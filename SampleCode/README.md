@@ -40,3 +40,4 @@ A step by step series of examples that tell you have to get a development enviro
   ```
 
 Now everything should be installed and ready to run! To leave the virtual environment, simply type `deactivate` in the terminal
+When you are commiting changes to Github, do not add these folders to your commit. Github does not like the binary files and sometimes weird things will happen.
