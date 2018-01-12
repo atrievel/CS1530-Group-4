@@ -40,3 +40,5 @@ A step by step series of examples that tell you have to get a development enviro
 ``` python
 pip install -r requirements.txt
 ```
+
+Now everything should be installed and ready to run! To leave the virtual environment, simply type `deactivate` in the terminal
