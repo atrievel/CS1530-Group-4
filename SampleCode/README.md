@@ -13,7 +13,7 @@ A step by step series of examples that tell you have to get a development enviro
 * During the install, select the option to add python to the path variable
 * Also make sure to select the option to install pip as well
 
-1. Install virtualenv
+2. Install virtualenv
 
 * Virtualenv creates a Python environment that is segregated from your system wide Python installation
   * We can test our module without any external packages affecting the result
@@ -32,7 +32,7 @@ A step by step series of examples that tell you have to get a development enviro
   virtualenv --no-site-packages SampleCode
   SampleCode\Scripts\activate
   ```
-1. Install Python packages and dependencies
+3. Install Python packages and dependencies
 * Download requirements.txt from this repository and copy it to your virtualenv directory
 
 * Run the following command in the terminal to install the python packages **(must be in admin mode)**
