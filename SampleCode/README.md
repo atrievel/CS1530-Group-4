@@ -29,6 +29,8 @@ A step by step series of examples that tell you have to get a development enviro
   * Run the following commands in the terminal *I am using SampleCode as my directory name. This name is up to you*
   `
   virtualenv --no-site-packages SampleCode
+  `
+  `
   SampleCode\Scripts\activate
   `
 3. Install Python packages and dependencies
