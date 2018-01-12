@@ -27,17 +27,16 @@ A step by step series of examples that tell you have to get a development enviro
   * Navigate to the desired path of the environment *(example: C:\Users\Alec\Documents\GitHub\CS1530-Group-4)*
 
   * Run the following commands in the terminal *I am using SampleCode as my directory name. This name is up to you*
-  ``` 
+  ``` bash
   virtualenv --no-site-packages SampleCode
   SampleCode\Scripts\activate
   ```
-3. Install Python packages and dependencies
+3. **Install Python packages and dependencies**
 * Download requirements.txt from this repository and copy it to your virtualenv directory
 
 * Run the following command in the terminal to install the python packages **(must be in admin mode)**
-
-`
-pip install -r requirements.txt
-`
+  ```python
+  pip install -r requirements.txt
+  ```
 
 Now everything should be installed and ready to run! To leave the virtual environment, simply type `deactivate` in the terminal
