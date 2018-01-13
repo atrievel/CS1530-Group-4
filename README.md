@@ -13,6 +13,7 @@ What things you need to install the software and how to install them
 ``` python
 Give examples
 ```
+(need python? https://www.python.org/downloads/)
 
 ### Installing
 
@@ -31,6 +32,26 @@ until finished
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
+
+Quick Flask tutorial here.
+
+1. To acquire Flask, create a directory with the cmd command prompt in a preferred place.
+2. after the directory is created, type in the cmd window pip install flask.
+3. Create a file "app.py"  with the content:
+
+from flask import Flask
+app = Flask(__name__)
+
+4. Define the main route and handle the request with "Welcome!". Append the content to app.py below:
+
+@app.route("/")
+def main():
+    return "Welcome!"
+   
+5. In command prompt, type in the command "python app.py" and redirect a web browser to http://localhost:5000/
+You should see "Welcome!" 
+
+For consistency so far, please check app.py in the repo.
 
 ## Running the tests
 
