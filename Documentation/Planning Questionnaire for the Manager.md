@@ -2,7 +2,7 @@
 
 ## Project Manager: Alec Trievel
 
-### Questions and And Answers
+### Questions And Answers
 
 * Have you got the commitment of the executive management for the project?
 * Do all the executive managers know what they have to do?
