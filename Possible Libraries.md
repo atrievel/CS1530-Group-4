@@ -1,4 +1,4 @@
-# Flask Libraries
+# Libraries
 
 ## List of possible Flask Libraries to use in our app
 
@@ -24,3 +24,18 @@
 * [Flask-RESTPlus](https://flask-restplus.readthedocs.io/en/stable/)
 * [Marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)
 * [PyTest](https://docs.pytest.org/en/latest/)
+* [Flask-Compress](https://github.com/libwilliam/flask-compress)
+
+### Hosting
+
+* Heroku
+* Python Anywhere
+
+## List of possible Front-end Libraries to use in our app
+
+* [jQuery](https://code.jquery.com/)
+* [Underscore.js](https://www.underscorejs.org)
+* [Mocha](https://mochajs.org/)
+* [Bootstrap](https://v4-alpha.getbootstrap.com/)
+* [Anime.js](http://animejs.com/)
+* [SweetAlert](https://sweetalert.js.org/)

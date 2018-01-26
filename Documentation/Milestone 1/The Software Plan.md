@@ -21,11 +21,11 @@
 
 * Hardware
   * For development
-  * For Deployment
+  * For deployment
 * Software
-  * what do you need for the development environment?
+  * What do you need for the development environment?
 * People
-  * introduction of personnel and their roles
+  * Introduction of personnel and their roles
 
 ## 4. Associated Costs
 
