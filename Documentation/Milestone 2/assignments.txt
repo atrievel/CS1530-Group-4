@@ -1,0 +1,20 @@
+From MS1
+	Cost: Tim
+	Schedule: Jermey
+
+
+User's Manual
+	Product overview: done in MS1
+	Getting started
+		Login: Tim
+		Help: Alec
+		Sample runs: Joey
+	Modes of Operation: Jeremy
+
+Requirement Spec
+	Product overview: done in MS1
+	User interface: user manual
+	Data flow: Bert
+	Functional Description: Alec
+
+Questionaire: Alec
