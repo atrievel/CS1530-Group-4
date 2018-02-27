@@ -12,6 +12,12 @@ class User(db.Model):
     creation_date = db.Column(db.DateTime)
     is_validated = db.Column(db.Boolean, default=False)
     last_login = db.Column(db.DateTime)
+    threads = db.relationship('Thread', backref='user', lazy=True)
+    comments = db.relationship('Comment', backref='user', lazy=True)
+    friendships = db.relationship('Friendship', backref='user', lazy=True)
+    thread_votes = db.relationship('ThreadVote', backref='user', lazy=True)
+    comment_votes = db.relationship('CommentVote', backref='user', lazy=True)
+    messages = db.relationship('Message', backref='user', lazy=True)
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,6 +31,9 @@ class Thread(db.Model):
     title = db.Column(db.String(256))
     body = db.Column(db.String(2048))
     creation_date = db.Column(db.DateTime)
+    comments = db.relationship('Comment', backref='user', lazy=False)
+    votes = db.relationship('ThreadVote', backref='user', lazy=False)
+    categories = db.relationship('Category', backref='user', lazy=False)
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,6 +41,7 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     body = db.Column(db.String(1024))
     creation_date = db.Column(db.DateTime)
+    votes = db.relationship('CommentVote', backref='user', lazy=False)
 
 class Friendship(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -42,11 +52,13 @@ class Friendship(db.Model):
 class ThreadVote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     value = db.Column(db.Boolean)
 
 class CommentVote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     value = db.Column(db.Boolean)
 
 class Message(db.Model):
