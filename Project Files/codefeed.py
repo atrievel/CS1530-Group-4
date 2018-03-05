@@ -43,7 +43,7 @@ def login():
         return render_template('login.html')
     if request.method == 'POST':
         # Get the user based on the entered username
-        user = User.query.filter_by(username=request.form['username'])
+        user = User.query.filter_by(username=request.form['username']).first()
         if user != None: 
             pw_hash = user.password_hash #get the password hash from the db
             if check_password_hash(pw_hash, requst.form['password']):
@@ -63,8 +63,37 @@ def logout():
         
 @app.route("/register", methods=['GET','POST'])
 def register():
-    return "Register"
-
+    if request.method == 'GET':
+        return render_template('register.html')
+    if request.method == 'POST':
+        # get all the inputs from the form
+        username = request.form['username']
+        password = request.form['password']
+        verify_password = request.form['verify_password']
+        name = request.form['name']
+        email = request.form['email']
+        try:
+            # assert all inputs are valid
+            assert User.query.filter_by(username=username).first() == None
+            assert password == verify_password
+            assert len(password) >= 8
+            # assert the email is a valid type
+            assert email.utils.parseaddr(email) != ('', '')
+        except:
+            # if any asserts fall flash an errer message
+            flash('Please check the entered information and try submitting again')
+            return
+        # otherwise add them as a new user
+        
+        # generate the hash for the password
+        pw_hash = bcrypt.generate_password_hash(password)
+        new_user = User(username, pw_hash, name, email, current_date)
+        new_user.creation_date = datetime.now()
+        new_user.is_validated = True
+        db.session.add(new_user)
+        db.session.commit()
+        return render_template('login.html')
+        
 @app.route("/profile", methods=['GET','POST'])
 def myProfile():
     user_id = request.args['user_id']
