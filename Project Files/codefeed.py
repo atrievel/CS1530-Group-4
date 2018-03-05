@@ -20,11 +20,26 @@ def initdb_command():
 # begin route initialization
 @app.route("/")
 def home():
-	return "Welcome to CodeFeed"
+    return "Welcome to CodeFeed"
 
-@app.route("/login")
+@app.route("/login", methods=['GET','POST'])
 def login():
-	return "Login"
+    if request.method == 'GET':
+        return render_template('login.html')
+    if request.method == 'POST':
+        # Get the user based on the entered username
+        user = User.query.filter_by(username=request.form['username'])
+        if user != None: 
+            pw_hash = user.password_hash #get the password hash from the db
+            if check_password_hash(pw_hash, requst.form['password']):
+                user.last_login = datetime.now()
+                db.session.commit()
+                session['user_id'] = user.id #set the session varaible for the user
+            else:
+                flash('Credentials not verified. Please try again or register for a new account')
+        else:
+            flash('Credentials not verified. Please try again or register for a new account')
+    return "Login"
 
 @app.route("/logout")
 def logout():
