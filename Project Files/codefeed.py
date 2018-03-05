@@ -10,6 +10,21 @@ app.config.from_object('config.DebugConfig')
 # initialize the database 
 db.init_app(app)
 
+
+
+# login required decorator
+# Use
+# @login_required
+# before any route to require the user be logged in
+# and redirect them to the login page.
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if sesssion['user_id'] is None:
+            return redirect(url_for('login', next=request.url))
+        return f(*args, **kwargs)
+    return decorated_function
+
 @app.cli.command('initdb')
 def initdb_command():
     """Creates the database tables."""
@@ -18,7 +33,7 @@ def initdb_command():
     print('Initialized the database.')
 
 # begin route initialization
-@app.route("/")
+@app.route("/", methods=['GET','POST'])
 def home():
     return "Welcome to CodeFeed"
 
@@ -39,77 +54,82 @@ def login():
                 flash('Credentials not verified. Please try again or register for a new account')
         else:
             flash('Credentials not verified. Please try again or register for a new account')
-    return "Login"
 
-@app.route("/logout")
+@app.route("/logout", methods=['GET','POST'])
 def logout():
-	return "Logout"
-
-@app.route("/register")
+    if request.method == 'GET':
+        session.clear()
+        return render_template('login.html')
+        
+@app.route("/register", methods=['GET','POST'])
 def register():
-	return "Register"
+    return "Register"
 
-@app.route("/profile")
+@app.route("/profile", methods=['GET','POST'])
 def myProfile():
-	user_id = request.args['user_id']
-	if user_id is None:
-		return "myProfile"
-	elif user_id == "":
-		return "myProfile"
-	else:
-		return "Profile_ID : " + user_id
+    user_id = request.args['user_id']
+    if user_id is None:
+        return "myProfile"
+    elif user_id == "":
+        return "myProfile"
+    else:
+        return "Profile_ID : " + user_id
 
-@app.route("/profile/send_message")
+@app.route("/profile/send_message", methods=['GET','POST'])
+@login_required
 def sendMessage():
-	user_id = request.args['user_id']
-	if user_id is None:
-		return "Send to who?"
-	elif user_id == "":
-		return "Send to who?"
-	else:
-		return "Send message to Profile_ID : " + user_id
+    user_id = request.args['user_id']
+    if user_id is None:
+        return "Send to who?"
+    elif user_id == "":
+        return "Send to who?"
+    else:
+        return "Send message to Profile_ID : " + user_id
     
-@app.route("/profile/messages")
+@app.route("/profile/messages", methods=['GET','POST'])
+@login_required
 def getMessages():
-	return "getMessages"
+    return "getMessages"
 
-@app.route("/profile/friends")
+@app.route("/profile/friends", methods=['GET','POST'])
+@login_required
 def listFriends():
-	return "listFriends"
+    return "listFriends"
 
-@app.route("/categories")
+@app.route("/categories", methods=['GET','POST'])
 def listCategories():
-	return "listCategories"
+    return "listCategories"
 
-@app.route("/category")
+@app.route("/category", methods=['GET','POST'])
 def getCategory():
-	cat_id = request.args['cat_id']
-	if cat_id is None:
-		return "Which category?"
-	elif cat_id == "":
-		return "Which category?"
-	else:
-		return "Get Category by cat_id : " + cat_id
+    cat_id = request.args['cat_id']
+    if cat_id is None:
+        return "Which category?"
+    elif cat_id == "":
+        return "Which category?"
+    else:
+        return "Get Category by cat_id : " + cat_id
 
-@app.route("/category/post")
+@app.route("/category/post", methods=['GET','POST'])
 def addPost():
-	post_id = request.args['post_id']
-	if post_id is None:
-		return "Which post?"
-	elif post_id == "":
-		return "Which post?"
-	else:
-		return "Add post with post_id : " + post_id
+    post_id = request.args['post_id']
+    if post_id is None:
+        return "Which post?"
+    elif post_id == "":
+        return "Which post?"
+    else:
+        return "Add post with post_id : " + post_id
 
-@app.route("/category/post/add_comment")
+@app.route("/category/post/add_comment", methods=['GET','POST'])
+@login_required
 def addComment():
-	post_id = request.args['post_id']
-	if post_id is None:
-		return "Which post?"
-	elif post_id == "":
-		return "Which post?"
-	else:
-		return "Add comment to post_id : " + post_id
+    post_id = request.args['post_id']
+    if post_id is None:
+        return "Which post?"
+    elif post_id == "":
+        return "Which post?"
+    else:
+        return "Add comment to post_id : " + post_id
 
 if __name__ == '__main__':
-	app.run()
+    app.run()
