@@ -38,9 +38,10 @@ def home():
     if request.method == 'GET':
         num_users = db.session.query(User).count()
         num_posts = db.session.query(Thread).count()
+        num_groups = db.session.query(Category).count()
         num_up_votes = db.session.query(ThreadVote).filter(ThreadVote.value == True).count()
         + db.session.query(ThreadVote).filter(CommentVote.value == True).count()
-
+        return render_template('landing.html', num_users=num_users, num_posts=num_posts,num_groups=num_groups,num_up_votes=num_up_votes)
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == 'GET':
@@ -55,9 +56,9 @@ def login():
                 db.session.commit()
                 session['user_id'] = user.id #set the session varaible for the user
             else:
-                flash('Credentials not verified. Please try again or register for a new account')
+                flash('Credentials not verified. Please try again or register for a new account','error')
         else:
-            flash('Credentials not verified. Please try again or register for a new account')
+            flash('Credentials not verified. Please try again or register for a new account','error')
 
 @app.route("/logout", methods=['GET','POST'])
 def logout():
@@ -85,7 +86,7 @@ def register():
             assert email.utils.parseaddr(email) != ('', '')
         except:
             # if any asserts fall flash an errer message
-            flash('Please check the entered information and try submitting again')
+            flash('Please check the entered information and try submitting again','error')
             return
         # otherwise add them as a new user
         
@@ -99,15 +100,23 @@ def register():
         return render_template('login.html')
         
 @app.route("/profile", methods=['GET','POST'])
-def myProfile():
-    user_id = request.args['user_id']
-    if user_id is None:
-        return "myProfile"
-    elif user_id == "":
-        return "myProfile"
-    else:
-        return "Profile_ID : " + user_id
-
+def profile():
+    if request.method == 'GET':
+        if request.args['user_id'] is None:
+            user_id = session['user_id']
+        else:
+            user_id = request.args['user_id']
+        user = User.query.filter_by(id=user_id).first()
+        return render_template('profile.hrml', id = user.id,
+        username=user.username,
+        name=user.name,
+        email=user.email,
+        biography=user.biography,
+        creation_date=creation_date,
+        last_login=last_login)
+    if request.method == 'POST':
+        user = User.query.filter_by(id=session['user_id']).first()
+        
 @app.route("/profile/send_message", methods=['GET','POST'])
 @login_required
 def sendMessage():
