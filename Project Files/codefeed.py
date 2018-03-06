@@ -35,7 +35,11 @@ def initdb_command():
 # begin route initialization
 @app.route("/", methods=['GET','POST'])
 def home():
-    return "Welcome to CodeFeed"
+    if request.method == 'GET':
+        num_users = db.session.query(User).count()
+        num_posts = db.session.query(Thread).count()
+        num_up_votes = db.session.query(ThreadVote).filter(ThreadVote.value == True).count()
+        + db.session.query(ThreadVote).filter(CommentVote.value == True).count()
 
 @app.route("/login", methods=['GET','POST'])
 def login():
