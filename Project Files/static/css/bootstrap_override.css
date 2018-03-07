@@ -12,7 +12,12 @@
     color: #D1E8E2;
 }
 
-a {
+.secondary-bg {
+    background-color: #FFCB9A;
+    color: #D1E8E2;
+}
+
+.nav-bar-link {
     -o-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;
     -moz-transition: all 0.0.3s linear;
@@ -20,7 +25,7 @@ a {
     transition: all 0.3s linear;
   }
 
-  a:hover {
+  .nav-bar-link:hover {
       margin: 0 1.1rem 0 1.1rem;
   }
 
@@ -42,7 +47,8 @@ a {
 
 
  h1, h2, h3, h4, h5, h6,
- .h1, .h2, .h3, .h4, .h5, .h6, .form_input, p {
+ .h1, .h2, .h3, .h4, .h5, .h6, 
+ .form_input, p, td, th, tr, table {
      font-style: normal;
      font-weight: normal;
      text-rendering: optimizeLegibility;
