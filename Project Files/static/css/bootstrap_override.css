@@ -3,16 +3,46 @@
 }
 
 .dark-bg {
-    background-color: #111111;;
+    background-color: #111111;
     color: #D1E8E2;
 }
+
+.light-bg {
+    background-color: #116466;
+    color: #D1E8E2;
+}
+
+a {
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -moz-transition: all 0.0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+  }
+
+  a:hover {
+      margin: 0 1.1rem 0 1.1rem;
+  }
 
 /* ===================================================================
  * # typography & general theme styles
  * 
  * ------------------------------------------------------------------- */
+ .primary-text {
+    color:#D9B08C;
+}
+
+.secondary-text {
+    color: #FFCB9A;
+}
+
+.light-text {
+    color: #D1E8E2;
+}
+
+
  h1, h2, h3, h4, h5, h6,
- .h1, .h2, .h3, .h4, .h5, .h6, .form_input {
+ .h1, .h2, .h3, .h4, .h5, .h6, .form_input, p {
      font-style: normal;
      font-weight: normal;
      text-rendering: optimizeLegibility;
