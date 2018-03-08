@@ -1,5 +1,4 @@
 function postNewCategory(name, description) {
-    //set 
     const newCat = JSON.stringify({
         name: name.trim(),
         description: description.trim()
