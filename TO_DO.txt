@@ -5,11 +5,10 @@ categories.html
 category.html
 post.html
 
-DONE (tested)
+/category
 
 
 TO DO
-/category
 /categories/post
 /category/post/add_comment
 /category/post/vote

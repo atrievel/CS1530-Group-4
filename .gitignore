@@ -7,5 +7,5 @@ tcl/
 pip-selfcheck.json
 settings.json
 _config.yml
-Presentations/~$Week2.pptx
 Project Files/__pycache__
+Project Files/codefeed_debug.db
