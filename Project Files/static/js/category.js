@@ -71,12 +71,14 @@ function postNewCategory(name, description) {
     });
 }
 
-function postNewMessage(title, body, category_id) {
+function postNewPost(title, body, category_id) {
     const new_message = JSON.stringify({
         title: title.trim(),
         body: body.trim(),
-        category_id: category_id
+        category_id: parseInt(category_id)
     });
+
+    console.log(new_message);
 
     let jqxhr = $.ajax({
         url: "/category/post",
@@ -239,4 +241,8 @@ function modifyCommentVote(post_id, comment_id, vote) {
                 break;
         }   
     });
+}
+
+function getQueryStringValue(key) {  
+    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
 }
