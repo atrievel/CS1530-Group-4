@@ -20,7 +20,7 @@ def initdb_command():
 # begin route initialization
 @app.route("/")
 def home():
-	return render_template("login.html")
+	return render_template("landing.html")
 
 @app.route("/login")
 def login():
