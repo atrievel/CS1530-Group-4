@@ -31,7 +31,7 @@
 
 /* ===================================================================
  * # typography & general theme styles
- * 
+ *
  * ------------------------------------------------------------------- */
  .primary-text {
     color:#D9B08C;
@@ -45,62 +45,80 @@
     color: #D1E8E2;
 }
 
+.dark-text {
+    color: #116466;
+}
+
+.darker-text {
+    color: #111111;
+}
+
 
  h1, h2, h3, h4, h5, h6,
- .h1, .h2, .h3, .h4, .h5, .h6, 
+ .h1, .h2, .h3, .h4, .h5, .h6,
  .form_input, p, td, th, tr, table {
      font-style: normal;
      font-weight: normal;
      text-rendering: optimizeLegibility;
  }
- 
+
  h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
      margin-top: 6rem;
      margin-bottom: 1.8rem;
  }
- 
+
  @media only screen and (max-width: 600px) {
      h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
          margin-top: 5.1rem;
      }
  }
- 
+
  h1, .h1 {
      font-size: 3.6rem;
      line-height: 1.25;
      letter-spacing: -.1rem;
  }
- 
+
  @media only screen and (max-width: 600px) {
      h1, .h1 {
          font-size: 3.3rem;
          letter-spacing: -.07rem;
      }
  }
- 
+
  h2, .h2 {
      font-size: 3rem;
      line-height: 1.3;
  }
- 
+
  h3, .h3 {
      font-size: 2.4rem;
      line-height: 1.25;
  }
- 
+
  h4, .h4 {
      font-size: 2.1rem;
      line-height: 1.286;
  }
- 
+
  h5, .h5 {
      font-size: 1.6rem;
      line-height: 1.313;
  }
- 
+
  h6, .h6, .form_input {
      font-size: 1.3rem;
      line-height: 1.385;
      text-transform: uppercase;
      letter-spacing: .16rem;
  }
+
+ /* ===================================================================
+  * # Stuff Tim needs
+  *
+  * ------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    #stackable {
+        margin-top: 2rem;
+    }
+}
