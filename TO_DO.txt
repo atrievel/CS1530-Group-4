@@ -6,10 +6,9 @@ category.html
 post.html
 
 /category
-
-
-TO DO
 /categories/post
 /category/post/add_comment
+
+TO DO
 /category/post/vote
 /category/post/comment/vote

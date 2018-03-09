@@ -70,11 +70,16 @@
             </div> 
         </nav>
 
+        <!-- List of comments and button to add new comment
+        ================================================== -->
         <div class="container">
             <div class="text-left my-3">
                 <h2 class="primary-text">Comment list for {{ post_name }} </h2>
             </div>
             <div class="jumbotron light-bg">
+                <div class="container-fluid text-right">
+                    <button id="btnAddNewComment" class="btn btn-md btn-info"><i class="fas fa-plus-square"></i> New comment</button>
+                </div>
                 <table id="tblComments" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -96,6 +101,36 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Modal to add new post
+            ================================================== -->
+            <div class="modal fade" id="modalNewComment" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title dark-text">New Comment</h5>
+                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="txtBody" class="form-control-label dark-text">Body:</label>
+                                <textarea class="form-control" id="txtBody"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    New comment body cannot be blank
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnPostNewComment" class="btn btn-primary">Submit Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- JavaScript
@@ -103,14 +138,40 @@
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://unpkg.com/sweetalert2@7.15.1/dist/sweetalert2.all.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+        <script src="../static/js/category.js"></script>
         <script type="text/javascript">
-            $("#tblComments").DataTable ({
-                scrollY:        '50vh',
-                scrollCollapse: true,
-                paging: false
+            $(document).ready(function() {
+                //set up the datatable for the posts
+                $("#tblComments").DataTable ({
+                    scrollY: '50vh',
+                    scrollCollapse: true
+                });
+
+                //load the modal on a button click
+                $("#btnAddNewComment").on('click touch', function() {
+                    $("#modalNewComment").modal('show');
+
+                    //run checks after the modal fields are completed and submit if they pass 
+                    $("#btnPostNewComment").on('click touch', function() {    
+                        const body = $('#txtBody').val();
+
+                        //assert the new comment body is not blank
+                        //add valid/invalid css if it is not/is blank
+                        if(body.length <= 0) {
+                            $('#txtBody').removeClass("is-valid");
+                            $('#txtBody').addClass("is-invalid");
+                        }
+                        else {
+                            postNewComment(body, getQueryStringValue("post_id"));
+                            $("#modalNewComment").modal('hide');
+                            $('#txtBody').val('');
+                            $('#txtBody').removeClass("is-valid");
+                        }                   
+                    });
+                });
             });
         </script>
     </body>

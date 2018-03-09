@@ -72,13 +72,13 @@ function postNewCategory(name, description) {
 }
 
 function postNewPost(title, body, category_id) {
-    const new_message = JSON.stringify({
+    const new_post = JSON.stringify({
         title: title.trim(),
         body: body.trim(),
         category_id: parseInt(category_id)
     });
 
-    console.log(new_message);
+    console.log(new_post);
 
     let jqxhr = $.ajax({
         url: "/category/post",
@@ -86,7 +86,7 @@ function postNewPost(title, body, category_id) {
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
         cache: false,
-        data: new_message     
+        data: new_post    
     })
 
     .always(function (data, textStatus) {
@@ -98,15 +98,44 @@ function postNewPost(title, body, category_id) {
         switch (jqxhr.status) {
             case 200:
                 console.log("All good");
+
+                swal({
+                    type: 'success',
+                    title: 'Awesome!',
+                    text: 'Your new post was created',
+                    footer: "<a href='/catgeory/post?post_id=?'>Click here to go to this post</a>",
+                  });
+
                 break;
             case 403:
-                console.log("Category name is taken");
+                console.log("Insert of post failed");
+
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Try submitting the request again',
+                  });
+
                 break;
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
+
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Try submitting the request again',
+                  });
+
                 break;
             case 500: 
                 console.log("Backend team broke something");
+
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Try submitting the request again',
+                  });
+
                 break;
             default:
                 //probably won't need this in production, but here's where we get the response (undefined if error)
@@ -119,8 +148,10 @@ function postNewPost(title, body, category_id) {
 function postNewComment(body, post_id) {
         const new_comment = JSON.stringify({
         body: body.trim(),
-        post_id: post_id
+        post_id: parseInt(post_id)
     });
+
+    console.log(new_comment);
 
     let jqxhr = $.ajax({
         url: "/category/post/add_comment",
@@ -140,15 +171,44 @@ function postNewComment(body, post_id) {
         switch (jqxhr.status) {
             case 200:
                 console.log("All good");
+
+                swal({
+                    type: 'success',
+                    title: 'Awesome!',
+                    text: 'Your new comment was created'
+                  });
+
                 break;
             case 403:
-                console.log("Category name is taken");
+                console.log("Comment post failed");
+
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Try submitting the request again',
+                  });
+
+
                 break;
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
+
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Try submitting the request again',
+                  });
+
                 break;
             case 500: 
                 console.log("Backend team broke something");
+
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Try submitting the request again',
+                  });
+
                 break;
             default:
                 //probably won't need this in production, but here's where we get the response (undefined if error)
