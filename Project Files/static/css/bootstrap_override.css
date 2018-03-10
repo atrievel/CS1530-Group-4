@@ -117,3 +117,7 @@
         margin-top: 2rem;
     }
 }
+
+a:hover {
+    color: #FFCB9A;
+}
