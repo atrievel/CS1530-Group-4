@@ -79,14 +79,17 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Friends Since</th>
+                            <th style="width: 15%">Friends Since</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for friend in friends %}
                             <tr>
-                                <td><a class="primary-text" href="profile/profile_id?={{ friend.id }}">{{ friend.name }} ({{ friend.username }})</a></td>
-                                <td>{{ friend.creation_date }}</td>
+                                <td>
+                                    <a class="primary-text" href="profile/profile_id?={{ friend.id }}">{{ friend.name }} ({{ friend.username }})</a>
+                                    <button id="sendMessage" class="btn btn-md btn-info" style="float: right"><i class="fas fa-envelope"></i> Send Message</button>
+                                </td>
+                                <td>{{ friend.date }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
