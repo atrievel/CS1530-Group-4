@@ -87,13 +87,53 @@
                             <tr>
                                 <td>
                                     <a class="primary-text" href="profile/profile_id?={{ friend.id }}">{{ friend.name }} ({{ friend.username }})</a>
-                                    <button id="sendMessage" class="btn btn-md btn-info" style="float: right"><i class="fas fa-envelope"></i> Send Message</button>
+                                    <button id="btnSendMessage" class="btn btn-md btn-info" style="float: right"><i class="fas fa-envelope"></i> Send Message</button>
                                 </td>
                                 <td>{{ friend.date }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Modal to add new message
+            ================================================== -->
+            <div class="modal fade" id="modalNewMessage" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title dark-text">Compose Message</h5>
+                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="txtUser" class="form-control-label dark-text">Send to:</label>
+                                <input type="text" class="form-control" id="txtUser">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Invalid user
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtBody" class="form-control-label dark-text">Message body:</label>
+                                <textarea class="form-control" id="txtBody"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Message body cannot be blank
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnPostNewMessage" class="btn btn-primary">Send message</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -109,6 +149,49 @@
             $("#tblFriends").DataTable ({
                 scrollY:        '50vh',
                 scrollCollapse: true
+            });
+
+            //load the modal on a button click
+            $("#btnSendMessage").on('click touch', function() {
+                $("#modalNewMessage").modal('show');
+
+                //run checks after the modal fields are completed and submit if they pass
+                $("#btnPostNewMessage").on('click touch', function() {
+                    const user = $('#txtUser').val();
+                    const body = $('#txtBody').val();
+
+                    //assert the user is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if(user.length <= 0) {
+                        $('#txtUser').removeClass("is-valid");
+                        $('#txtUser').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtUser').removeClass("is-invalid");
+                        $('#txtUser').addClass("is-valid");
+                    }
+
+                    //assert the message body is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if(body.length <= 0) {
+                        $('#txtBody').removeClass("is-valid");
+                        $('#txtBody').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtBody').removeClass("is-invalid");
+                        $('#txtBody').addClass("is-valid");
+                    }
+
+                    //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                    if(user.length > 0 && body.length > 0) {
+                        postNewMessage(user, body);
+                        $("#modalNewMessage").modal('hide');
+                        $('#txtUser').val('');
+                        $('#txtBody').val('');
+                        $('#txtUser').removeClass("is-valid");
+                        $('#txtBody').removeClass("is-valid");
+                    }
+                });
             });
         </script>
     </body>
