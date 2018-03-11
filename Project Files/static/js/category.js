@@ -1,3 +1,11 @@
+/*
+* The AJAX requests for each route in order of declaration
+* /category
+* /category/post
+* /category/post/add_comment
+* /category/post/vote
+* /category/post/comment/vote
+*/
 function postNewCategory(name, description) {
     const new_cat = JSON.stringify({
         name: name.trim(),
@@ -25,6 +33,8 @@ function postNewCategory(name, description) {
                 case 200:
                     console.log("All good");
 
+                    clearModalInputs("#modalNewCategory", ['#txtCategoryName', '#txtDescription']);
+
                     swal({
                         type: 'success',
                         title: 'Awesome!',
@@ -36,6 +46,8 @@ function postNewCategory(name, description) {
                 case 403:
                     console.log("Category name is taken");
 
+                    $("#modalNewCategory").modal('show');
+
                     swal({
                         type: 'error',
                         title: 'Oh no!',
@@ -45,6 +57,8 @@ function postNewCategory(name, description) {
                     break;
                 case 405:
                     console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
+
+                    $("#modalNewCategory").modal('show');
 
                     swal({
                         type: 'error',
@@ -56,6 +70,8 @@ function postNewCategory(name, description) {
                 case 500: 
                     console.log("Backend team broke something");
 
+                    $("#modalNewCategory").modal('show');
+                    
                     swal({
                         type: 'error',
                         title: 'Oops...',
@@ -99,6 +115,8 @@ function postNewPost(title, body, category_id) {
             case 200:
                 console.log("All good");
 
+                clearModalInputs("#modalNewPost", ['#txtTitle', '#txtBody']);
+
                 swal({
                     type: 'success',
                     title: 'Awesome!',
@@ -110,6 +128,8 @@ function postNewPost(title, body, category_id) {
             case 403:
                 console.log("Insert of post failed");
 
+                $("#modalNewPost").modal('show');
+
                 swal({
                     type: 'error',
                     title: 'Oops...',
@@ -119,6 +139,8 @@ function postNewPost(title, body, category_id) {
                 break;
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
+                
+                $("#modalNewPost").modal('show');
 
                 swal({
                     type: 'error',
@@ -129,6 +151,8 @@ function postNewPost(title, body, category_id) {
                 break;
             case 500: 
                 console.log("Backend team broke something");
+
+                $("#modalNewPost").modal('show');
 
                 swal({
                     type: 'error',
@@ -172,6 +196,8 @@ function postNewComment(body, post_id) {
             case 200:
                 console.log("All good");
 
+                clearModalInputs("#modalNewComment", ['#txtBody']);
+
                 swal({
                     type: 'success',
                     title: 'Awesome!',
@@ -181,6 +207,8 @@ function postNewComment(body, post_id) {
                 break;
             case 403:
                 console.log("Comment post failed");
+
+                $("#modalNewPost").modal('show');
 
                 swal({
                     type: 'error',
@@ -193,6 +221,8 @@ function postNewComment(body, post_id) {
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
 
+                $("#modalNewPost").modal('show');
+
                 swal({
                     type: 'error',
                     title: 'Oops...',
@@ -202,6 +232,8 @@ function postNewComment(body, post_id) {
                 break;
             case 500: 
                 console.log("Backend team broke something");
+
+                $("#modalNewPost").modal('show');
 
                 swal({
                     type: 'error',
@@ -303,6 +335,48 @@ function modifyCommentVote(post_id, comment_id, vote) {
     });
 }
 
+/*
+* Helper functions used by the AJAX requests
+*/
 function getQueryStringValue(key) {  
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+}
+
+function setupDataTable(table_id) {
+    $("#" + table_id).DataTable ({
+        scrollY: '50vh',
+        scrollCollapse: true
+    });
+}
+
+function setupVoteListeners(base_class) {
+    const up_class = '.' + base_class + '-up';
+    const down_class = '.' + base_class + '-down';
+
+    $(up_class).on('click touch', function() {
+        const other_id = this.id.replace("Up", "Down").trim();
+        $(this).removeClass('animated-not-clicked');
+        $(this).toggleClass('animated-clicked');
+        document.getElementById(other_id).classList.add('animated-not-clicked');
+        document.getElementById(other_id).classList.remove('animated-clicked');
+    });
+
+    $(down_class).on('click touch', function() {
+        const other_id = this.id.replace("Down", "Up").trim();
+        $(this).removeClass('animated-not-clicked');
+        $(this).toggleClass('animated-clicked');
+        document.getElementById(other_id).classList.add('animated-not-clicked');
+        document.getElementById(other_id).classList.remove('animated-clicked');
+    });
+}
+
+function clearModalInputs(modal, inputs) {
+    $(modal).modal('hide');
+
+    inputs.forEach(function(e) {
+        $(e).val('');
+        $(e).removeClass("is-valid");
+        $(e).removeClass("is-invalid");
+        console.log($(e));
+    });
 }

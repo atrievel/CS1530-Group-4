@@ -151,11 +151,7 @@
     <script src="../static/js/category.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            //set up the datatable for the categories
-            $("#tblCategories").DataTable ({
-                scrollY: '50vh',
-                scrollCollapse: true
-            });
+            setupDataTable('tblCategories');
 
             //load the modal on a button click
             $("#btnAddNewCategory").on('click touch', function() {
@@ -191,11 +187,6 @@
                     //if both the name and description are not blank, pass the data to the server, clear the modal, and hide the modal
                     if(name.length > 0 && description.length > 0) {
                         postNewCategory(name, description);
-                        $("#modalNewCategory").modal('hide');
-                        $('#txtCategoryName').val('');
-                        $('#txtDescription').val('');
-                        $('#txtCategoryName').removeClass("is-valid");
-                        $('#txtDescription').removeClass("is-valid");
                     }                     
                 });
             });

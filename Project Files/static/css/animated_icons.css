@@ -1,0 +1,45 @@
+/* BOUNCE UP */
+    @-webkit-keyframes bounce-up {
+        0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+        40% {-webkit-transform: translateY(-15px);} 
+        60% {-webkit-transform: translateY(-5px);} 
+    }
+
+    @keyframes bounce-up {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+        40% {transform: translateY(-15px);} 
+        60% {transform: translateY(-5px);} 
+    }
+
+    .bounce-up:hover {
+        -webkit-animation: bounce-up 2s ease infinite;
+        animation: bounce-up 2s ease infinite;
+        cursor: pointer;
+    }
+
+/* BOUNCE DOWN*/
+    @-webkit-keyframes bounce-down {
+        0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+        40% {-webkit-transform: translateY(15px);} 
+        60% {-webkit-transform: translateY(5px);} 
+    }
+
+    @keyframes bounce-down {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+        40% {transform: translateY(15px);} 
+        60% {transform: translateY(5px);} 
+    }
+
+    .bounce-down:hover {
+        -webkit-animation: bounce-down 2s ease infinite;
+        animation: bounce-down 2s ease infinite;
+        cursor: pointer;
+    }
+
+    .animated-clicked {
+        color: #D9B08C;
+    }
+
+    .animated-not-clicked {
+        color: inherit;
+    }
