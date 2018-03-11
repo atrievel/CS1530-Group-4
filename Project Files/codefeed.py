@@ -108,15 +108,34 @@ def profile():
             user_id = request.args['user_id']
         user = User.query.filter_by(id=user_id).first()
         return render_template('profile.hrml', id = user.id,
-        username=user.username,
-        name=user.name,
-        email=user.email,
-        biography=user.biography,
-        creation_date=creation_date,
-        last_login=last_login)
+        username = user.username,
+        name = user.name,
+        email = user.email,
+        biography = user.biography,
+        creation_date = creation_date,
+        last_login = last_login)
     if request.method == 'POST':
         user = User.query.filter_by(id=session['user_id']).first()
-        
+        data = request.get_json(force=True)
+        try:
+            name = string(data['name'])
+            password = string(data['password'])
+            verify_password = string(data['verify_password'])
+            biography = string(data['biography'])
+        except (KeyError, TypeError, ValueError):
+            raise JsonError(description='Invalid values.')
+        try:
+            assert password == verify_password or (password is None and verify_password is None)
+            assert email.utils.parseaddr(email) != ('', '')
+        except:
+            return jsonify(staus=403, updated = False)
+        user.name = name
+        user.email = email
+        user.biography = biography
+        if password is not None:
+            pw_hash = bcrypt.generate_password_hash(password)
+            user.password_hash = pw_hash
+        return jsonify(status = 200, updated = True)
 @app.route("/profile/send_message", methods=['GET','POST'])
 @login_required
 def sendMessage():
