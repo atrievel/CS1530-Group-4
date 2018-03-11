@@ -252,8 +252,8 @@ function postNewComment(body, post_id) {
 
 function modifyPostVote(post_id, vote) {
     const new_vote = JSON.stringify({
-        post_id: post_id,
-        vote: vote
+        post_id: parseInt(post_id),
+        vote: parseInt(vote)
     });
 
     let jqxhr = $.ajax({
@@ -294,9 +294,9 @@ function modifyPostVote(post_id, vote) {
 
 function modifyCommentVote(post_id, comment_id, vote) {
     const new_vote = JSON.stringify({
-        post_id: post_id,
-        comment_id: comment_id,
-        vote: vote
+        post_id: parseInt(post_id),
+        comment_id: parseInt(comment_id),
+        vote: parseInt(vote)
     });
 
     let jqxhr = $.ajax({
@@ -349,7 +349,7 @@ function setupDataTable(table_id) {
     });
 }
 
-function setupVoteListeners(base_class) {
+function setupVoteListeners(base_class, type) {
     const up_class = '.' + base_class + '-up';
     const down_class = '.' + base_class + '-down';
 
@@ -359,6 +359,13 @@ function setupVoteListeners(base_class) {
         $(this).toggleClass('animated-clicked');
         document.getElementById(other_id).classList.add('animated-not-clicked');
         document.getElementById(other_id).classList.remove('animated-clicked');
+        
+        if(type === 'post') {
+            modifyPostVote(this.id.replace(/\D/g,'').trim(), 1);
+        }
+        else if(type === 'comment') {
+            modifyCommentVote(getQueryStringValue('post_id'), this.id.replace(/\D/g,'').trim(), 1);
+        }
     });
 
     $(down_class).on('click touch', function() {
@@ -367,6 +374,13 @@ function setupVoteListeners(base_class) {
         $(this).toggleClass('animated-clicked');
         document.getElementById(other_id).classList.add('animated-not-clicked');
         document.getElementById(other_id).classList.remove('animated-clicked');
+
+        if(type === 'post') {
+            modifyPostVote(this.id.replace(/\D/g,'').trim(), -1);
+        }
+        else if(type === 'comment') {
+            modifyCommentVote(getQueryStringValue('post_id'), this.id.replace(/\D/g,'').trim(), -1);
+        }
     });
 }
 
