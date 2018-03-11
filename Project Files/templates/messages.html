@@ -97,7 +97,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <!-- Modal to add new message
             ================================================== -->
             <div class="modal fade" id="modalNewMessage" tabindex="-1" role="dialog">
@@ -111,8 +111,8 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="txtUser" class="form-control-label dark-text">Send to:</label>
-                                <input type="text" class="form-control" id="txtUser">
+                                <label for="txtUsername" class="form-control-label dark-text">Send to:</label>
+                                <input type="text" class="form-control" id="txtUsername">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" id="btnPostNewMessage" class="btn btn-primary">Send message</button>
+                            <button type="button" id="btnPostNewMessage" class="btn btn-primary">Send Message</button>
                         </div>
                     </div>
                 </div>
@@ -171,18 +171,18 @@
 
                 //run checks after the modal fields are completed and submit if they pass
                 $("#btnPostNewMessage").on('click touch', function() {
-                    const user = $('#txtUser').val();
+                    const username = $('#txtUsername').val();
                     const body = $('#txtBody').val();
 
-                    //assert the user is not blank
+                    //assert the username is not blank
                     //add valid/invalid css if it is not/is blank
-                    if(user.length <= 0) {
-                        $('#txtUser').removeClass("is-valid");
-                        $('#txtUser').addClass("is-invalid");
+                    if(username.length <= 0) {
+                        $('#txtUsername').removeClass("is-valid");
+                        $('#txtUsername').addClass("is-invalid");
                     }
                     else {
-                        $('#txtUser').removeClass("is-invalid");
-                        $('#txtUser').addClass("is-valid");
+                        $('#txtUsername').removeClass("is-invalid");
+                        $('#txtUsername').addClass("is-valid");
                     }
 
                     //assert the message body is not blank
@@ -196,17 +196,16 @@
                         $('#txtBody').addClass("is-valid");
                     }
 
-                    //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
-                    if(user.length > 0 && body.length > 0) {
-                        postNewMessage(user, body);
+                    //if both the username and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                    if(username.length > 0 && body.length > 0) {
+                        postNewMessage(username, body);
                         $("#modalNewMessage").modal('hide');
-                        $('#txtUser').val('');
+                        $('#txtUsername').val('');
                         $('#txtBody').val('');
-                        $('#txtUser').removeClass("is-valid");
+                        $('#txtUsername').removeClass("is-valid");
                         $('#txtBody').removeClass("is-valid");
                     }
                 });
             });
-
         </script>
     </body>

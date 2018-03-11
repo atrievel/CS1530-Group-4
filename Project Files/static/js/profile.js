@@ -1,18 +1,19 @@
-function postNewMessage(user, body) {
-    const new_message = JSON.stringify({
-        title: title.trim(),
-        body: body.trim(),
+function editProfile(name, email, bio) {
+    const profile_info = JSON.stringify({
+        name: name.trim(),
+        email: email.trim(),
+        bio: bio.trim()
     });
 
-    console.log(new_message);
+    console.log(profile_info);
 
     let jqxhr = $.ajax({
-        url: "/profile/messages",
+        url: "/profile",
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "application/json; charset=utf-8",
         cache: false,
-        data: new_message
+        data: profile_info
     })
 
     .always(function (data, textStatus) {
@@ -25,15 +26,19 @@ function postNewMessage(user, body) {
             case 200:
                 console.log("All good");
 
+                $('#name').html(name);
+                $('#email').html(email);
+                $('#bio').html(bio);
+
                 swal({
                     type: 'success',
                     title: 'Awesome!',
-                    text: 'Your message was sent',
+                    text: 'Your profile was updated',
                   });
 
                 break;
             case 403:
-                console.log("Insert of post failed");
+                console.log("Profile update failed");
 
                 swal({
                     type: 'error',
