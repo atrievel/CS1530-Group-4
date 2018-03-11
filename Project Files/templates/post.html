@@ -148,28 +148,8 @@
         <script src="../static/js/category.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-                //set up the datatable for the posts
-                $("#tblComments").DataTable ({
-                    scrollY: '50vh',
-                    scrollCollapse: true
-                });
-
-                //add event listener for comment voting
-                $('.comment-vote-up').on('click touch', function() {
-                    const other_id = this.id.replace("Up", "Down").trim();
-                    $(this).removeClass('animated-not-clicked');
-                    $(this).toggleClass('animated-clicked');
-                    document.getElementById(other_id).classList.add('animated-not-clicked');
-                    document.getElementById(other_id).classList.remove('animated-clicked');
-                });
-
-                $('.comment-vote-down').on('click touch', function() {
-                    const other_id = this.id.replace("Down", "Up").trim();
-                    $(this).removeClass('animated-not-clicked');
-                    $(this).toggleClass('animated-clicked');
-                    document.getElementById(other_id).classList.add('animated-not-clicked');
-                    document.getElementById(other_id).classList.remove('animated-clicked');
-                });
+                setupDataTable('tblComments');
+                setupVoteListeners('comment-vote');
 
                 //load the modal on a button click
                 $("#btnAddNewComment").on('click touch', function() {
@@ -187,9 +167,6 @@
                         }
                         else {
                             postNewComment(body, getQueryStringValue("post_id"));
-                            $("#modalNewComment").modal('hide');
-                            $('#txtBody').val('');
-                            $('#txtBody').removeClass("is-valid");
                         }                   
                     });
                 });

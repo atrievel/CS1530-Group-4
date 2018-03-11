@@ -156,27 +156,9 @@
         <script src="../static/js/category.js"></script>
         <script type="text/javascript">          
             $(document).ready(function() {
-                //set up the datatable for the posts
-                $("#tblPosts").DataTable ({
-                    scrollY: '50vh',
-                    scrollCollapse: true
-                });
+                setupDataTable('tblPosts');
+                setupVoteListeners('post-vote');
 
-                $('.post-vote-up').on('click touch', function() {
-                    const other_id = this.id.replace("Up", "Down").trim();
-                    $(this).removeClass('animated-not-clicked');
-                    $(this).toggleClass('animated-clicked');
-                    document.getElementById(other_id).classList.add('animated-not-clicked');
-                    document.getElementById(other_id).classList.remove('animated-clicked');
-                });
-
-                $('.post-vote-down').on('click touch', function() {
-                    const other_id = this.id.replace("Down", "Up").trim();
-                    $(this).removeClass('animated-not-clicked');
-                    $(this).toggleClass('animated-clicked');
-                    document.getElementById(other_id).classList.add('animated-not-clicked');
-                    document.getElementById(other_id).classList.remove('animated-clicked');
-                });
 
                 //load the modal on a button click
                 $("#btnAddNewPost").on('click touch', function() {
@@ -212,11 +194,6 @@
                         //if both the title and body are not blank, pass the data to the server, clear the modal, and hide the modal
                         if(title.length > 0 && body.length > 0) {
                             postNewPost(title, body, getQueryStringValue("category_id"));
-                            $("#modalNewPost").modal('hide');
-                            $('#txtTitle').val('');
-                            $('#txtBody').val('');
-                            $('#txtTitle').removeClass("is-valid");
-                            $('#txtBody').removeClass("is-valid");
                         }                     
                     });
                 });
