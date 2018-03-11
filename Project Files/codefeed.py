@@ -25,6 +25,29 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+# Returns the tally of upvotes and downvotes on the given thread    
+def get_thread_votes(id):
+    votes = ThreadVote.query.filter_by(thread_id=id).all()
+    count = 0
+    for vote in votes:
+        if vote.value:
+            count+=1
+        else:
+            count-=1
+    return count
+
+# Returns the tally of upvotes and downvotes on the given comment     
+def get_comment_votes(id):
+    votes = CommentVote.query.filter_by(thread_id=id).all()
+    count = 0
+    for vote in votes:
+        if vote.value:
+            count+=1
+        else:
+            count-=1
+    return count
+
+
 @app.cli.command('initdb')
 def initdb_command():
     """Creates the database tables."""
@@ -163,14 +186,30 @@ def listCategories():
 
 @app.route("/category", methods=['GET','POST'])
 def getCategory():
-    cat_id = request.args['cat_id']
-    if cat_id is None:
-        return "Which category?"
-    elif cat_id == "":
-        return "Which category?"
-    else:
-        return "Get Category by cat_id : " + cat_id
-
+    if request.method == 'GET':
+        category_id = request.args['cat_id']
+        category = Category.query.filter_by(id=category_id).first()
+        posts = []
+        # Get a list of all threads in the category
+        threads = Threads.query.filter_by(category_id=category_id).all()
+        
+        # Create a list of tuples containg each threads id, title, body, and vote count.
+        for thread in threads:
+            post.append((thread.id, thread.title, thread.body, get_thread_votes(thread.id)))
+        
+        return render_template('category.html',posts=posts, category_name=category.name)
+    if request.method == 'POST':
+        data = request.get_json(force=True)
+        name = string(data['name'])
+        description = string(data['description'])
+        try:
+            assert Category.query.filter_by(name=name).first() is None
+        except:
+            return jsonify(status = 200)
+        new_category = Category(name, description)
+        db.session.add(new_category)
+        db.sesssion.commit()
+        return jsonify(status = 200, id = new_category.id, name= name)
 @app.route("/category/post", methods=['GET','POST'])
 def addPost():
     post_id = request.args['post_id']
