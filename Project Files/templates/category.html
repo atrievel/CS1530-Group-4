@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/animated_icons.css">
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap_override.css">
 
     <!-- scripts
@@ -85,13 +86,18 @@
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
+                            <th>Vote</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for post in category %}
                             <tr>
-                                <td><a class="btn" href="category/category_id?={{ post.id }}">{{ post.name }}</a></td>
+                                <td><a class="btn" href="category/post_id?={{ post.id }}">{{ post.name }}</a></td>
                                 <td>{{ post.description }}</td>
+                                <td><span id="postUp{{ post.id }}" class="post-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
+                                    {{ post.vote_count }}  
+                                    <span id="postDown{{ post.id }}" class="post-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -154,6 +160,22 @@
                 $("#tblPosts").DataTable ({
                     scrollY: '50vh',
                     scrollCollapse: true
+                });
+
+                $('.post-vote-up').on('click touch', function() {
+                    const other_id = this.id.replace("Up", "Down").trim();
+                    $(this).removeClass('animated-not-clicked');
+                    $(this).toggleClass('animated-clicked');
+                    document.getElementById(other_id).classList.add('animated-not-clicked');
+                    document.getElementById(other_id).classList.remove('animated-clicked');
+                });
+
+                $('.post-vote-down').on('click touch', function() {
+                    const other_id = this.id.replace("Down", "Up").trim();
+                    $(this).removeClass('animated-not-clicked');
+                    $(this).toggleClass('animated-clicked');
+                    document.getElementById(other_id).classList.add('animated-not-clicked');
+                    document.getElementById(other_id).classList.remove('animated-clicked');
                 });
 
                 //load the modal on a button click

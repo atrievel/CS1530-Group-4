@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/animated_icons.css">
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap_override.css">
 
     <!-- scripts
@@ -86,7 +87,7 @@
                             <th>Commentor</th>
                             <th>Date Created</th>
                             <th>Body</th> 
-                            <th>Vote Count</th>
+                            <th>Votes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -95,7 +96,10 @@
                                 <td>{{ comment.commentor_name }}</td>
                                 <td>{{ comment.date_created }}</td>
                                 <td>{{ comment.body }}</td>
-                                <td>{{ comment.comment_vote }}</td>
+                                <td><span id="commentUp{{ comment.id }}" class="comment-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
+                                    {{ comment.comment_vote }}  
+                                    <span id="commentDown{{ comment.id }}" class="comment-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -148,6 +152,23 @@
                 $("#tblComments").DataTable ({
                     scrollY: '50vh',
                     scrollCollapse: true
+                });
+
+                //add event listener for comment voting
+                $('.comment-vote-up').on('click touch', function() {
+                    const other_id = this.id.replace("Up", "Down").trim();
+                    $(this).removeClass('animated-not-clicked');
+                    $(this).toggleClass('animated-clicked');
+                    document.getElementById(other_id).classList.add('animated-not-clicked');
+                    document.getElementById(other_id).classList.remove('animated-clicked');
+                });
+
+                $('.comment-vote-down').on('click touch', function() {
+                    const other_id = this.id.replace("Down", "Up").trim();
+                    $(this).removeClass('animated-not-clicked');
+                    $(this).toggleClass('animated-clicked');
+                    document.getElementById(other_id).classList.add('animated-not-clicked');
+                    document.getElementById(other_id).classList.remove('animated-clicked');
                 });
 
                 //load the modal on a button click

@@ -6,7 +6,7 @@ category.html
 post.html
 
 /category
-/categories/post
+/category/post
 /category/post/add_comment
 
 TO DO
