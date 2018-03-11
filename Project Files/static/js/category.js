@@ -256,13 +256,15 @@ function modifyPostVote(post_id, vote) {
         vote: parseInt(vote)
     });
 
+    console.log(new_vote);
+
     let jqxhr = $.ajax({
         url: "/category/post/vote",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
         cache: false,
-        data: new_comment     
+        data: new_vote     
     })
 
     .always(function (data, textStatus) {
@@ -299,13 +301,15 @@ function modifyCommentVote(post_id, comment_id, vote) {
         vote: parseInt(vote)
     });
 
+    console.log(new_vote);
+    
     let jqxhr = $.ajax({
         url: "/category/post/comment/vote",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
         cache: false,
-        data: new_comment     
+        data: new_vote     
     })
 
     .always(function (data, textStatus) {
