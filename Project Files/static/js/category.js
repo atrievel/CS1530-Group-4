@@ -1,3 +1,11 @@
+/*
+* The AJAX requests for each route in order of declaration
+* /category
+* /category/post
+* /category/post/add_comment
+* /category/post/vote
+* /category/post/comment/vote
+*/
 function postNewCategory(name, description) {
     const new_cat = JSON.stringify({
         name: name.trim(),
@@ -303,6 +311,9 @@ function modifyCommentVote(post_id, comment_id, vote) {
     });
 }
 
+/*
+* Helper functions used by the AJAX requests
+*/
 function getQueryStringValue(key) {  
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
 }
