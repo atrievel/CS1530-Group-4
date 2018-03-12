@@ -212,34 +212,44 @@ def getCategory():
         return jsonify(status = 200, id = new_category.id, name= name)
 @app.route("/category/post", methods=['GET','POST'])
 def addPost():
-    post_id = request.args['post_id']
-    if post_id is None:
-        return "Which post?"
-    elif post_id == "":
-        return "Which post?"
-    else:
-        return "Add post with post_id : " + post_id
+    if request.method == 'GET':
+        post_id = request.args['post_id']
 
 @app.route("/category/post/add_comment", methods=['GET','POST'])
 @login_required
 def addComment():
-    post_id = request.args['post_id']
-    if post_id is None:
-        return "Which post?"
-    elif post_id == "":
-        return "Which post?"
-    else:
-        return "Add comment to post_id : " + post_id
+    if request.method == 'POST':
+        user = User.query.filter_by(id=session['user_id']).first()
+        
+        # Parse the JSON string
+        data = request.get_json(force=True)
+        body = string(data['body'])
+        post_id = int(data['post_id'])
+        
+        # Add the comment to database
+        new_comment = Comment(post_id, user.id, body)
+        db.session.add(new_comment)
+        db.session.commit()
+        
+        # Check if the comment was inserted
+        if new_comment.thread_id is not None:
+            return jsonify(status = 200)
+        else:
+            return jsonify(status = 403)
 
 @app.route('/category/post/vote', methods=['GET','POST'])
 @login_required
 def addPostVote():
     if request.method == 'POST':
         user = User.query.filter_by(id=session['user_id']).first()
+        
+        # Parse the JSON string
         data = request.get_json(force=True)
         post_id = int(data['post_id'])
         vote = int(data['vote']) == 1
-        new_vote = ThreadVote(post_id, user_id, vote)
+        
+        # Add the vote to the database
+        new_vote = ThreadVote(post_id, use.id, vote)
         db.session.add(new_vote)
         db.session.commit()
         return jsonify(status = 200)
@@ -249,11 +259,15 @@ def addPostVote():
 def addCommentVote():
     if request.method == 'POST':
         user = User.query.filter_by(id=session['user_id']).first()
+        
+        # Parse the JSON string
         data = request.get_json(force=True)
         post_id = int(data['post_id'])
         comment_id = int(data['comment_id'])
         vote = int(data['vote']) == 1
-        new_vote = CommentVote(comment_id, user_id, vote)
+        
+        # Add the vote to the database
+        new_vote = CommentVote(comment_id, user.id, vote)
         db.session.add(new_vote)
         db.session.commit()
         return jsonify(status = 200)
