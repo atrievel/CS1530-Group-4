@@ -231,9 +231,22 @@ def addComment():
     else:
         return "Add comment to post_id : " + post_id
 
+@app.route('/category/post/vote', methods=['GET','POST'])
+@login_required
+def addPostVote():
+    if request.method == 'POST':
+        user = User.query.filter_by(id=session['user_id']).first()
+        data = request.get_json(force=True)
+        post_id = int(data['post_id'])
+        vote = int(data['vote']) == 1
+        new_vote = ThreadVote(post_id, user_id, vote)
+        db.session.add(new_vote)
+        db.session.commit()
+        return jsonify(status = 200)
+        
 @app.route('/category/post/comment/vote', methods=['GET','POST'])
 @login_required
-def addVote():
+def addCommentVote():
     if request.method == 'POST':
         user = User.query.filter_by(id=session['user_id']).first()
         data = request.get_json(force=True)
