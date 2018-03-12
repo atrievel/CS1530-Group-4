@@ -100,6 +100,7 @@ def register():
         verify_password = request.form['verify_password']
         name = request.form['name']
         email = request.form['email']
+        current_date = datetime.now()
         try:
             # assert all inputs are valid
             assert User.query.filter_by(username=username).first() == None
@@ -115,9 +116,9 @@ def register():
         
         # generate the hash for the password
         pw_hash = bcrypt.generate_password_hash(password)
-        new_user = User(username, pw_hash, name, email, current_date)
-        new_user.creation_date = datetime.now()
-        new_user.is_validated = True
+        new_user = User(username, pw_hash, name, email, current_date, True, current_date)
+      
+        
         db.session.add(new_user)
         db.session.commit()
         return render_template('login.html')
@@ -210,11 +211,49 @@ def getCategory():
         db.session.add(new_category)
         db.sesssion.commit()
         return jsonify(status = 200, id = new_category.id, name= name)
+        
 @app.route("/category/post", methods=['GET','POST'])
 def addPost():
     if request.method == 'GET':
         post_id = request.args['post_id']
-
+        thread = Thread.query.filter_by(id = post_id).first()
+        comments = []
+        # Get a list of all threads in the category
+        comms = Comment.query.filter_by(thread_id=post_id).all()
+        
+        # Create a list of tuples containg each threads id, title, body, and vote count.
+        for comment in comms:
+            commenter = User.query.filter_by(id = comment.user_id).first()
+            comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id)))
+        
+        return render_template('post.html',comments=comments, post_name=thread.title, vote_count = get_thread_votes(thread.id))
+    
+    if request.method == 'POST':
+    
+        # Check if the user is logged in
+        if session['user_id'] is None:
+            return jsonify(status = 403)
+        
+        user = User.query.filter_by(id=session['user_id']).first()
+        
+        # Parse the JSON string
+        data = request.get_json(force=True)
+        title = string(data['title'])
+        body = string(data['body'])
+        cat_id = int(data['category_id'])
+        
+        # Add the post to the database
+        current_date = datetime.now();
+        new_post = Thread(cat_id, user.id, title, body, creation_date)
+        db.session.add(new_post)
+        db.session.commit()
+        
+        # Check if the post was inserted
+        if new_post.id is not None:
+            return jsonify(status = 200)
+        else:
+            return jsonify(status = 403)
+            
 @app.route("/category/post/add_comment", methods=['GET','POST'])
 @login_required
 def addComment():
@@ -226,13 +265,14 @@ def addComment():
         body = string(data['body'])
         post_id = int(data['post_id'])
         
+        current_date = datetime.now();
         # Add the comment to database
-        new_comment = Comment(post_id, user.id, body)
+        new_comment = Comment(post_id, user.id, body, current_date)
         db.session.add(new_comment)
         db.session.commit()
         
         # Check if the comment was inserted
-        if new_comment.thread_id is not None:
+        if new_comment.id is not None:
             return jsonify(status = 200)
         else:
             return jsonify(status = 403)
