@@ -183,8 +183,16 @@ def listFriends():
 
 @app.route("/categories", methods=['GET','POST'])
 def listCategories():
-    return "listCategories"
-
+    if request.method == 'GET':
+        list = []
+        # Get a list of all categories
+        cats = Category.query.all()
+        
+        # Create a list of tuples containg each threads id, name, and description
+        for cat in cats:
+            list.append((cat.id, cat.name, cat.description))
+        
+        return render_template('categories.html', categories=list)
 @app.route("/category", methods=['GET','POST'])
 def getCategory():
     if request.method == 'GET':
@@ -218,10 +226,10 @@ def addPost():
         post_id = request.args['post_id']
         thread = Thread.query.filter_by(id = post_id).first()
         comments = []
-        # Get a list of all threads in the category
+        # Get a list of all comments in the thread
         comms = Comment.query.filter_by(thread_id=post_id).all()
         
-        # Create a list of tuples containg each threads id, title, body, and vote count.
+        # Create a list of tuples containg each comment's id, user, body, creation_date and vote count.
         for comment in comms:
             commenter = User.query.filter_by(id = comment.user_id).first()
             comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id)))
