@@ -48,7 +48,7 @@ def get_comment_votes(id):
     return count
     
 # Returns true if the two ids are freinds    
-def areFreinds(id1, id2):
+def areFriends(id1, id2):
     return (Friendship.query.filter_by(user1_id = id1, user2_id = id2).first() is not None or
     Friendship.query.filter_by(user1_id = id2, user2_id = id1).first())
 
@@ -165,16 +165,6 @@ def profile():
             pw_hash = bcrypt.generate_password_hash(password)
             user.password_hash = pw_hash
         return jsonify(status = 200, updated = True)
-@app.route("/profile/send_message", methods=['GET','POST'])
-@login_required
-def sendMessage():
-    user_id = request.args['user_id']
-    if user_id is None:
-        return "Send to who?"
-    elif user_id == "":
-        return "Send to who?"
-    else:
-        return "Send message to Profile_ID : " + user_id
     
 @app.route("/profile/messages", methods=['GET','POST'])
 @login_required
@@ -182,10 +172,10 @@ def getMessages():
     if request.method == 'GET':
         user = User.query.filter_by(id=session['user_id']).first()
         list = []
-        # Get a list of all categories
+        # Get a list of all messages sent to the current user
         messages = Message.query.filter_by(user2_id=user.id).all()
         
-        # Create a list of tuples containg each threads id, name, and description
+        # Create a list of tuples containg each messages sender, body, and creation_date
         for message in messages:
             list.append((message.username, message.body, message.creation_date))
         
@@ -210,8 +200,33 @@ def getMessages():
 @app.route("/profile/friends", methods=['GET','POST'])
 @login_required
 def listFriends():
-    return "listFriends"
-
+    if request.method == 'GET':
+        user = User.query.filter_by(id=session['user_id']).first()
+        list = []
+        # Get a list of all messages sent to the current user
+        friends = Frienship.query.filter_by(user1_id=user.id).all()
+        friends.append(Frienship.query.filter_by(user2_id=user.id).all())
+        
+        # Create a list of tuples containg each messages sender, body, and creation_date
+        for friend in friends:
+            list.append((friend.id, friend.username))
+        
+        return render_template('friends.html', friends=list)
+    
+    if request.method == 'POST':
+        user = User.query.filter_by(id=session['user_id']).first()
+        
+        # Parse the JSON string
+        data = request.get_json(force=True)
+        user2_id = int(data['user2_id'])
+        
+        try:
+            assert not areFriends(user.id, user2.id)
+        except:
+            return jsonify(staus=403)
+        
+        return jsonify(staus=200)
+        
 @app.route("/categories", methods=['GET','POST'])
 def listCategories():
     if request.method == 'GET':
