@@ -46,6 +46,11 @@ def get_comment_votes(id):
         else:
             count-=1
     return count
+    
+# Returns true if the two ids are freinds    
+def areFreinds(id1, id2):
+    return (Friendship.query.filter_by(user1_id = id1, user2_id = id2).first() is not None or
+    Friendship.query.filter_by(user1_id = id2, user2_id = id1).first())
 
 
 @app.cli.command('initdb')
@@ -174,8 +179,34 @@ def sendMessage():
 @app.route("/profile/messages", methods=['GET','POST'])
 @login_required
 def getMessages():
-    return "getMessages"
-
+    if request.method == 'GET':
+        user = User.query.filter_by(id=session['user_id']).first()
+        list = []
+        # Get a list of all categories
+        messages = Message.query.filter_by(user2_id=user.id).all()
+        
+        # Create a list of tuples containg each threads id, name, and description
+        for message in messages:
+            list.append((message.username, message.body, message.creation_date))
+        
+        return render_template('messages.html', messages=list)
+    if request.method == 'POST':
+        user = User.query.filter_by(id=session['user_id']).first()
+        
+        # Parse the JSON string
+        data = request.get_json(force=True)
+        name = string(data['name'])
+        description = string(data['description'])
+        
+        recipient = User.query.filter_by(name=name).first()
+        
+        try:
+            assert areFriends(user.id, recipient.id)
+        except:
+            return jsonify(staus=403)
+        
+        return jsonify(status=200)
+        
 @app.route("/profile/friends", methods=['GET','POST'])
 @login_required
 def listFriends():
