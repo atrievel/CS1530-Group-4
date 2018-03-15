@@ -1,0 +1,14 @@
+DONE (not tested)
+landing.html
+register.html
+categories.html
+category.html
+post.html
+
+/category
+/category/post
+/category/post/add_comment
+
+TO DO
+/category/post/vote
+/category/post/comment/vote

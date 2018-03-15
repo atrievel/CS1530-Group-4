@@ -7,7 +7,7 @@ crypto = Bcrypt(app)
 # load default config and override config from an external class
 app.config.from_object('config.DebugConfig')
 
-# initialize the database 
+# initialize the database
 db.init_app(app)
 
 @app.cli.command('initdb')
@@ -20,7 +20,7 @@ def initdb_command():
 # begin route initialization
 @app.route("/")
 def home():
-	return "Welcome to CodeFeed"
+	return render_template("landing.html")
 
 @app.route("/login")
 def login():
@@ -53,7 +53,7 @@ def sendMessage():
 		return "Send to who?"
 	else:
 		return "Send message to Profile_ID : " + user_id
-    
+
 @app.route("/profile/messages")
 def getMessages():
 	return "getMessages"

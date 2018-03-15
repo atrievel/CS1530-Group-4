@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Your friends</title>
+    <meta name="description" content="">
+    <meta name="author" content="CodeFeed">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap_override.css">
+
+    <!-- scripts
+    ================================================== -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../staticfavicons//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <body class="bootstrap_override dark-bg">
+        <!-- Navbar
+        ================================================== -->
+        <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
+            <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link nav-bar-link" href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-bar-link" href="messages.html"><i class="fas fa-envelope"></i> Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-bar-link" href="categories.html"><i class="fas fa-object-ungroup"></i> Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-bar-link" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="text-left my-3">
+                <h2 class="primary-text">Your Friends</h2>
+            </div>
+            <div class="jumbotron light-bg">
+                <div class="container-fluid text-right p-0">
+                    {% if requests %}
+                        <button id="btnRequests" class="btn btn-md btn-success mb-4 mr-2"><i class="fas fa-exclamation-circle"></i> Friend Requests</button>
+                    {% endif %}
+                    <button id="btnAddFriends" class="btn btn-md btn-info mb-4 mr-2"><i class="fas fa-plus-square"></i> Add Friend</button>
+                    <!-- <button id="btnRemoveFriends" class="btn btn-md btn-danger mb-4"><i class="fas fa-minus-circle"></i> Remove Friends</button> -->
+                </div>
+                <table id="tblFriends" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th style="width: 15%">Friends Since</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for friend in friends %}
+                            <tr>
+                                <td>
+                                    <button class="btn btn-md btn-info btnSendMessage mr-2"><i class="fas fa-pencil-alt"></i></button>
+                                    <a class="primary-text" style="vertical-align: middle" href="profile/profile_id?={{ friend.id }}">{{ friend.name }} ({{ friend.username }})</a>
+                                    <meta content="{{ friend.username }}">
+                                    <button class="btn btn-md btn-danger btnRemoveFriend" style="display: none; float: right"><i class="fas fa-minus-circle"></i></button>
+                                </td>
+                                <td>{{ friend.date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal to add new message
+            ================================================== -->
+            <div class="modal fade" id="modalNewMessage" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title dark-text">Compose Message</h5>
+                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="txtUser" class="form-control-label dark-text">Send to:</label>
+                                <input type="text" class="form-control" id="txtUser">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Invalid user
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtBody" class="form-control-label dark-text">Message body:</label>
+                                <textarea class="form-control" id="txtBody"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Message body cannot be blank
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnPostNewMessage" class="btn btn-primary">Send message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal to add friend
+            ================================================== -->
+            <div class="modal fade" id="modalAddFriend" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title dark-text">Add Friend</h5>
+                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="txtUser" class="form-control-label dark-text">Add user:</label>
+                                <input type="text" class="form-control" id="txtUser">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Invalid username
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnAddFriend" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal to add friend
+            ================================================== -->
+            <div class="modal fade" id="modalRequests" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title dark-text">Accept Friend Requests</h5>
+                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="tblRequests" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <tbody>
+                                    {% for request in requests %}
+                                        <tr>
+                                            <td>
+                                                <a class="dark-text-alt" style="vertical-align: middle" href="profile/profile_id?={{ request.id }}">{{ request.user1 }}</a>
+                                                <button class="btn btn-md btn-success btnAcceptRequest" style="float: right"><i class="fas fa-check-square"></i> Accept Request</button>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnAddFriend" class="btn btn-primary">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript
+        ================================================== -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="../static/js/profile.js"></script>
+
+        <script type="text/javascript">
+            $("#tblFriends").DataTable ({
+                scrollY:        '50vh',
+                scrollCollapse: true
+            });
+
+            $('#btnAddFriends').on('click touch', function() {
+                $('#modalAddFriend').modal('show');
+
+                $('#btnAddFriend').on('click touch', function() {
+                    const user = $('#txtUser').val();
+
+                    //assert the user is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if (user.length <= 0) {
+                        $('#txtUser').removeClass("is-valid");
+                        $('#txtUser').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtUser').removeClass("is-invalid");
+                        $('#txtUser').addClass("is-valid");
+                    }
+
+                    //if the user is not blank, pass the data to the server, clear the modal, and hide the modal
+                    if(user.length > 0) {
+                        addFriend(user);
+                        $("#modalAddFriend").modal('hide');
+                        $('#txtUser').val('');
+                        $('#txtUser').removeClass("is-valid");
+                    }
+                });
+            });
+
+            $('#btnRemoveFriends').on('click touch', function() {
+                $('.btnRemoveFriend').toggle('fast');
+                if ($(this).hasClass('btn-danger')) {
+                    $(this).removeClass('btn-danger');
+                    $(this).addClass('btn-default');
+                    $(this).html('<i class="fas fa-check-circle"></i> Done')
+                }
+                else {
+                    $(this).removeClass('btn-default');
+                    $(this).addClass('btn-danger');
+                    $(this).html('<i class="fas fa-minus-circle"></i> Remove Friends');
+                }
+            });
+
+            $('.btnRemoveFriend').on('click touch', function() {
+                removeFriend($(this.siblings('meta').attr('content')));
+                $(this).closest('tr').remove();
+            });
+
+            //load the modal on a button click
+            $(".btnSendMessage").on('click touch', function() {
+                $("#modalNewMessage").modal('show');
+                $('#txtUser').val($(this).siblings('meta').attr('content'));
+
+                //run checks after the modal fields are completed and submit if they pass
+                $("#btnPostNewMessage").on('click touch', function() {
+                    const user = $('#txtUser').val();
+                    const body = $('#txtBody').val();
+
+                    //assert the user is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if(user.length <= 0) {
+                        $('#txtUser').removeClass("is-valid");
+                        $('#txtUser').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtUser').removeClass("is-invalid");
+                        $('#txtUser').addClass("is-valid");
+                    }
+
+                    //assert the message body is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if(body.length <= 0) {
+                        $('#txtBody').removeClass("is-valid");
+                        $('#txtBody').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtBody').removeClass("is-invalid");
+                        $('#txtBody').addClass("is-valid");
+                    }
+
+                    //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                    if(user.length > 0 && body.length > 0) {
+                        postNewMessage(user, body);
+                        $("#modalNewMessage").modal('hide');
+                        $('#txtUser').val('');
+                        $('#txtBody').val('');
+                        $('#txtUser').removeClass("is-valid");
+                        $('#txtBody').removeClass("is-valid");
+                    }
+                });
+            });
+
+            //load the modal on a button click
+            $("#btnRequests").on('click touch', function() {
+                $("#modalRequests").modal('show');
+
+                //run checks after the modal fields are completed and submit if they pass
+                $(".btnAcceptRequest").on('click touch', function() {
+                    const user = $(this).siblings('a').text();
+                    acceptRequest(user);
+
+                    $(this).closest('tr').remove();
+                });
+            });
+        </script>
+    </body>
