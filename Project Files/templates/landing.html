@@ -89,9 +89,9 @@
                 </h1>
 
                 <div class="home-content__buttons">
-                    <a href="register.html" class="smoothscroll btn btn--stroke">Create Account
+                    <a href="/register" class="btn btn--stroke">Create Account
                     </a>
-                    <a href="login.html" class="smoothscroll btn btn--stroke">Login
+                    <a href="/login" class="btn btn--stroke">Login
                     </a>
                 </div>
 
@@ -127,19 +127,19 @@
 
         <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
             <div class="col-block stats__col ">
-                <div class="stats__count">100</div>
+                <div class="stats__count">{{ num_users }}</div>
                 <h5>Registered Users</h5>
             </div>
             <div class="col-block stats__col">
-                <div class="stats__count">15</div>
+                <div class="stats__count">{{ num_groups }}</div>
                 <h5>Current Groups</h5>
             </div>
             <div class="col-block stats__col">
-                <div class="stats__count">1000</div>
+                <div class="stats__count">{{ num_posts }}</div>
                 <h5>Posts Made</h5>
             </div>
             <div class="col-block stats__col">
-                <div class="stats__count">1500</div>
+                <div class="stats__count">{{ num_up_votes }}</div>
                 <h5>Happy Programmers</h5>
             </div>
 
