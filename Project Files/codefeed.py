@@ -2,15 +2,13 @@ from imports import *
 
 # create the application and associated objects
 app = Flask(__name__)
-crypto = Bcrypt(app)
+bcrypt = Bcrypt(app)
 
 # load default config and override config from an external class
 app.config.from_object('config.DebugConfig')
 
 # initialize the database
 db.init_app(app)
-
-
 
 # login required decorator
 # Use
@@ -52,7 +50,6 @@ def areFriends(id1, id2):
     return (Friendship.query.filter_by(user1_id = id1, user2_id = id2).first() is not None or
     Friendship.query.filter_by(user1_id = id2, user2_id = id1).first())
 
-
 @app.cli.command('initdb')
 def initdb_command():
     """Creates the database tables."""
@@ -70,24 +67,33 @@ def home():
         num_up_votes = db.session.query(ThreadVote).filter(ThreadVote.value == True).count()
         + db.session.query(ThreadVote).filter(CommentVote.value == True).count()
         return render_template('landing.html', num_users=num_users, num_posts=num_posts,num_groups=num_groups,num_up_votes=num_up_votes)
+
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
-    if request.method == 'POST':
+    elif request.method == 'POST':
         # Get the user based on the entered username
         user = User.query.filter_by(username=request.form['username']).first()
-        if user != None: 
-            pw_hash = user.password_hash #get the password hash from the db
-            if check_password_hash(pw_hash, requst.form['password']):
-                user.last_login = datetime.now()
-                db.session.commit()
-                session['user_id'] = user.id #set the session varaible for the user
-            else:
-                flash('Credentials not verified. Please try again or register for a new account','error')
-        else:
-            flash('Credentials not verified. Please try again or register for a new account','error')
 
+        if user is not None: 
+            pw_hash = user.password_hash #get the password hash from the db
+
+        if bcrypt.check_password_hash(pw_hash, request.form['password']):
+            
+            session['user_id'] = user.id #set the session varaible for the user
+            print(session['user_id'])
+            #print(session.pop('user_id', None))
+        #     user.last_login = datetime.now()
+        #     db.session.commit() 
+            return ""
+        else:
+            print("Password bad")
+            flash('Credentials not verified. Please try again or register for a new account','error')
+            return render_template('login.html')
+    else:
+        return render_template('login.html')
+        
 @app.route("/logout", methods=['GET','POST'])
 def logout():
     if request.method == 'GET':
@@ -120,52 +126,54 @@ def register():
 
         #otherwise add them as a new user
         # generate the hash for the password
-        # pw_hash = bcrypt.generate_password_hash(password)
-        # new_user = User(username, pw_hash, name, email, current_date, True, current_date)
+        pw_hash = bcrypt.generate_password_hash(password)
+        new_user = User(username, pw_hash, name, email, "", current_date, True, current_date)
       
-        
-        # db.session.add(new_user)
-        # db.session.commit()
-        return render_template('login.html')
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect(url_for('login'))
     return render_template('register.html')
         
 @app.route("/profile", methods=['GET','POST'])
 def profile():
     if request.method == 'GET':
-        if request.args['user_id'] is None:
+        if request.args.get('user_id') is None:
             user_id = session['user_id']
         else:
-            user_id = request.args['user_id']
-        user = User.query.filter_by(id=user_id).first()
-        return render_template('profile.hrml', id = user.id,
-        username = user.username,
-        name = user.name,
-        email = user.email,
-        biography = user.biography,
-        creation_date = creation_date,
-        last_login = last_login)
-    if request.method == 'POST':
-        user = User.query.filter_by(id=session['user_id']).first()
-        data = request.get_json(force=True)
-        try:
-            name = string(data['name'])
-            password = string(data['password'])
-            verify_password = string(data['verify_password'])
-            biography = string(data['biography'])
-        except (KeyError, TypeError, ValueError):
-            raise JsonError(description='Invalid values.')
-        try:
-            assert password == verify_password or (password is None and verify_password is None)
-            assert email.utils.parseaddr(email) != ('', '')
-        except:
-            return jsonify(staus=403, updated = False)
-        user.name = name
-        user.email = email
-        user.biography = biography
-        if password is not None:
-            pw_hash = bcrypt.generate_password_hash(password)
-            user.password_hash = pw_hash
-        return jsonify(status = 200, updated = True)
+            user_id = request.args.get('user_id')
+    return render_template('profile.html')
+
+        # user = User.query.filter_by(id=user_id).first()
+        # return render_template('profile.html', id = user.id,
+        # username = user.username,
+        # name = user.name,
+        # email = user.email,
+        # biography = user.biography,
+        # creation_date = user.creation_date,
+        # last_login = user.last_login)
+
+    # if request.method == 'POST':
+    #     user = User.query.filter_by(id=session['user_id']).first()
+    #     data = request.get_json(force=True)
+    #     try:
+    #         name = string(data['name'])
+    #         password = string(data['password'])
+    #         verify_password = string(data['verify_password'])
+    #         biography = string(data['biography'])
+    #     except (KeyError, TypeError, ValueError):
+    #         raise JsonError(description='Invalid values.')
+    #     try:
+    #         assert password == verify_password or (password is None and verify_password is None)
+    #         assert email.utils.parseaddr(email) != ('', '')
+    #     except:
+    #         return jsonify(staus=403, updated = False)
+    #     user.name = name
+    #     user.email = email
+    #     user.biography = biography
+    #     if password is not None:
+    #         pw_hash = bcrypt.generate_password_hash(password)
+    #         user.password_hash = pw_hash
+    #     return jsonify(status = 200, updated = True)
     
 @app.route("/profile/messages", methods=['GET','POST'])
 @login_required
@@ -240,6 +248,7 @@ def listCategories():
             list.append((cat.id, cat.name, cat.description))
         
         return render_template('categories.html', categories=list)
+
 @app.route("/category", methods=['GET','POST'])
 def getCategory():
     if request.method == 'GET':
@@ -366,6 +375,6 @@ def addCommentVote():
         db.session.add(new_vote)
         db.session.commit()
         return jsonify(status = 200)
-        
+
 if __name__ == '__main__':
     app.run(debug=True)
