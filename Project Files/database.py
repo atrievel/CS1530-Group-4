@@ -19,10 +19,24 @@ class User(db.Model):
     thread_votes = db.relationship('ThreadVote', backref='user', lazy=True)
     comment_votes = db.relationship('CommentVote', backref='user', lazy=True)
 
+    def __init__(self, username, password_hash, name, email, biography, creation_date, is_validated, last_login):
+        self.username = username
+        self.password_hash = password_hash
+        self.name = name
+        self.email = email
+        self.biography = biography
+        self.creation_date = creation_date
+        self.is_validated = is_validated
+        self.last_login = last_login
+
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(32))
     description = db.Column(db.String(512))
+
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
 
 class Thread(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -34,12 +48,25 @@ class Thread(db.Model):
 
     categories = db.relationship('Category', backref='user', lazy=False)
 
+    def __init__(self, category_id, user_id, title, body, creation_date):
+        self.category_id = category_id
+        self.user_id = user_id
+        self.title = title
+        self.body = body
+        self.creation_date = creation_date
+
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     body = db.Column(db.String(1024))
     creation_date = db.Column(db.DateTime)
+
+    def __init__(self, thread_id, user_id, body, creation_date):
+        self.thread_id = thread_id
+        self.user_id = user_id
+        self.body = body
+        self.creation_date = creation_date
 
 class Friendship(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -50,17 +77,32 @@ class Friendship(db.Model):
     user1 = relationship('User', foreign_keys=[user1_id])
     user2 = relationship('User', foreign_keys=[user2_id])
 
+    def __init__(self, user1_id, user2_id, creation_date):
+        self.user1_id = user1_id
+        self.user2_id = user2_id
+        self.creation_date = creation_date
+
 class ThreadVote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     value = db.Column(db.Boolean)
 
+    def __init__(self, thread_id, user_id, value):
+        self.thread_id = thread_id
+        self.user_id = user_id
+        self.value = value
+
 class CommentVote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     value = db.Column(db.Boolean)
+
+    def __init__(self, comment_id, user_id, value):
+        self.comment_id = comment_id
+        self.user_id = user_id
+        self.value = value
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -71,3 +113,9 @@ class Message(db.Model):
 
     user1 = relationship('User', foreign_keys=[user1_id])
     user2 = relationship('User', foreign_keys=[user2_id])
+
+    def __init__(self, user1_id, user2_id, body, creation_date):
+        self.user1_id = user1_id
+        self.user2_id = user2_id
+        self.body = body
+        self.creation_date = creation_date
