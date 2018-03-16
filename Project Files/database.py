@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import relationship
 
 db = SQLAlchemy()
 
@@ -15,10 +16,8 @@ class User(db.Model):
 
     threads = db.relationship('Thread', backref='user', lazy=True)
     comments = db.relationship('Comment', backref='user', lazy=True)
-    friendships = db.relationship('Friendship', backref='user', lazy=True)
     thread_votes = db.relationship('ThreadVote', backref='user', lazy=True)
     comment_votes = db.relationship('CommentVote', backref='user', lazy=True)
-    messages = db.relationship('Message', backref='user', lazy=True)
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -33,8 +32,6 @@ class Thread(db.Model):
     body = db.Column(db.String(2048))
     creation_date = db.Column(db.DateTime)
 
-    comments = db.relationship('Comment', backref='user', lazy=False)
-    votes = db.relationship('ThreadVote', backref='user', lazy=False)
     categories = db.relationship('Category', backref='user', lazy=False)
 
 class Comment(db.Model):
@@ -43,14 +40,15 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     body = db.Column(db.String(1024))
     creation_date = db.Column(db.DateTime)
-    
-    votes = db.relationship('CommentVote', backref='user', lazy=False)
 
 class Friendship(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user1_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user2_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     creation_date = db.Column(db.DateTime)
+
+    user1 = relationship('User', foreign_keys=[user1_id])
+    user2 = relationship('User', foreign_keys=[user2_id])
 
 class ThreadVote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -70,3 +68,6 @@ class Message(db.Model):
     user2_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     body = db.Column(db.String(1024))
     creation_date = db.Column(db.DateTime)
+
+    user1 = relationship('User', foreign_keys=[user1_id])
+    user2 = relationship('User', foreign_keys=[user2_id])
