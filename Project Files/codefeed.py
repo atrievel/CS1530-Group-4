@@ -98,7 +98,7 @@ def logout():
 def register():
     if request.method == 'GET':
         return render_template('register.html')
-    if request.method == 'POST':
+    elif request.method == 'POST':
         # get all the inputs from the form
         username = request.form['username']
         password = request.form['password']
@@ -106,27 +106,28 @@ def register():
         name = request.form['name']
         email = request.form['email']
         current_date = datetime.now()
+
         try:
             # assert all inputs are valid
-            assert User.query.filter_by(username=username).first() == None
+            #assert User.query.filter_by(username=username).first() is None
             assert password == verify_password
             assert len(password) >= 8
-            # assert the email is a valid type
-            assert email.utils.parseaddr(email) != ('', '')
+            #future: maybe verify the email here?
         except:
-            # if any asserts fall flash an errer message
+            # if any asserts fall flash an error message
             flash('Please check the entered information and try submitting again','error')
-            return
-        # otherwise add them as a new user
-        
+            return render_template('register.html')
+
+        #otherwise add them as a new user
         # generate the hash for the password
-        pw_hash = bcrypt.generate_password_hash(password)
-        new_user = User(username, pw_hash, name, email, current_date, True, current_date)
+        # pw_hash = bcrypt.generate_password_hash(password)
+        # new_user = User(username, pw_hash, name, email, current_date, True, current_date)
       
         
-        db.session.add(new_user)
-        db.session.commit()
+        # db.session.add(new_user)
+        # db.session.commit()
         return render_template('login.html')
+    return render_template('register.html')
         
 @app.route("/profile", methods=['GET','POST'])
 def profile():
@@ -367,4 +368,4 @@ def addCommentVote():
         return jsonify(status = 200)
         
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
