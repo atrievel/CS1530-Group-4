@@ -11,14 +11,13 @@ app.config.from_object('config.DebugConfig')
 db.init_app(app)
 
 # login required decorator
-# Use
-# @login_required
+# Use @login_required
 # before any route to require the user be logged in
 # and redirect them to the login page.
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if sesssion['user_id'] is None:
+        if session['user_id'] is None:
             return redirect(url_for('login', next=request.url))
         return f(*args, **kwargs)
     return decorated_function
@@ -46,7 +45,7 @@ def get_comment_votes(id):
     return count
     
 # Returns true if the two ids are freinds    
-def areFriends(id1, id2):
+def are_friends(id1, id2):
     return (Friendship.query.filter_by(user1_id = id1, user2_id = id2).first() is not None or
     Friendship.query.filter_by(user1_id = id2, user2_id = id1).first())
 
@@ -58,15 +57,14 @@ def initdb_command():
     print('Initialized the database.')
 
 # begin route initialization
-@app.route("/", methods=['GET','POST'])
-def home():
-    if request.method == 'GET':
-        num_users = db.session.query(User).count()
-        num_posts = db.session.query(Thread).count()
-        num_groups = db.session.query(Category).count()
-        num_up_votes = db.session.query(ThreadVote).filter(ThreadVote.value == True).count()
-        + db.session.query(ThreadVote).filter(CommentVote.value == True).count()
-        return render_template('landing.html', num_users=num_users, num_posts=num_posts,num_groups=num_groups,num_up_votes=num_up_votes)
+@app.route("/", methods=['GET'])
+def index():
+    num_users = db.session.query(User).count()
+    num_posts = db.session.query(Thread).count()
+    num_groups = db.session.query(Category).count()
+    num_up_votes = db.session.query(ThreadVote).filter(ThreadVote.value == True).count() + db.session.query(ThreadVote).filter(CommentVote.value == True).count()
+    
+    return render_template('landing.html', num_users=num_users, num_posts=num_posts,num_groups=num_groups,num_up_votes=num_up_votes)
 
 @app.route("/login", methods=['GET','POST'])
 def login():
@@ -76,29 +74,28 @@ def login():
         # Get the user based on the entered username
         user = User.query.filter_by(username=request.form['username']).first()
 
-        if user is not None: 
+        if user: 
             pw_hash = user.password_hash #get the password hash from the db
 
-        if bcrypt.check_password_hash(pw_hash, request.form['password']):
-            
-            session['user_id'] = user.id #set the session varaible for the user
-            print(session['user_id'])
-            #print(session.pop('user_id', None))
-        #     user.last_login = datetime.now()
-        #     db.session.commit() 
-            return ""
+            if bcrypt.check_password_hash(pw_hash, request.form['password']):    
+                session['user_id'] = user.id #set the session varaible for the user
+                user.last_login = datetime.now()
+                db.session.commit() 
+                return redirect(url_for('profile'))
+            else:
+                flash('Credentials not verified. Please try again or register for a new account','error')
+                return render_template('login.html')
         else:
-            print("Password bad")
             flash('Credentials not verified. Please try again or register for a new account','error')
             return render_template('login.html')
     else:
         return render_template('login.html')
         
-@app.route("/logout", methods=['GET','POST'])
+@app.route("/logout", methods=['GET'])
+@login_required
 def logout():
-    if request.method == 'GET':
-        session.clear()
-        return render_template('login.html')
+    session.clear()
+    return redirect(url_for('login'))
         
 @app.route("/register", methods=['GET','POST'])
 def register():
@@ -115,7 +112,7 @@ def register():
 
         try:
             # assert all inputs are valid
-            #assert User.query.filter_by(username=username).first() is None
+            assert User.query.filter_by(username=username).first() is None
             assert password == verify_password
             assert len(password) >= 8
             #future: maybe verify the email here?
@@ -132,155 +129,177 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
-    return render_template('register.html')
+    else:
+        return render_template('register.html')
         
 @app.route("/profile", methods=['GET','POST'])
+@login_required
 def profile():
+    user = User.query.filter_by(id=session['user_id']).first()
+
     if request.method == 'GET':
-        if request.args.get('user_id') is None:
-            user_id = session['user_id']
-        else:
-            user_id = request.args.get('user_id')
-    return render_template('profile.html')
+            return render_template('profile.html', id=user.id, username=user.username,
+                                                   name=user.name, email=user.email,
+                                                   biography=user.biography,
+                                                   creation_date=user.creation_date.strftime("%m/%d/%Y"),
+                                                   last_login=user.last_login.strftime("%m/%d/%Y"))
+    elif request.method == 'POST':
+        updated_profile = request.get_json(force=True)
 
-        # user = User.query.filter_by(id=user_id).first()
-        # return render_template('profile.html', id = user.id,
-        # username = user.username,
-        # name = user.name,
-        # email = user.email,
-        # biography = user.biography,
-        # creation_date = user.creation_date,
-        # last_login = user.last_login)
+        try:
+            name = updated_profile['name']
+            password = updated_profile['password']
+            verify_password = updated_profile['verify_password']
+            biography = updated_profile['biography']
+        except (KeyError, TypeError, ValueError):
+            return Response("{'error': 'invalid JSON'}", status=403, mimetype='application/json')
 
-    # if request.method == 'POST':
-    #     user = User.query.filter_by(id=session['user_id']).first()
-    #     data = request.get_json(force=True)
-    #     try:
-    #         name = string(data['name'])
-    #         password = string(data['password'])
-    #         verify_password = string(data['verify_password'])
-    #         biography = string(data['biography'])
-    #     except (KeyError, TypeError, ValueError):
-    #         raise JsonError(description='Invalid values.')
-    #     try:
-    #         assert password == verify_password or (password is None and verify_password is None)
-    #         assert email.utils.parseaddr(email) != ('', '')
-    #     except:
-    #         return jsonify(staus=403, updated = False)
-    #     user.name = name
-    #     user.email = email
-    #     user.biography = biography
-    #     if password is not None:
-    #         pw_hash = bcrypt.generate_password_hash(password)
-    #         user.password_hash = pw_hash
-    #     return jsonify(status = 200, updated = True)
-    
+        try:
+            assert password == verify_password or (password is None and verify_password is None)
+        except:
+            return Response("{'updated': false}", status=403, mimetype='application/json')
+
+        user.name = name
+        user.email = email
+        user.biography = biography
+        if password is not None:
+            pw_hash = bcrypt.generate_password_hash(password)
+            user.password_hash = pw_hash
+
+        db.session.update(user)
+        db.session.commit()
+        return Response("{'updated': true}", status=200, mimetype='application/json')
+    else:
+        return render_template('profile.html')
+
+@app.route("/profile/<int:user_id>", methods=['GET'])
+def get_profile(user_id):
+    user = User.query.filter_by(id=user_id).first()
+    return render_template('profile.html', id=user.id, username=user.username,
+                                           name=user.name, email=user.email,
+                                           biography=user.biography,
+                                           creation_date=user.creation_date.strftime("%m/%d/%Y"),
+                                           last_login=user.last_login.strftime("%m/%d/%Y"))
+
 @app.route("/profile/messages", methods=['GET','POST'])
 @login_required
 def getMessages():
+    user = User.query.filter_by(id=session['user_id']).first()
+
     if request.method == 'GET':
-        user = User.query.filter_by(id=session['user_id']).first()
-        list = []
-        # Get a list of all messages sent to the current user
         messages = Message.query.filter_by(user2_id=user.id).all()
+        messages_parsed = []
         
         # Create a list of tuples containg each messages sender, body, and creation_date
         for message in messages:
-            list.append((message.username, message.body, message.creation_date))
+            messages_parsed.append((message.username, message.body, message.creation_date))
         
-        return render_template('messages.html', messages=list)
-    if request.method == 'POST':
-        user = User.query.filter_by(id=session['user_id']).first()
-        
+        return render_template('messages.html', messages=messages_parsed)
+    elif request.method == 'POST':     
         # Parse the JSON string
-        data = request.get_json(force=True)
-        name = string(data['name'])
-        description = string(data['description'])
-        
-        recipient = User.query.filter_by(name=name).first()
+        new_message = request.get_json(force=True)
+        description = string(new_message['description'])  
+        recipient = User.query.filter_by(name=new_message['name']).first()
         
         try:
-            assert areFriends(user.id, recipient.id)
+            assert are_friends(user.id, recipient.id)
         except:
-            return jsonify(staus=403)
+            return Response("{'error': 'users not friends'", status=403, mimetype='application/json')
         
-        return jsonify(status=200)
-        
+        return Response("{'error': 'none'", status=200, mimetype='application/json')
+    else:
+        return render_template('messages.html', messages=None)
+
 @app.route("/profile/friends", methods=['GET','POST'])
 @login_required
 def listFriends():
+    user = User.query.filter_by(id=session['user_id']).first()
+
     if request.method == 'GET':
-        user = User.query.filter_by(id=session['user_id']).first()
-        list = []
         # Get a list of all messages sent to the current user
         friends = Frienship.query.filter_by(user1_id=user.id).all()
+        friends_parsed = []
         friends.append(Frienship.query.filter_by(user2_id=user.id).all())
         
         # Create a list of tuples containg each messages sender, body, and creation_date
         for friend in friends:
-            list.append((friend.id, friend.username))
+            friends_parsed.append((friend.id, friend.username))
         
-        return render_template('friends.html', friends=list)
-    
-    if request.method == 'POST':
-        user = User.query.filter_by(id=session['user_id']).first()
-        
+        return render_template('friends.html', friends=friends_parsed) 
+    elif request.method == 'POST':        
         # Parse the JSON string
         data = request.get_json(force=True)
         user2_id = int(data['user2_id'])
         
         try:
-            assert not areFriends(user.id, user2.id)
+            assert not are_friends(user.id, user2.id)
         except:
-            return jsonify(staus=403)
+            return Response("{'error': 'no friends'", status=403, mimetype='application/json')
         
-        return jsonify(staus=200)
-        
-@app.route("/categories", methods=['GET','POST'])
-def listCategories():
+        return Response("{'error': 'none'", status=200, mimetype='application/json')
+    else:
+        return render_template('friends.html', friends=None) 
+
+   #TO DO     
+
+@app.route("/categories", methods=['GET'])
+def categories():
     if request.method == 'GET':
-        list = []
         # Get a list of all categories
         cats = Category.query.all()
-        
+        categories = []
+
         # Create a list of tuples containg each threads id, name, and description
         for cat in cats:
-            list.append((cat.id, cat.name, cat.description))
-        
-        return render_template('categories.html', categories=list)
+            categories.append((cat.id, cat.name, cat.description))
 
-@app.route("/category", methods=['GET','POST'])
-def getCategory():
-    if request.method == 'GET':
-        category_id = request.args['cat_id']
-        category = Category.query.filter_by(id=category_id).first()
-        posts = []
-        # Get a list of all threads in the category
-        threads = Threads.query.filter_by(category_id=category_id).all()
+        return render_template('categories.html', categories=categories)
+    else:
+        return render_template('categories.html', categories=None)
         
-        # Create a list of tuples containg each threads id, title, body, and vote count.
-        for thread in threads:
-            post.append((thread.id, thread.title, thread.body, get_thread_votes(thread.id)))
-        
-        return render_template('category.html',posts=posts, category_name=category.name)
+@app.route("/category", methods=['POST'])
+@login_required
+def create_category():
     if request.method == 'POST':
         data = request.get_json(force=True)
-        name = string(data['name'])
-        description = string(data['description'])
+        name = data['name']
+        description = data['description']
+
         try:
             assert Category.query.filter_by(name=name).first() is None
         except:
-            return jsonify(status = 200)
+            return Response("{'error': 'category exists'}", status=403, mimetype='application/json')
+
         new_category = Category(name, description)
         db.session.add(new_category)
-        db.sesssion.commit()
-        return jsonify(status = 200, id = new_category.id, name= name)
-        
-@app.route("/category/post", methods=['GET','POST'])
-def addPost():
+        db.session.commit()
+
+        return Response("{'error': 'none'}", status=200, mimetype='application/json')
+
+@app.route("/category/", methods=['GET'])
+def category():
     if request.method == 'GET':
-        post_id = request.args['post_id']
-        thread = Thread.query.filter_by(id = post_id).first()
+        category_id = request.args.get('category_id')
+
+        category = Category.query.filter_by(id=category_id).first()
+        posts = []
+
+        # Get a list of all threads in the category
+        threads = Thread.query.filter_by(category_id=category_id).all()
+        
+        # Create a list of tuples containg each threads id, title, body, and vote count.
+        for thread in threads:
+            posts.append((thread.id, thread.title, thread.body, get_thread_votes(thread.id)))
+        
+        return render_template('category.html', posts=posts, category_name=category.name)
+    else:
+        return url_for('listCategories')
+
+@app.route("/category/post/", methods=['GET'])
+def post():
+    if request.method == 'GET':
+        post_id = request.args.get('post_id')
+        thread = Thread.query.filter_by(id=post_id).first()
         comments = []
         # Get a list of all comments in the thread
         comms = Comment.query.filter_by(thread_id=post_id).all()
@@ -291,90 +310,72 @@ def addPost():
             comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id)))
         
         return render_template('post.html',comments=comments, post_name=thread.title, vote_count = get_thread_votes(thread.id))
+    else:
+        return url_for('listCategories')
     
+@app.route("/category/post", methods=["POST"])
+@login_required
+def create_post():
     if request.method == 'POST':
-    
-        # Check if the user is logged in
-        if session['user_id'] is None:
-            return jsonify(status = 403)
-        
-        user = User.query.filter_by(id=session['user_id']).first()
-        
         # Parse the JSON string
         data = request.get_json(force=True)
-        title = string(data['title'])
-        body = string(data['body'])
-        cat_id = int(data['category_id'])
-        
+
         # Add the post to the database
-        current_date = datetime.now();
-        new_post = Thread(cat_id, user.id, title, body, creation_date)
+        new_post = Thread(data['category_id'], session['user_id'], data['title'], data['body'], datetime.now())
         db.session.add(new_post)
         db.session.commit()
-        
+
         # Check if the post was inserted
-        if new_post.id is not None:
-            return jsonify(status = 200)
+        if new_post.id:
+            return Response("{'error': 'none'}", status=200, mimetype='application/json')
         else:
-            return jsonify(status = 403)
+            return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
             
-@app.route("/category/post/add_comment", methods=['GET','POST'])
+@app.route("/category/post/add_comment", methods=['POST'])
 @login_required
-def addComment():
+def create_comment():
     if request.method == 'POST':
-        user = User.query.filter_by(id=session['user_id']).first()
-        
         # Parse the JSON string
         data = request.get_json(force=True)
-        body = string(data['body'])
-        post_id = int(data['post_id'])
-        
-        current_date = datetime.now();
+
         # Add the comment to database
-        new_comment = Comment(post_id, user.id, body, current_date)
+        new_comment = Comment(data['post_id'], session['user_id'], data['body'], datetime.now())
         db.session.add(new_comment)
         db.session.commit()
         
         # Check if the comment was inserted
-        if new_comment.id is not None:
-            return jsonify(status = 200)
+        if new_comment.id:
+            return Response("{'error': 'none'}", status=200, mimetype='application/json')
         else:
-            return jsonify(status = 403)
+            return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
 
-@app.route('/category/post/vote', methods=['GET','POST'])
+@app.route('/category/post/vote', methods=['POST'])
 @login_required
 def addPostVote():
     if request.method == 'POST':
-        user = User.query.filter_by(id=session['user_id']).first()
-        
         # Parse the JSON string
         data = request.get_json(force=True)
-        post_id = int(data['post_id'])
-        vote = int(data['vote']) == 1
-        
+  
         # Add the vote to the database
-        new_vote = ThreadVote(post_id, use.id, vote)
+        new_vote = ThreadVote(data['post_id'], session['user_id'], data['vote']==1)
         db.session.add(new_vote)
         db.session.commit()
-        return jsonify(status = 200)
+
+        return Response("{'error': 'none'}", status=200, mimetype='application/json')
         
-@app.route('/category/post/comment/vote', methods=['GET','POST'])
+@app.route('/category/post/comment/vote', methods=['POST'])
 @login_required
 def addCommentVote():
     if request.method == 'POST':
-        user = User.query.filter_by(id=session['user_id']).first()
-        
-        # Parse the JSON string
+        #Parse the JSON string
         data = request.get_json(force=True)
-        post_id = int(data['post_id'])
-        comment_id = int(data['comment_id'])
-        vote = int(data['vote']) == 1
         
-        # Add the vote to the database
-        new_vote = CommentVote(comment_id, user.id, vote)
+        #Add the vote to the database
+        new_vote = CommentVote(data['comment_id'], session['user_id'], data['vote']==1)
         db.session.add(new_vote)
         db.session.commit()
-        return jsonify(status = 200)
+
+        return Response("{'error': 'none'}", status=200, mimetype='application/json')
 
 if __name__ == '__main__':
     app.run(debug=True)
