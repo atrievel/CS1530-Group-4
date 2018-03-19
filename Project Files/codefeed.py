@@ -284,56 +284,56 @@ def category():
         category_id = request.args.get('category_id')
 
         category = Category.query.filter_by(id=category_id).first()
-        posts = []
+        thread_list = []
 
         # Get a list of all threads in the category
         threads = Thread.query.filter_by(category_id=category_id).all()
         
         # Create a list of tuples containg each threads id, title, body, and vote count.
         for thread in threads:
-            posts.append((thread.id, thread.title, thread.body, get_thread_votes(thread.id)))
+            thread_list.append((thread.id, thread.title, thread.body, get_thread_votes(thread.id)))
         
-        return render_template('category.html', posts=posts, category_name=category.name)
+        return render_template('category.html', threads=thread_list, category_name=category.name)
     else:
         return url_for('listCategories')
 
-@app.route("/category/post/", methods=['GET'])
-def post():
+@app.route("/category/thread/", methods=['GET'])
+def thread():
     if request.method == 'GET':
-        post_id = request.args.get('post_id')
-        thread = Thread.query.filter_by(id=post_id).first()
+        thread_id = request.args.get('thread_id')
+        thread = Thread.query.filter_by(id=thread_id).first()
         comments = []
         # Get a list of all comments in the thread
-        comms = Comment.query.filter_by(thread_id=post_id).all()
+        comms = Comment.query.filter_by(thread_id=thread_id).all()
         
         # Create a list of tuples containg each comment's id, user, body, creation_date and vote count.
         for comment in comms:
             commenter = User.query.filter_by(id=comment.user_id).first()
             comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id), comment.creation_date.strftime("%m/%d/%Y")))
         
-        return render_template('post.html',comments=comments, post_name=thread.title, vote_count = get_thread_votes(thread.id))
+        return render_template('thread.html',comments=comments, thread_name=thread.title, vote_count = get_thread_votes(thread.id))
     else:
         return url_for('listCategories')
     
-@app.route("/category/post", methods=["POST"])
+@app.route("/category/thread", methods=["POST"])
 @login_required
-def create_post():
+def create_thread():
     if request.method == 'POST':
         # Parse the JSON string
         data = request.get_json(force=True)
 
-        # Add the post to the database
-        new_post = Thread(data['category_id'], session['user_id'], data['title'], data['body'], datetime.now())
-        db.session.add(new_post)
+        # Add the thread to the database
+        new_thread = Thread(data['category_id'], session['user_id'], data['title'], data['body'], datetime.now())
+        db.session.add(new_thread)
         db.session.commit()
 
-        # Check if the post was inserted
-        if new_post.id:
+        # Check if the thread was inserted
+        if new_thread.id:
             return Response("{'error': 'none'}", status=200, mimetype='application/json')
         else:
             return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
             
-@app.route("/category/post/add_comment", methods=['POST'])
+@app.route("/category/thread/add_comment", methods=['POST'])
 @login_required
 def create_comment():
     if request.method == 'POST':
@@ -341,7 +341,7 @@ def create_comment():
         data = request.get_json(force=True)
 
         # Add the comment to database
-        new_comment = Comment(data['post_id'], session['user_id'], data['body'], datetime.now())
+        new_comment = Comment(data['thread_id'], session['user_id'], data['body'], datetime.now())
         db.session.add(new_comment)
         db.session.commit()
         
@@ -351,7 +351,7 @@ def create_comment():
         else:
             return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
 
-@app.route('/category/post/vote', methods=['POST'])
+@app.route('/category/thread/vote', methods=['POST'])
 @login_required
 def addPostVote():
     if request.method == 'POST':
@@ -359,13 +359,13 @@ def addPostVote():
         data = request.get_json(force=True)
   
         # Add the vote to the database
-        new_vote = ThreadVote(data['post_id'], session['user_id'], data['vote']==1)
+        new_vote = ThreadVote(data['thread_id'], session['user_id'], data['vote']==1)
         db.session.add(new_vote)
         db.session.commit()
 
         return Response("{'error': 'none'}", status=200, mimetype='application/json')
         
-@app.route('/category/post/comment/vote', methods=['POST'])
+@app.route('/category/thread/comment/vote', methods=['POST'])
 @login_required
 def addCommentVote():
     if request.method == 'POST':
