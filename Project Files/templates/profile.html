@@ -5,7 +5,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>{{ username }} - Profile Page</title>
+    <title>{{ username }} | Profile Page</title>
     <meta name="description" content="">
     <meta name="author" content="CodeFeed">
 
@@ -43,244 +43,245 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../staticfavicons//ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+</head>
 
-    <body class="bootstrap_override dark-bg">
-        <!-- Navbar
-        ================================================== -->
-        <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
-            <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ml-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/profile"><i class="fas fa-user"></i> My Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/profile/messages"><i class="fas fa-envelope"></i> Messages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/categories"><i class="fas fa-object-ungroup"></i> Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                    </li>
-                </ul>
+<body class="bootstrap_override dark-bg">
+    <!-- Navbar
+    ================================================== -->
+    <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
+        <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto mb-2">
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/profile"><i class="fas fa-user"></i> My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/profile/messages"><i class="fas fa-envelope"></i> Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/categories"><i class="fas fa-object-ungroup"></i> Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-left my-3">
+                    <h2 id="name" class="primary-text" style="margin-bottom: 0">{{ name }}</h2>
+                    <h5 class="light-text" style="margin-bottom: 1.8rem">>{{ username }}</h5>
+                </div>
             </div>
-        </nav>
-
-        <div class="container">
+            <div class="col-md-6" style="position: relative">
+                <div class="m-3" style="position: absolute; bottom: 0; right: 0">
+                    <h5><a class="primary-text" href="friends.html"><i class="fas fa-users"></i> Friends</a></h5>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron light-bg">
+            <div class="container-fluid text-right p-0">
+                <button id="btnEditProfile" class="btn btn-md btn-info mb-4"><i class="fas fa-edit"></i> Edit Profile</button>
+            </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="text-left my-3">
-                        <h2 id="name" class="primary-text" style="margin-bottom: 0">{{ name }}</h2>
-                        <h5 class="light-text" style="margin-bottom: 1.8rem">>{{ username }}</h5>
-                    </div>
-                </div>
-                <div class="col-md-6" style="position: relative">
-                    <div class="m-3" style="position: absolute; bottom: 0; right: 0">
-                        <h5><a class="primary-text" href="friends.html"><i class="fas fa-users"></i> Friends</a></h5>
-                    </div>
-                </div>
-            </div>
-            <div class="jumbotron light-bg">
-                <div class="container-fluid text-right p-0">
-                    <button id="btnEditProfile" class="btn btn-md btn-info mb-4"><i class="fas fa-edit"></i> Edit Profile</button>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card" style="width: 100%">
-                            <div class="card-header">
-                                <h4 class="dark-text" style="margin: 0">About me</h4>
-                            </div>
-                            <div class="card-body">
-                                <p id="bio" class="dark-text-alt">{{ biography }}</p>
-                            </div>
+                <div class="col-md-8">
+                    <div class="card" style="width: 100%">
+                        <div class="card-header">
+                            <h4 class="dark-text" style="margin: 0">About me</h4>
                         </div>
-                    </div>
-                    <div class="col-md-4" id="stackable">
-                        <div class="card" style="width: 100%">
-                            <div class="card-header">
-                                <h5 class="dark-text" style="margin: 0">Additional info</h5>
-                            </div>
-                            <div class="card-body">
-                                <label id="email" class="dark-text"><strong>Email:</strong></label>
-                                <p><a class="dark-text-alt" href="mailto:{{ email }}">{{ email }}</a></p>
-                                <br>
-                                <label class="dark-text"><strong>Member since:</strong></label>
-                                <p class="dark-text-alt">{{ creation_date }}</p>
-                            </div>
+                        <div class="card-body">
+                            <p id="bio" class="dark-text-alt">{{ biography }}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Modal to edit profile
-            ================================================== -->
-            <div class="modal fade" id="modalEditProfile" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title dark-text">Edit Profile</h5>
-                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                <div class="col-md-4" id="stackable">
+                    <div class="card" style="width: 100%">
+                        <div class="card-header">
+                            <h5 class="dark-text" style="margin: 0">Additional info</h5>
                         </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="txtName" class="form-control-label dark-text">Name:</label>
-                                <input type="text" class="form-control" id="txtName">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Name cannot be blank
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtEmail" class="form-control-label dark-text">Email:</label>
-                                <input type="text" class="form-control" id="txtEmail">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Email cannot be blank
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtPass1" class="form-control-label dark-text">Password:</label>
-                                <input type="password" class="form-control" id="txtPass1">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Passwords do not match
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtPass2" class="form-control-label dark-text">Confirm Password:</label>
-                                <input type="password" class="form-control" id="txtPass2">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Passwords do not match
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtBio" class="form-control-label dark-text">Bio:</label>
-                                <textarea class="form-control" id="txtBio"></textarea>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Bio must be less than 256 characters
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" id="btnUpdateProfile" class="btn btn-primary">Update Profile</button>
+                        <div class="card-body">
+                            <label id="email" class="dark-text"><strong>Email:</strong></label>
+                            <p><a class="dark-text-alt" href="mailto:{{ email }}">{{ email }}</a></p>
+                            <br>
+                            <label class="dark-text"><strong>Member since:</strong></label>
+                            <p class="dark-text-alt">{{ creation_date }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- JavaScript
+        <!-- Modal to edit profile
         ================================================== -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="../static/js/profile.js" type="text/javascript"></script>
-        <script type="text/javascript">
+        <div class="modal fade" id="modalEditProfile" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title dark-text">Edit Profile</h5>
+                        <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="txtName" class="form-control-label dark-text">Name:</label>
+                            <input type="text" class="form-control" id="txtName">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Name cannot be blank
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtEmail" class="form-control-label dark-text">Email:</label>
+                            <input type="text" class="form-control" id="txtEmail">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Email cannot be blank
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPass1" class="form-control-label dark-text">Password:</label>
+                            <input type="password" class="form-control" id="txtPass1">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Passwords do not match
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPass2" class="form-control-label dark-text">Confirm Password:</label>
+                            <input type="password" class="form-control" id="txtPass2">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Passwords do not match
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtBio" class="form-control-label dark-text">Bio:</label>
+                            <textarea class="form-control" id="txtBio"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Bio must be less than 256 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnUpdateProfile" class="btn btn-primary">Update Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            $(document).ready(function() {
-                //set up the datatable
-                $("#tblPosts").DataTable ({
-                    scrollY: '50vh',
-                    scrollCollapse: true
-                });
+    <!-- JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../static/js/profile.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            //set up the datatable
+            $("#tblPosts").DataTable ({
+                scrollY: '50vh',
+                scrollCollapse: true
             });
+        });
 
-            //load the modal on a button click
-            $("#btnEditProfile").on('click touch', function() {
-                $("#modalEditProfile").modal('show');
+        //load the modal on a button click
+        $("#btnEditProfile").on('click touch', function() {
+            $("#modalEditProfile").modal('show');
 
-                //run checks after the modal fields are completed and submit if they pass
-                $("#btnUpdateProfile").on('click touch', function() {
-                    const name = $('#txtName').val();
-                    const username = $('#txtUsername').val();
-                    const email = $('#txtEmail').val();
-                    const pass1 = $('#txtPass1').val();
-                    const pass2 = $('#txtPass2').val();
-                    const bio = $('#txtBio').val();
+            //run checks after the modal fields are completed and submit if they pass
+            $("#btnUpdateProfile").on('click touch', function() {
+                const name = $('#txtName').val();
+                const username = $('#txtUsername').val();
+                const email = $('#txtEmail').val();
+                const pass1 = $('#txtPass1').val();
+                const pass2 = $('#txtPass2').val();
+                const bio = $('#txtBio').val();
 
-                    //assert the name is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(name.length <= 0) {
-                        $('#txtName').removeClass("is-valid");
-                        $('#txtName').addClass("is-invalid");
+                //assert the name is not blank
+                //add valid/invalid css if it is not/is blank
+                if(name.length <= 0) {
+                    $('#txtName').removeClass("is-valid");
+                    $('#txtName').addClass("is-invalid");
+                }
+                else {
+                    $('#txtName').removeClass("is-invalid");
+                    $('#txtName').addClass("is-valid");
+                }
+
+                //assert the email is not blank
+                //add valid/invalid css if it is not/is blank
+                if(email.length <= 0) {
+                    $('#txtEmail').removeClass("is-valid");
+                    $('#txtEmail').addClass("is-invalid");
+                }
+                else {
+                    $('#txtEmail').removeClass("is-invalid");
+                    $('#txtEmail').addClass("is-valid");
+                }
+
+                //assert the passwords match if they've been changed
+                //add valid/invalid css if they do not match
+                if (pass1.length > 0 || pass2.length > 0) {
+                    if (pass1 != pass2) {
+                        $('#txtPass1').removeClass("is-valid");
+                        $('#txtPass1').addClass("is-invalid");
+                        $('#txtPass2').removeClass("is-valid");
+                        $('#txtPass2').addClass("is-invalid");
                     }
                     else {
-                        $('#txtName').removeClass("is-invalid");
-                        $('#txtName').addClass("is-valid");
+                        $('#txtPass1').removeClass("is-invalid");
+                        $('#txtPass1').addClass("is-valid");
+                        $('#txtPass2').removeClass("is-invalid");
+                        $('#txtPass2').addClass("is-valid");
                     }
+                }
 
-                    //assert the email is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(email.length <= 0) {
-                        $('#txtEmail').removeClass("is-valid");
-                        $('#txtEmail').addClass("is-invalid");
-                    }
-                    else {
-                        $('#txtEmail').removeClass("is-invalid");
-                        $('#txtEmail').addClass("is-valid");
-                    }
+                //assert the bio is not blank
+                //add valid/invalid css if it is not/is blank
+                if(bio.length > 256) {
+                    $('#txtBio').removeClass("is-valid");
+                    $('#txtBio').addClass("is-invalid");
+                }
+                else {
+                    $('#txtBio').removeClass("is-invalid");
+                    $('#txtBio').addClass("is-valid");
+                }
 
-                    //assert the passwords match if they've been changed
-                    //add valid/invalid css if they do not match
-                    if (pass1.length > 0 || pass2.length > 0) {
-                        if (pass1 != pass2) {
-                            $('#txtPass1').removeClass("is-valid");
-                            $('#txtPass1').addClass("is-invalid");
-                            $('#txtPass2').removeClass("is-valid");
-                            $('#txtPass2').addClass("is-invalid");
-                        }
-                        else {
-                            $('#txtPass1').removeClass("is-invalid");
-                            $('#txtPass1').addClass("is-valid");
-                            $('#txtPass2').removeClass("is-invalid");
-                            $('#txtPass2').addClass("is-valid");
-                        }
-                    }
-
-                    //assert the bio is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(bio.length > 256) {
-                        $('#txtBio').removeClass("is-valid");
-                        $('#txtBio').addClass("is-invalid");
-                    }
-                    else {
-                        $('#txtBio').removeClass("is-invalid");
-                        $('#txtBio').addClass("is-valid");
-                    }
-
-                    //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
-                    //TODO: add check for max length and email verification(?)
-                    if(name.length > 0 && email.length > 0 && bio.length > 0) {
-                        editProfile(name, email, bio, pass1, pass2);
-                        $("#modalEditProfile").modal('hide');
-                        $('#txtName').val('');
-                        $('#txtEmail').val('');
-                        $('#txtBio').val('');
-                        $('#txtName').removeClass("is-valid");
-                        $('#txtEmail').removeClass("is-valid");
-                        $('#txtBio').removeClass("is-valid");
-                    }
-                });
+                //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                //TODO: add check for max length and email verification(?)
+                if(name.length > 0 && email.length > 0 && bio.length > 0) {
+                    editProfile(name, email, bio, pass1, pass2);
+                    $("#modalEditProfile").modal('hide');
+                    $('#txtName').val('');
+                    $('#txtEmail').val('');
+                    $('#txtBio').val('');
+                    $('#txtName').removeClass("is-valid");
+                    $('#txtEmail').removeClass("is-valid");
+                    $('#txtBio').removeClass("is-valid");
+                }
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>

@@ -5,7 +5,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Register for CodeFeed</title>
+    <title>Register | CodeFeed</title>
     <meta name="description" content="">
     <meta name="author" content="CodeFeed">
 
@@ -42,169 +42,170 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../staticfavicons//ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+</head>
 
-    <body class="bootstrap_override dark-bg">
+<body class="bootstrap_override dark-bg">
 
-        <!-- the form used to register an account
-             all fields are required
-        ================================================== -->
-        <div class="container">
-            <div class="text-right">
-                <a class="btn btn-lg" href="/login">Return to Login</a>
-            </div>
-
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Oh no!</strong> {{ message }}
-                    </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-            <div class="text-left mb-2">
-                <h2 style="margin-top:0; margin-bottom:0">Sign up for CodeFeed</h2>
-                <small style="margin-top:0">We will never share your data with other third parties</small>
-            </div>
-            <form method="POST" class="needs-validation" id="fmRegister">
-                <div class="form-group">
-                    <label for="txtName" class="form_input mt-2">Full Name</label>
-                    <input type="text" class="form-control" id="txtName" name="name" placeholder="Enter full name" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        You must enter your name.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="txtEmail" class="form_input mt-2">Email address</label>
-                    <input type="email" class="form-control" id="txtEmail" name="email" placeholder="Enter email" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        You must enter a valid email address.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="txtUsername" class="form_input mt-2">Username</label>
-                    <input type="text" class="form-control" id="txtUsername" name="username" placeholder="Enter desired username" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        You must enter a username.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="txtPass1" class="form_input mt-2">Password</label>
-                    <input type="password" class="form-control" id="txtPass1" name="password" placeholder="Enter password" required>
-                    <small class="form-text text-muted">Password must be at least 8 characters.</small>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Passwords must be 8 or more characters long and match.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="txtPass2" class="form_input mt-2">Confirm password</label>
-                    <input type="password" class="form-control" id="txtPass2" name="verify_password" placeholder="Confirm password" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                            Passwords must be 8 or more characters long and match.
-                    </div>
-                </div>
-                <div class="form-group text-center">
-                    <input type="submit" class="btn btn-lg btn-primary my-3" value="Submit Registration">
-                </div>
-            </form>
+    <!-- the form used to register an account
+            all fields are required
+    ================================================== -->
+    <div class="container">
+        <div class="text-right">
+            <a class="btn btn-lg" href="/login">Return to Login</a>
         </div>
 
-        <!-- JavaScript
-        ================================================== -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            $("#fmRegister").submit(function(event) {
-                let valid_form = true;
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh no!</strong> {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
-                //validate the name
-                if($('#txtName').val().length < 1) {
-                    $('#txtName').removeClass("is-valid");
-                    $('#txtName').addClass("is-invalid");
-                    valid_form = false;
-                }
-                else {
-                    $('#txtName').removeClass("is-invalid");
-                    $('#txtName').addClass("is-valid");
-                }
+        <div class="text-left mb-2">
+            <h2 style="margin-top:0; margin-bottom:0">Sign up for CodeFeed</h2>
+            <small style="margin-top:0">We will never share your data with other third parties</small>
+        </div>
+        <form method="POST" class="needs-validation" id="fmRegister">
+            <div class="form-group">
+                <label for="txtName" class="form_input mt-2">Full Name</label>
+                <input type="text" class="form-control" id="txtName" name="name" placeholder="Enter full name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    You must enter your name.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtEmail" class="form_input mt-2">Email address</label>
+                <input type="email" class="form-control" id="txtEmail" name="email" placeholder="Enter email" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    You must enter a valid email address.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtUsername" class="form_input mt-2">Username</label>
+                <input type="text" class="form-control" id="txtUsername" name="username" placeholder="Enter desired username" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    You must enter a username.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtPass1" class="form_input mt-2">Password</label>
+                <input type="password" class="form-control" id="txtPass1" name="password" placeholder="Enter password" required>
+                <small class="form-text text-muted">Password must be at least 8 characters.</small>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Passwords must be 8 or more characters long and match.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtPass2" class="form_input mt-2">Confirm password</label>
+                <input type="password" class="form-control" id="txtPass2" name="verify_password" placeholder="Confirm password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                        Passwords must be 8 or more characters long and match.
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-lg btn-primary my-3" value="Submit Registration">
+            </div>
+        </form>
+    </div>
 
-                //validate the email length
-                if($('#txtEmail').val().length < 1) {
-                    $('#txtName').removeClass("is-valid");
-                    $('#txtEmail').addClass("is-invalid");
-                    valid_form = false;
-                }
-                else {
-                    $('#txtEmail').removeClass("is-invalid");
-                    $('#txtEmail').addClass("is-valid");
-                }
+    <!-- JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $("#fmRegister").submit(function(event) {
+            let valid_form = true;
 
-                //validate the username
-                if($('#txtUsername').val().length < 1) {
-                    $('#txtUsername').removeClass("is-valid");
-                    $('#txtUsername').addClass("is-invalid");
-                    valid_form = false;
-                }
-                else {
-                    $('#txtUsername').removeClass("is-invalid");
-                    $('#txtUsername').addClass("is-valid");
-                }
+            //validate the name
+            if($('#txtName').val().length < 1) {
+                $('#txtName').removeClass("is-valid");
+                $('#txtName').addClass("is-invalid");
+                valid_form = false;
+            }
+            else {
+                $('#txtName').removeClass("is-invalid");
+                $('#txtName').addClass("is-valid");
+            }
 
-                //validate the username
-                if($('#txtUsername').val().length < 1) {
-                    $('#txtUsername').removeClass("is-valid");
-                    $('#txtUsername').addClass("is-invalid");
-                    valid_form = false;
-                }
-                else {
-                    $('#txtUsername').removeClass("is-invalid");
-                    $('#txtUsername').addClass("is-valid");
-                }
+            //validate the email length
+            if($('#txtEmail').val().length < 1) {
+                $('#txtName').removeClass("is-valid");
+                $('#txtEmail').addClass("is-invalid");
+                valid_form = false;
+            }
+            else {
+                $('#txtEmail').removeClass("is-invalid");
+                $('#txtEmail').addClass("is-valid");
+            }
 
-                //validate the passwords match are > 8 length
-                if($('#txtPass1').val().length < 7 && $('#txtPass2').val().length < 7) {
-                    $('#txtPass1').removeClass("is-valid");
-                    $('#txtPass1').addClass("is-invalid");
-                    $('#txtPass2').removeClass("is-valid");
-                    $('#txtPass2').addClass("is-invalid");
-                    valid_form = false;
-                }
-                else if($('#txtPass1').val() !== $('#txtPass2').val()) {
-                    $('#txtPass1').removeClass("is-valid");
-                    $('#txtPass1').addClass("is-invalid");
-                    $('#txtPass2').removeClass("is-valid");
-                    $('#txtPass2').addClass("is-invalid");
-                    valid_form = false;
-                }
-                else {
-                    $('#txtPass1').removeClass("is-invalid");
-                    $('#txtPass1').addClass("is-valid");
-                    $('#txtPass2').removeClass("is-invalid");
-                    $('#txtPass2').addClass("is-valid");
-                }
+            //validate the username
+            if($('#txtUsername').val().length < 1) {
+                $('#txtUsername').removeClass("is-valid");
+                $('#txtUsername').addClass("is-invalid");
+                valid_form = false;
+            }
+            else {
+                $('#txtUsername').removeClass("is-invalid");
+                $('#txtUsername').addClass("is-valid");
+            }
 
-                //cancel for submission if all fields are invalid
-                if(!valid_form) {
-                    event.preventDefault();
-                    event.stopImmediatePropagation();  
-                }           
-            });
-        </script>
-    </body>
+            //validate the username
+            if($('#txtUsername').val().length < 1) {
+                $('#txtUsername').removeClass("is-valid");
+                $('#txtUsername').addClass("is-invalid");
+                valid_form = false;
+            }
+            else {
+                $('#txtUsername').removeClass("is-invalid");
+                $('#txtUsername').addClass("is-valid");
+            }
+
+            //validate the passwords match are > 8 length
+            if($('#txtPass1').val().length < 7 && $('#txtPass2').val().length < 7) {
+                $('#txtPass1').removeClass("is-valid");
+                $('#txtPass1').addClass("is-invalid");
+                $('#txtPass2').removeClass("is-valid");
+                $('#txtPass2').addClass("is-invalid");
+                valid_form = false;
+            }
+            else if($('#txtPass1').val() !== $('#txtPass2').val()) {
+                $('#txtPass1').removeClass("is-valid");
+                $('#txtPass1').addClass("is-invalid");
+                $('#txtPass2').removeClass("is-valid");
+                $('#txtPass2').addClass("is-invalid");
+                valid_form = false;
+            }
+            else {
+                $('#txtPass1').removeClass("is-invalid");
+                $('#txtPass1').addClass("is-valid");
+                $('#txtPass2').removeClass("is-invalid");
+                $('#txtPass2').addClass("is-valid");
+            }
+
+            //cancel for submission if all fields are invalid
+            if(!valid_form) {
+                event.preventDefault();
+                event.stopImmediatePropagation();  
+            }           
+        });
+    </script>
+</body>
 </head>

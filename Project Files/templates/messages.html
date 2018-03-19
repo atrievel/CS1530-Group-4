@@ -43,215 +43,216 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../staticfavicons//ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+</head>
 
-    <body class="bootstrap_override dark-bg">
-        <!-- Navbar
-        ================================================== -->
-        <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
-            <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ml-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/profile"><i class="fas fa-user"></i> My Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/profile/messages"><i class="fas fa-envelope"></i> Messages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/categories"><i class="fas fa-object-ungroup"></i> Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<body class="bootstrap_override dark-bg">
+    <!-- Navbar
+    ================================================== -->
+    <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
+        <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto mb-2">
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/profile"><i class="fas fa-user"></i> My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/profile/messages"><i class="fas fa-envelope"></i> Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/categories"><i class="fas fa-object-ungroup"></i> Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <div class="container">
-            <div class="text-left my-3">
-                <h2 class="primary-text">Messages</h2>
+    <div class="container">
+        <div class="text-left my-3">
+            <h2 class="primary-text">Messages</h2>
+        </div>
+        <div class="jumbotron light-bg">
+            <div class="container-fluid text-right">
+                <button id="btnSendMessage" class="btn btn-md btn-info"><i class="fas fa-pencil-alt"></i> New Message</button>
             </div>
-            <div class="jumbotron light-bg">
-                <div class="container-fluid text-right">
-                    <button id="btnSendMessage" class="btn btn-md btn-info"><i class="fas fa-pencil-alt"></i> New Message</button>
-                </div>
-                <table id="tblMessages" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
+            <table id="tblMessages" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th style="width: 25%">From</th>
+                        <th style="width: 50%">Contents</th>
+                        <th style="width: 15%">Time Sent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for message in messages %}
                         <tr>
-                            <th style="width: 25%">From</th>
-                            <th style="width: 50%">Contents</th>
-                            <th style="width: 15%">Time Sent</th>
+                            <td>
+                                <a class="primary-text" style="vertical-align: middle" href="profile/profile_id?={{ message.friend_id }}">{{ message.user1 }}</a>
+                                <button class="btn btn-md btn-info btnReply mr-2" style="float:right"><i class="fas fa-reply"></i></button>
+                            </td>
+                            <td class="message-body">{{ message.body }}</td>
+                            <td>{{ message.date }}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for message in messages %}
-                            <tr>
-                                <td>
-                                    <a class="primary-text" style="vertical-align: middle" href="profile/profile_id?={{ message.friend_id }}">{{ message.user1 }}</a>
-                                    <button class="btn btn-md btn-info btnReply mr-2" style="float:right"><i class="fas fa-reply"></i></button>
-                                </td>
-                                <td class="message-body">{{ message.body }}</td>
-                                <td>{{ message.date }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
-            <!-- Modal to add new message
-            ================================================== -->
-            <div class="modal fade" id="modalNewMessage" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title dark-text">Compose Message</h5>
-                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="txtUsername" class="form-control-label dark-text">Send to:</label>
-                                <input type="text" class="form-control" id="txtUsername">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Invalid user
-                                </div>
+        <!-- Modal to add new message
+        ================================================== -->
+        <div class="modal fade" id="modalNewMessage" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title dark-text">Compose Message</h5>
+                        <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="txtUsername" class="form-control-label dark-text">Send to:</label>
+                            <input type="text" class="form-control" id="txtUsername">
+                            <div class="valid-feedback">
+                                Looks good!
                             </div>
-                            <div class="form-group">
-                                <label for="txtBody" class="form-control-label dark-text">Message body:</label>
-                                <textarea class="form-control" id="txtBody"></textarea>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Message body cannot be blank
-                                </div>
+                            <div class="invalid-feedback">
+                                Invalid user
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" id="btnPostNewMessage" class="btn btn-primary">Send Message</button>
+                        <div class="form-group">
+                            <label for="txtBody" class="form-control-label dark-text">Message body:</label>
+                            <textarea class="form-control" id="txtBody"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Message body cannot be blank
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnPostNewMessage" class="btn btn-primary">Send Message</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- JavaScript
-        ================================================== -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="../static/js/profile.js"></script>
+    <!-- JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../static/js/profile.js"></script>
 
-        <script type="text/javascript">
-            $("#tblMessages").DataTable ({
-                scrollY:        '50vh',
-                scrollCollapse: true
-            });
+    <script type="text/javascript">
+        $("#tblMessages").DataTable ({
+            scrollY:        '50vh',
+            scrollCollapse: true
+        });
 
-            $('.message-body').each(function() {
-                var text = $(this).html();
-                if (text.length > 50) {
-                    $(this).html(text.substring(0, 50) + '... ' + '<a class="see-more" href="#"><span>See More</span></a>');
+        $('.message-body').each(function() {
+            var text = $(this).html();
+            if (text.length > 50) {
+                $(this).html(text.substring(0, 50) + '... ' + '<a class="see-more" href="#"><span>See More</span></a>');
+            }
+        });
+
+        $('.see-more').click(function() {
+            $(this).parent().html("{{ message.body }}");
+        });
+
+        //load the modal on a button click
+        $("#btnSendMessage").on('click touch', function() {
+            $("#modalNewMessage").modal('show');
+
+            //run checks after the modal fields are completed and submit if they pass
+            $("#btnPostNewMessage").on('click touch', function() {
+                const username = $('#txtUsername').val();
+                const body = $('#txtBody').val();
+
+                //assert the username is not blank
+                //add valid/invalid css if it is not/is blank
+                if(username.length <= 0) {
+                    $('#txtUsername').removeClass("is-valid");
+                    $('#txtUsername').addClass("is-invalid");
+                }
+                else {
+                    $('#txtUsername').removeClass("is-invalid");
+                    $('#txtUsername').addClass("is-valid");
+                }
+
+                //assert the message body is not blank
+                //add valid/invalid css if it is not/is blank
+                if(body.length <= 0) {
+                    $('#txtBody').removeClass("is-valid");
+                    $('#txtBody').addClass("is-invalid");
+                }
+                else {
+                    $('#txtBody').removeClass("is-invalid");
+                    $('#txtBody').addClass("is-valid");
+                }
+
+                //if both the username and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                if(username.length > 0 && body.length > 0) {
+                    postNewMessage(username, body);
+                    $("#modalNewMessage").modal('hide');
+                    $('#txtUsername').val('');
+                    $('#txtBody').val('');
+                    $('#txtUsername').removeClass("is-valid");
+                    $('#txtBody').removeClass("is-valid");
                 }
             });
+        });
 
-            $('.see-more').click(function() {
-                $(this).parent().html("{{ message.body }}");
+        $(".btnReply").on('click touch', function() {
+            $("#modalNewMessage").modal('show');
+            $('#txtUsername').val($(this).siblings('a').text());
+
+            //run checks after the modal fields are completed and submit if they pass
+            $("#btnPostNewMessage").on('click touch', function() {
+                const user = $('#txtUser').val();
+                const body = $('#txtBody').val();
+
+                //assert the user is not blank
+                //add valid/invalid css if it is not/is blank
+                if(user.length <= 0) {
+                    $('#txtUser').removeClass("is-valid");
+                    $('#txtUser').addClass("is-invalid");
+                }
+                else {
+                    $('#txtUser').removeClass("is-invalid");
+                    $('#txtUser').addClass("is-valid");
+                }
+
+                //assert the message body is not blank
+                //add valid/invalid css if it is not/is blank
+                if(body.length <= 0) {
+                    $('#txtBody').removeClass("is-valid");
+                    $('#txtBody').addClass("is-invalid");
+                }
+                else {
+                    $('#txtBody').removeClass("is-invalid");
+                    $('#txtBody').addClass("is-valid");
+                }
+
+                //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                if(user.length > 0 && body.length > 0) {
+                    postNewMessage(user, body);
+                    $("#modalNewMessage").modal('hide');
+                    $('#txtUser').val('');
+                    $('#txtBody').val('');
+                    $('#txtUser').removeClass("is-valid");
+                    $('#txtBody').removeClass("is-valid");
+                }
             });
-
-            //load the modal on a button click
-            $("#btnSendMessage").on('click touch', function() {
-                $("#modalNewMessage").modal('show');
-
-                //run checks after the modal fields are completed and submit if they pass
-                $("#btnPostNewMessage").on('click touch', function() {
-                    const username = $('#txtUsername').val();
-                    const body = $('#txtBody').val();
-
-                    //assert the username is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(username.length <= 0) {
-                        $('#txtUsername').removeClass("is-valid");
-                        $('#txtUsername').addClass("is-invalid");
-                    }
-                    else {
-                        $('#txtUsername').removeClass("is-invalid");
-                        $('#txtUsername').addClass("is-valid");
-                    }
-
-                    //assert the message body is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(body.length <= 0) {
-                        $('#txtBody').removeClass("is-valid");
-                        $('#txtBody').addClass("is-invalid");
-                    }
-                    else {
-                        $('#txtBody').removeClass("is-invalid");
-                        $('#txtBody').addClass("is-valid");
-                    }
-
-                    //if both the username and body are not blank, pass the data to the server, clear the modal, and hide the modal
-                    if(username.length > 0 && body.length > 0) {
-                        postNewMessage(username, body);
-                        $("#modalNewMessage").modal('hide');
-                        $('#txtUsername').val('');
-                        $('#txtBody').val('');
-                        $('#txtUsername').removeClass("is-valid");
-                        $('#txtBody').removeClass("is-valid");
-                    }
-                });
-            });
-
-            $(".btnReply").on('click touch', function() {
-                $("#modalNewMessage").modal('show');
-                $('#txtUsername').val($(this).siblings('a').text());
-
-                //run checks after the modal fields are completed and submit if they pass
-                $("#btnPostNewMessage").on('click touch', function() {
-                    const user = $('#txtUser').val();
-                    const body = $('#txtBody').val();
-
-                    //assert the user is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(user.length <= 0) {
-                        $('#txtUser').removeClass("is-valid");
-                        $('#txtUser').addClass("is-invalid");
-                    }
-                    else {
-                        $('#txtUser').removeClass("is-invalid");
-                        $('#txtUser').addClass("is-valid");
-                    }
-
-                    //assert the message body is not blank
-                    //add valid/invalid css if it is not/is blank
-                    if(body.length <= 0) {
-                        $('#txtBody').removeClass("is-valid");
-                        $('#txtBody').addClass("is-invalid");
-                    }
-                    else {
-                        $('#txtBody').removeClass("is-invalid");
-                        $('#txtBody').addClass("is-valid");
-                    }
-
-                    //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
-                    if(user.length > 0 && body.length > 0) {
-                        postNewMessage(user, body);
-                        $("#modalNewMessage").modal('hide');
-                        $('#txtUser').val('');
-                        $('#txtBody').val('');
-                        $('#txtUser').removeClass("is-valid");
-                        $('#txtBody').removeClass("is-valid");
-                    }
-                });
-            });
-        </script>
-    </body>
+        });
+    </script>
+</body>

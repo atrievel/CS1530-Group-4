@@ -44,159 +44,160 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../staticfavicons//ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+</head>
 
-    <body class="bootstrap_override dark-bg">
-        <!-- Navbar
-        ================================================== -->
-        <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
-            <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav ml-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/profile"><i class="fas fa-user"></i> My Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/profile/messages"><i class="fas fa-envelope"></i> Messages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/categories"><i class="fas fa-object-ungroup"></i> Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-bar-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                    </li> 
-                </ul>
-            </div> 
-        </nav>
+<body class="bootstrap_override dark-bg">
+    <!-- Navbar
+    ================================================== -->
+    <nav class="navbar navbar-expand-md fixed-top light-bg navbar-dark">
+        <span class="navbar-brand"><span class="secondary-text"><></span><span class="light-text"> CodeFeed </span><span class="secondary-text">();</span></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto mb-2">
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/profile"><i class="fas fa-user"></i> My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/profile/messages"><i class="fas fa-envelope"></i> Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/categories"><i class="fas fa-object-ungroup"></i> Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-bar-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li> 
+            </ul>
+        </div> 
+    </nav>
 
-        <!-- List of posts and button to add new post
-        ================================================== -->
-        <div class="container">
-            <div class="text-left my-3">
-                <h2 class="primary-text">Select a Post to View</h2>
+    <!-- List of posts and button to add new post
+    ================================================== -->
+    <div class="container">
+        <div class="text-left my-3">
+            <h2 class="primary-text">Select a Post to View</h2>
+        </div>
+        <div class="jumbotron light-bg">
+            <div class="container-fluid text-right">
+                <button id="btnAddNewPost" class="btn btn-md btn-info mb-3"><i class="fas fa-plus-square"></i> New post</button>
             </div>
-            <div class="jumbotron light-bg">
-                <div class="container-fluid text-right">
-                    <button id="btnAddNewPost" class="btn btn-md btn-info mb-3"><i class="fas fa-plus-square"></i> New post</button>
-                </div>
-                <table id="tblPosts" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
+            <table id="tblPosts" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Vote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
                         <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Vote</th>
+                            <td><a class="btn" href="/category/post/?post_id={{ post.0 }}">{{ post.1 }}</a></td>
+                            <td>{{ post.2 }}</td>
+                            <td><span id="postUp{{ post.id }}" class="post-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
+                                {{ post.3 }}  
+                                <span id="postDown{{ post.id }}" class="post-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for post in posts %}
-                            <tr>
-                                <td><a class="btn" href="/category/post/?post_id={{ post.0 }}">{{ post.1 }}</a></td>
-                                <td>{{ post.2 }}</td>
-                                <td><span id="postUp{{ post.id }}" class="post-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
-                                    {{ post.3 }}  
-                                    <span id="postDown{{ post.id }}" class="post-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
-            <!-- Modal to add new post
-            ================================================== -->
-            <div class="modal fade" id="modalNewPost" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title dark-text">New Post</h5>
-                            <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="txtPostTitle" class="form-control-label dark-text">Post title:</label>
-                                <input type="text" class="form-control" id="txtTitle">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    New post title cannot be blank
-                                </div>
+        <!-- Modal to add new post
+        ================================================== -->
+        <div class="modal fade" id="modalNewPost" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title dark-text">New Post</h5>
+                        <button type="button" class="close dark-text" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="txtPostTitle" class="form-control-label dark-text">Post title:</label>
+                            <input type="text" class="form-control" id="txtTitle">
+                            <div class="valid-feedback">
+                                Looks good!
                             </div>
-                            <div class="form-group">
-                                <label for="txtBody" class="form-control-label dark-text">Body:</label>
-                                <textarea class="form-control" id="txtBody"></textarea>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    New post body cannot be blank
-                                </div>
+                            <div class="invalid-feedback">
+                                New post title cannot be blank
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" id="btnPostNewPost" class="btn btn-primary">Submit Post</button>
+                        <div class="form-group">
+                            <label for="txtBody" class="form-control-label dark-text">Body:</label>
+                            <textarea class="form-control" id="txtBody"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                New post body cannot be blank
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnPostNewPost" class="btn btn-primary">Submit Post</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- JavaScript
-        ================================================== -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-        <script src="https://unpkg.com/sweetalert2@7.15.1/dist/sweetalert2.all.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="../static/js/category.js"></script>
-        <script type="text/javascript">          
-            $(document).ready(function() {
-                setupDataTable('tblPosts');
-                setupVoteListeners('post-vote', 'post');
+    <!-- JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.15.1/dist/sweetalert2.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="../static/js/category.js"></script>
+    <script type="text/javascript">          
+        $(document).ready(function() {
+            setupDataTable('tblPosts');
+            setupVoteListeners('post-vote', 'post');
 
 
-                //load the modal on a button click
-                $("#btnAddNewPost").on('click touch', function() {
-                    $("#modalNewPost").modal('show');
+            //load the modal on a button click
+            $("#btnAddNewPost").on('click touch', function() {
+                $("#modalNewPost").modal('show');
 
-                    //run checks after the modal fields are completed and submit if they pass 
-                    $("#btnPostNewPost").on('click touch', function() {
-                        const title = $('#txtTitle').val();      
-                        const body = $('#txtBody').val();
+                //run checks after the modal fields are completed and submit if they pass 
+                $("#btnPostNewPost").on('click touch', function() {
+                    const title = $('#txtTitle').val();      
+                    const body = $('#txtBody').val();
 
-                        //assert the new post title is not blank
-                        //add valid/invalid css if it is not/is blank
-                        if(title.length <= 0) {
-                            $('#txtTitle').removeClass("is-valid");
-                            $('#txtTitle').addClass("is-invalid");
-                        }
-                        else {
-                            $('#txtTitle').removeClass("is-invalid");
-                            $('#txtTitle').addClass("is-valid");
-                        }
+                    //assert the new post title is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if(title.length <= 0) {
+                        $('#txtTitle').removeClass("is-valid");
+                        $('#txtTitle').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtTitle').removeClass("is-invalid");
+                        $('#txtTitle').addClass("is-valid");
+                    }
 
-                        //assert the new post body is not blank
-                        //add valid/invalid css if it is not/is blank
-                        if(body.length <= 0) {
-                            $('#txtBody').removeClass("is-valid");
-                            $('#txtBody').addClass("is-invalid");
-                        }
-                        else {
-                            $('#txtBody').removeClass("is-invalid");
-                            $('#txtBody').addClass("is-valid");
-                        }
+                    //assert the new post body is not blank
+                    //add valid/invalid css if it is not/is blank
+                    if(body.length <= 0) {
+                        $('#txtBody').removeClass("is-valid");
+                        $('#txtBody').addClass("is-invalid");
+                    }
+                    else {
+                        $('#txtBody').removeClass("is-invalid");
+                        $('#txtBody').addClass("is-valid");
+                    }
 
-                        //if both the title and body are not blank, pass the data to the server, clear the modal, and hide the modal
-                        if(title.length > 0 && body.length > 0) {
-                            postNewPost(title, body, getQueryStringValue("category_id"));
-                        }                     
-                    });
+                    //if both the title and body are not blank, pass the data to the server, clear the modal, and hide the modal
+                    if(title.length > 0 && body.length > 0) {
+                        postNewPost(title, body, getQueryStringValue("category_id"));
+                    }                     
                 });
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
