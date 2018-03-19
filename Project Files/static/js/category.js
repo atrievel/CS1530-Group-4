@@ -1,10 +1,10 @@
 /*
 * The AJAX requests for each route in order of declaration
 * /category
-* /category/post
-* /category/post/add_comment
-* /category/post/vote
-* /category/post/comment/vote
+* /category/thread
+* /category/thread/add_comment
+* /category/thread/vote
+* /category/thread/comment/vote
 */
 function postNewCategory(name, description) {
     const new_cat = JSON.stringify({
@@ -87,22 +87,20 @@ function postNewCategory(name, description) {
     });
 }
 
-function postNewPost(title, body, category_id) {
-    const new_post = JSON.stringify({
+function postNewThread(title, body, category_id) {
+    const new_thread = JSON.stringify({
         title: title.trim(),
         body: body.trim(),
         category_id: parseInt(category_id)
     });
 
-    console.log(new_post);
-
     let jqxhr = $.ajax({
-        url: "/category/post",
+        url: "/category/thread",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
         cache: false,
-        data: new_post    
+        data: new_thread  
     })
 
     .always(function (data, textStatus) {
@@ -115,20 +113,20 @@ function postNewPost(title, body, category_id) {
             case 200:
                 console.log("All good");
 
-                clearModalInputs("#modalNewPost", ['#txtTitle', '#txtBody']);
+                clearModalInputs("#modalNewThread", ['#txtTitle', '#txtBody']);
 
                 swal({
                     type: 'success',
                     title: 'Awesome!',
-                    text: 'Your new post was created',
-                    footer: "<a href='/catgeory/post?post_id=?'>Click here to go to this post</a>",
+                    text: 'Your new thread was created',
+                    footer: "<a href='/catgeory/thread?thread_id=?'>Click here to go to this thread</a>",
                   });
 
                 break;
             case 403:
-                console.log("Insert of post failed");
+                console.log("Insert of thread failed");
 
-                $("#modalNewPost").modal('show');
+                $("#modalNewthread").modal('show');
 
                 swal({
                     type: 'error',
@@ -140,7 +138,7 @@ function postNewPost(title, body, category_id) {
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
                 
-                $("#modalNewPost").modal('show');
+                $("#modalNewThread").modal('show');
 
                 swal({
                     type: 'error',
@@ -152,7 +150,7 @@ function postNewPost(title, body, category_id) {
             case 500: 
                 console.log("Backend team broke something");
 
-                $("#modalNewPost").modal('show');
+                $("#modalNewThread").modal('show');
 
                 swal({
                     type: 'error',
@@ -169,16 +167,15 @@ function postNewPost(title, body, category_id) {
     });
 }
 
-function postNewComment(body, post_id) {
-        const new_comment = JSON.stringify({
+function postNewComment(body, thread_id) {
+    const new_comment = JSON.stringify({
         body: body.trim(),
-        post_id: parseInt(post_id)
+        thread_id: parseInt(thread_id)
     });
 
-    console.log(new_comment);
 
     let jqxhr = $.ajax({
-        url: "/category/post/add_comment",
+        url: "/category/thread/add_comment",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
@@ -208,7 +205,7 @@ function postNewComment(body, post_id) {
             case 403:
                 console.log("Comment post failed");
 
-                $("#modalNewPost").modal('show');
+                $("#modalNewComment").modal('show');
 
                 swal({
                     type: 'error',
@@ -221,7 +218,7 @@ function postNewComment(body, post_id) {
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
 
-                $("#modalNewPost").modal('show');
+                $("#modalNewComment").modal('show');
 
                 swal({
                     type: 'error',
@@ -233,7 +230,7 @@ function postNewComment(body, post_id) {
             case 500: 
                 console.log("Backend team broke something");
 
-                $("#modalNewPost").modal('show');
+                $("#modalNewComment").modal('show');
 
                 swal({
                     type: 'error',
@@ -250,16 +247,16 @@ function postNewComment(body, post_id) {
     });
 }
 
-function modifyPostVote(post_id, vote) {
+function modidyThreadVote(thread_id, vote) {
     const new_vote = JSON.stringify({
-        post_id: parseInt(post_id),
+        thread_id: parseInt(thread_id),
         vote: parseInt(vote)
     });
 
     console.log(new_vote);
 
     let jqxhr = $.ajax({
-        url: "/category/post/vote",
+        url: "/category/thread/vote",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
@@ -294,9 +291,9 @@ function modifyPostVote(post_id, vote) {
     });
 }
 
-function modifyCommentVote(post_id, comment_id, vote) {
+function modifyCommentVote(thread_id, comment_id, vote) {
     const new_vote = JSON.stringify({
-        post_id: parseInt(post_id),
+        thread_id: parseInt(thread_id),
         comment_id: parseInt(comment_id),
         vote: parseInt(vote)
     });
@@ -304,7 +301,7 @@ function modifyCommentVote(post_id, comment_id, vote) {
     console.log(new_vote);
     
     let jqxhr = $.ajax({
-        url: "/category/post/comment/vote",
+        url: "/category/thread/comment/vote",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
@@ -364,11 +361,11 @@ function setupVoteListeners(base_class, type) {
         document.getElementById(other_id).classList.add('animated-not-clicked');
         document.getElementById(other_id).classList.remove('animated-clicked');
         
-        if(type === 'post') {
-            modifyPostVote(this.id.replace(/\D/g,'').trim(), 1);
+        if(type === 'thread') {
+            modifyThreadVote(this.id.replace(/\D/g,'').trim(), 1);
         }
         else if(type === 'comment') {
-            modifyCommentVote(getQueryStringValue('post_id'), this.id.replace(/\D/g,'').trim(), 1);
+            modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), 1);
         }
     });
 
@@ -379,11 +376,11 @@ function setupVoteListeners(base_class, type) {
         document.getElementById(other_id).classList.add('animated-not-clicked');
         document.getElementById(other_id).classList.remove('animated-clicked');
 
-        if(type === 'post') {
-            modifyPostVote(this.id.replace(/\D/g,'').trim(), -1);
+        if(type === 'thread') {
+            modifyThreadVote(this.id.replace(/\D/g,'').trim(), -1);
         }
         else if(type === 'comment') {
-            modifyCommentVote(getQueryStringValue('post_id'), this.id.replace(/\D/g,'').trim(), -1);
+            modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), -1);
         }
     });
 }
