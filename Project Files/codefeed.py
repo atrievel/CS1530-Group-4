@@ -303,6 +303,7 @@ def thread():
         thread_id = request.args.get('thread_id')
         thread = Thread.query.filter_by(id=thread_id).first()
         comments = []
+
         # Get a list of all comments in the thread
         comms = Comment.query.filter_by(thread_id=thread_id).all()
         
@@ -315,7 +316,7 @@ def thread():
     else:
         return url_for('listCategories')
     
-@app.route("/category/thread", methods=["POST"])
+@app.route("/category/thread", methods=['POST'])
 @login_required
 def create_thread():
     if request.method == 'POST':
