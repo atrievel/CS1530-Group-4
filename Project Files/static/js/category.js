@@ -22,22 +22,22 @@ function postNewCategory(name, description) {
         })
     
         .always(function (data, textStatus) {
-            if (textStatus !== 'success') {
-                console.log(textStatus);
-            }
-            
             //switch on the HTTP status code
             switch (jqxhr.status) {
                 case 200:
-                    console.log("All good");
+                    const new_cat = JSON.parse(data.responseText);
 
                     clearModalInputs("#modalNewCategory", ['#txtCategoryName', '#txtDescription']);
+
+                    $("#tblCategories tbody").append("<tr><td><a class='btn' href='/category/?category_id=" + parseInt(new_cat.id) + "'>" + 
+                                                     new_cat.name + "</a></td><td>" + new_cat.description + "</td></tr>"
+                    );
 
                     swal({
                         type: 'success',
                         title: 'Awesome!',
                         text: 'Your new category was created',
-                        footer: "<a href='/catgeory?category_id=?'>Click here to go to this category</a>",
+                        footer: "<a href='/category/?category_id=" + parseInt(new_cat.id) + "'>Click here to go to this category</a>"
                       });
 
                     break;
@@ -102,22 +102,26 @@ function postNewThread(title, body, category_id) {
     })
 
     .always(function (data, textStatus) {
-        if (textStatus !== 'success') {
-            console.log(textStatus);
-        }
-        
         //switch on the HTTP status code
         switch (jqxhr.status) {
             case 200:
-                console.log("All good");
+                const new_thread = JSON.parse(data.responseText);
 
                 clearModalInputs("#modalNewThread", ['#txtTitle', '#txtBody']);
+
+                $("#tblThreads tbody").append("<tr><td><a class='btn' href='/category/thread/?thread_id=" + parseInt(new_thread.id) + "'>" + 
+                                              new_thread.title + "</a></td><td>" + new_thread.body + "</td>" +
+                                              "<td><span id='threadUp" + parseInt(new_thread.id) + "' class='thread-vote-up'>" +
+                                              "<i class='fas fa-arrow-up bounce-up'></i></span><span id='thread" + parseInt(new_thread.id) + "'" +
+                                              "> 0 </span><span id='threadDown" + parseInt(new_thread.id) + "' class='thread-vote-down'>" + 
+                                              "<i class='fas fa-arrow-down bounce-down'></i></span></td></tr>"
+                );
 
                 swal({
                     type: 'success',
                     title: 'Awesome!',
                     text: 'Your new thread was created',
-                    footer: "<a href='/catgeory/thread?thread_id=?'>Click here to go to this thread</a>",
+                    footer: "<a href='/category/thread/?thread_id=" + parseInt(new_thread.id) + "'>Click here to go to this thread</a>",
                   });
 
                 break;
@@ -198,6 +202,8 @@ function postNewComment(body, thread_id) {
                     title: 'Awesome!',
                     text: 'Your new comment was created'
                   });
+
+                  location.reload(true); //this is lazy, fix this later
 
                 break;
             case 403:
