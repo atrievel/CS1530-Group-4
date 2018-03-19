@@ -2,7 +2,7 @@
 * The AJAX requests for each route in order of declaration
 * /category
 * /category/thread
-* /category/thread/add_comment
+* /category/thread/comment
 * /category/thread/vote
 * /category/thread/comment/vote
 */
@@ -175,7 +175,7 @@ function postNewComment(body, thread_id) {
 
 
     let jqxhr = $.ajax({
-        url: "/category/thread/add_comment",
+        url: "/category/thread/comment",
         type: "POST",
         contentType: "applcation/json; charset=utf-8",
         dataType: "applcation/json; charset=utf-8",
