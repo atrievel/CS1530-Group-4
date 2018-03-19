@@ -276,7 +276,21 @@ def create_category():
         db.session.add(new_category)
         db.session.commit()
 
-        return Response("{'error': 'none'}", status=200, mimetype='application/json')
+        new_category_dict = {
+            'id': new_category.id,
+            'name': new_category.name,
+            'description': new_category.description
+        }
+
+        response = app.response_class (
+                response = json.dumps(new_category_dict),
+                status=200,
+                mimetype='application/json'
+        )
+
+        return response
+
+        #return Response("{'new_id': {0}}".format(new_category.id), status=200, mimetype='application/json')
 
 @app.route("/category/", methods=['GET'])
 def category():
@@ -328,9 +342,21 @@ def create_thread():
         db.session.add(new_thread)
         db.session.commit()
 
+        new_thread_dict = {
+            'id': new_thread.id,
+            'title': new_thread.title,
+            'body': new_thread.body
+        }
+
         # Check if the thread was inserted
         if new_thread.id:
-            return Response("{'error': 'none'}", status=200, mimetype='application/json')
+            response = app.response_class (
+                response=json.dumps(new_thread_dict),
+                status=200,
+                mimetype='application/json'
+            )
+
+            return response
         else:
             return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
             
@@ -354,7 +380,7 @@ def create_comment():
 
 @app.route('/category/thread/vote', methods=['POST'])
 @login_required
-def addPostVote():
+def thread_vote():
     if request.method == 'POST':
         # Parse the JSON string
         data = request.get_json(force=True)
@@ -368,7 +394,7 @@ def addPostVote():
         
 @app.route('/category/thread/comment/vote', methods=['POST'])
 @login_required
-def addCommentVote():
+def comment_vote():
     if request.method == 'POST':
         #Parse the JSON string
         data = request.get_json(force=True)
