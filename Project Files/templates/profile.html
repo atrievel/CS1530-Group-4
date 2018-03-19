@@ -271,7 +271,7 @@
                     //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
                     //TODO: add check for max length and email verification(?)
                     if(name.length > 0 && email.length > 0 && bio.length > 0) {
-                        editProfile(name, email, bio);
+                        editProfile(name, email, bio, pass1, pass2);
                         $("#modalEditProfile").modal('hide');
                         $('#txtName').val('');
                         $('#txtEmail').val('');

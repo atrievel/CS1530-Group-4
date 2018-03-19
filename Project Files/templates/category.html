@@ -90,12 +90,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for post in category %}
+                        {% for post in posts %}
                             <tr>
-                                <td><a class="btn" href="category/post_id?={{ post.id }}">{{ post.name }}</a></td>
-                                <td>{{ post.description }}</td>
+                                <td><a class="btn" href="/category/post/?post_id={{ post.0 }}">{{ post.1 }}</a></td>
+                                <td>{{ post.2 }}</td>
                                 <td><span id="postUp{{ post.id }}" class="post-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
-                                    {{ post.vote_count }}  
+                                    {{ post.3 }}  
                                     <span id="postDown{{ post.id }}" class="post-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
                                 </td>
                             </tr>
