@@ -15,7 +15,7 @@ function postNewCategory(name, description) {
     console.log(new_cat);
 
     let jqxhr = $.ajax({
-            url: "/categories",
+            url: "/category",
             type: "POST",
             contentType: "applcation/json; charset=utf-8",
             dataType: "applcation/json; charset=utf-8",

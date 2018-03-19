@@ -1,8 +1,10 @@
-function editProfile(name, email, bio) {
+function editProfile(name, email, bio, password, verify_password) {
     const profile_info = JSON.stringify({
         name: name.trim(),
         email: email.trim(),
-        bio: bio.trim()
+        biography: bio.trim(),
+        password: password.trim(),
+        verify_password = verify_password.trim()
     });
 
     console.log(profile_info);

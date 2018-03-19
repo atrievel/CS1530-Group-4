@@ -1,3 +1,7 @@
+* {
+    text-rendering: optimizelegibility;
+}
+
 .bootstrap_override {
     font-family: "Lato", serif !important;
 }
