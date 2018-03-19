@@ -333,7 +333,7 @@ def create_thread():
         else:
             return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
             
-@app.route("/category/thread/add_comment", methods=['POST'])
+@app.route("/category/thread/comment", methods=['POST'])
 @login_required
 def create_comment():
     if request.method == 'POST':
