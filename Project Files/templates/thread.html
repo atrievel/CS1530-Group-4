@@ -5,7 +5,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Comments in {{ post_name }}</title>
+    <title>Comments in {{ thread_name }}</title>
     <meta name="description" content="">
     <meta name="author" content="CodeFeed">
 
@@ -76,7 +76,7 @@
     ================================================== -->
     <div class="container">
         <div class="text-left my-3">
-            <h2 class="primary-text">Comment list for {{ post_name }} </h2>
+            <h2 class="primary-text">Comment list for {{ thread_name }} </h2>
         </div>
         <div class="jumbotron light-bg">
             <div class="container-fluid text-right">
@@ -107,7 +107,7 @@
             </table>
         </div>
 
-        <!-- Modal to add new post
+        <!-- Modal to add new thread
         ================================================== -->
         <div class="modal fade" id="modalNewComment" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="btnPostNewComment" class="btn btn-primary">Submit Post</button>
+                        <button type="button" id="btnPostNewComment" class="btn btn-primary">Submit Comment</button>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                         $('#txtBody').addClass("is-invalid");
                     }
                     else {
-                        postNewComment(body, getQueryStringValue("post_id"));
+                        postNewComment(body, getQueryStringValue("thread_id"));
                     }                   
                 });
             });
