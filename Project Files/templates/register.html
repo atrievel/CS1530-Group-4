@@ -52,6 +52,17 @@
             <div class="text-right">
                 <a class="btn btn-lg" href="/login">Return to Login</a>
             </div>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Oh no!</strong> {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
             <div class="text-left mb-2">
                 <h2 style="margin-top:0; margin-bottom:0">Sign up for CodeFeed</h2>
                 <small style="margin-top:0">We will never share your data with other third parties</small>

@@ -111,14 +111,16 @@ def register():
         current_date = datetime.now()
 
         try:
-            # assert all inputs are valid
             assert User.query.filter_by(username=username).first() is None
+        except:
+            flash('That username is already taken','error')
+            return render_template('register.html')
+
+        try:
             assert password == verify_password
             assert len(password) >= 8
-            #future: maybe verify the email here?
         except:
-            # if any asserts fall flash an error message
-            flash('Please check the entered information and try submitting again','error')
+            flash('The passwords do not match and/or are less than 8 characters long','error')
             return render_template('register.html')
 
         #otherwise add them as a new user
