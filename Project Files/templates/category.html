@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Threads in {{ category_name }}</title>
+    <title>Threads in {{ category_name }} | CodeFeed</title>
     <meta name="description" content="">
     <meta name="author" content="CodeFeed">
 
@@ -95,9 +94,9 @@
                         <tr>
                             <td><a class="btn" href="/category/thread/?thread_id={{ thread.0 }}">{{ thread.1 }}</a></td>
                             <td>{{ thread.2 }}</td>
-                            <td><span id="threadUp{{ thread.id }}" class="thread-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
-                                {{ thread.3 }}  
-                                <span id="threadDown{{ thread.id }}" class="thread-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
+                            <td><span id="threadUp{{ thread.0 }}" class="thread-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
+                                <span id="thread{{ thread.0 }}"> {{ thread.3 }} </span>     
+                                <span id="threadDown{{ thread.0 }}" class="thread-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
                             </td>
                         </tr>
                     {% endfor %}
@@ -159,7 +158,6 @@
         $(document).ready(function() {
             setupDataTable('tblThreads');
             setupVoteListeners('thread-vote', 'thread');
-
 
             //load the modal on a button click
             $("#btnAddNewThread").on('click touch', function() {

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
@@ -98,7 +97,7 @@
                             <td>{{ comment.4 }}</td>
                             <td>{{ comment.1 }}</td>
                             <td><span id="commentUp{{ comment.0 }}" class="comment-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
-                                {{ comment.3 }}  
+                                <span id="comment{{comment.0}}">{{ comment.3 }}</span>
                                 <span id="commentDown{{ comment.0 }}" class="comment-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
                             </td>
                         </tr>

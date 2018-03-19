@@ -12,8 +12,6 @@ function postNewCategory(name, description) {
         description: description.trim()
     });
 
-    console.log(new_cat);
-
     let jqxhr = $.ajax({
             url: "/category",
             type: "POST",
@@ -247,13 +245,11 @@ function postNewComment(body, thread_id) {
     });
 }
 
-function modidyThreadVote(thread_id, vote) {
+function modifyThreadVote(thread_id, vote) {
     const new_vote = JSON.stringify({
         thread_id: parseInt(thread_id),
         vote: parseInt(vote)
     });
-
-    console.log(new_vote);
 
     let jqxhr = $.ajax({
         url: "/category/thread/vote",
@@ -297,8 +293,6 @@ function modifyCommentVote(thread_id, comment_id, vote) {
         comment_id: parseInt(comment_id),
         vote: parseInt(vote)
     });
-
-    console.log(new_vote);
     
     let jqxhr = $.ajax({
         url: "/category/thread/comment/vote",
@@ -356,31 +350,67 @@ function setupVoteListeners(base_class, type) {
 
     $(up_class).on('click touch', function() {
         const other_id = this.id.replace("Up", "Down").trim();
+        const base_id = this.id.replace("Up", "").trim();
+
         $(this).removeClass('animated-not-clicked');
         $(this).toggleClass('animated-clicked');
         document.getElementById(other_id).classList.add('animated-not-clicked');
         document.getElementById(other_id).classList.remove('animated-clicked');
-        
+
+        let current_vote = parseInt(document.getElementById(base_id).innerText);
+
         if(type === 'thread') {
-            modifyThreadVote(this.id.replace(/\D/g,'').trim(), 1);
+            if(!$(this).hasClass('animated-clicked')) {
+                modifyThreadVote(this.id.replace(/\D/g,'').trim(), -1);
+                document.getElementById(base_id).innerText = (current_vote - 1);
+            }
+            else {
+                modifyThreadVote(this.id.replace(/\D/g,'').trim(), 1);
+                document.getElementById(base_id).innerText = (current_vote + 1);
+            }        
         }
         else if(type === 'comment') {
-            modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), 1);
+            if(!$(this).hasClass('animated-clicked')) {
+                modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), -1);
+                document.getElementById(base_id).innerText = (current_vote - 1);
+            }
+            else {
+                modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), 1);
+                document.getElementById(base_id).innerText = (current_vote + 1);
+            }  
         }
     });
 
     $(down_class).on('click touch', function() {
         const other_id = this.id.replace("Down", "Up").trim();
+        const base_id = this.id.replace("Down", "").trim();
+
         $(this).removeClass('animated-not-clicked');
         $(this).toggleClass('animated-clicked');
         document.getElementById(other_id).classList.add('animated-not-clicked');
         document.getElementById(other_id).classList.remove('animated-clicked');
 
+        let current_vote = parseInt(document.getElementById(base_id).innerText);
+
         if(type === 'thread') {
-            modifyThreadVote(this.id.replace(/\D/g,'').trim(), -1);
+            if($(this).hasClass('animated-clicked')) {
+                modifyThreadVote(this.id.replace(/\D/g,'').trim(), -1);
+                document.getElementById(base_id).innerText = (current_vote - 1);
+            }
+            else {
+                modifyThreadVote(this.id.replace(/\D/g,'').trim(), 1);
+                document.getElementById(base_id).innerText = (current_vote + 1);
+            }        
         }
         else if(type === 'comment') {
-            modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), -1);
+            if($(this).hasClass('animated-clicked')) {
+                modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), -1);
+                document.getElementById(base_id).innerText = (current_vote - 1);
+            }
+            else {
+                modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), 1);
+                document.getElementById(base_id).innerText = (current_vote + 1);
+            }  
         }
     });
 }
@@ -392,6 +422,5 @@ function clearModalInputs(modal, inputs) {
         $(e).val('');
         $(e).removeClass("is-valid");
         $(e).removeClass("is-invalid");
-        console.log($(e));
     });
 }
