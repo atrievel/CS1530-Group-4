@@ -91,14 +91,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for comment in post %}
+                        {% for comment in comments %}
                             <tr>
-                                <td>{{ comment.commentor_name }}</td>
-                                <td>{{ comment.date_created }}</td>
-                                <td>{{ comment.body }}</td>
-                                <td><span id="commentUp{{ comment.id }}" class="comment-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
-                                    {{ comment.comment_vote }}  
-                                    <span id="commentDown{{ comment.id }}" class="comment-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
+                                <td>{{ comment.2 }}</td>
+                                <td>{{ comment.4 }}</td>
+                                <td>{{ comment.1 }}</td>
+                                <td><span id="commentUp{{ comment.0 }}" class="comment-vote-up"><i class="fas fa-arrow-up bounce-up"></i></span>  
+                                    {{ comment.3 }}  
+                                    <span id="commentDown{{ comment.0 }}" class="comment-vote-down"><i class="fas fa-arrow-down bounce-down"></i></span>
                                 </td>
                             </tr>
                         {% endfor %}

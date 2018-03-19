@@ -35,7 +35,7 @@ def get_thread_votes(id):
 
 # Returns the tally of upvotes and downvotes on the given comment     
 def get_comment_votes(id):
-    votes = CommentVote.query.filter_by(thread_id=id).all()
+    votes = CommentVote.query.filter_by(comment_id=id).all()
     count = 0
     for vote in votes:
         if vote.value:
@@ -306,8 +306,8 @@ def post():
         
         # Create a list of tuples containg each comment's id, user, body, creation_date and vote count.
         for comment in comms:
-            commenter = User.query.filter_by(id = comment.user_id).first()
-            comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id)))
+            commenter = User.query.filter_by(id=comment.user_id).first()
+            comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id), comment.creation_date.strftime("%m/%d/%Y")))
         
         return render_template('post.html',comments=comments, post_name=thread.title, vote_count = get_thread_votes(thread.id))
     else:
