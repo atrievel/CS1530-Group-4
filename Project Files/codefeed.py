@@ -181,9 +181,9 @@ def profile():
     else:
         return render_template('profile.html')
 
-@app.route("/profile/<int:user_id>", methods=['GET'])
-def getProfile(user_id):
-    user = User.query.filter_by(id=user_id).first()
+@app.route("/profile/<id>", methods=['GET'])
+def getProfile(id):
+    user = User.query.filter_by(id=id).first()
     return render_template('profile.html', id=user.id, username=user.username,
                                            name=user.name, email=user.email,
                                            biography=user.biography,
