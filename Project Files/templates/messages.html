@@ -76,7 +76,7 @@
             <h2 class="primary-text">Messages</h2>
         </div>
         <div class="jumbotron light-bg">
-            <div class="container-fluid text-right">
+            <div class="container-fluid text-right mb-4">
                 <button id="btnSendMessage" class="btn btn-md btn-info"><i class="fas fa-pencil-alt"></i> New Message</button>
             </div>
             <table id="tblMessages" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -95,6 +95,7 @@
                                 <button class="btn btn-md btn-info btnReply mr-2" style="float:right"><i class="fas fa-reply"></i></button>
                             </td>
                             <td class="message-body">{{ message.body }}</td>
+                            <meta content="{{ message.body }}">
                             <td>{{ message.date }}</td>
                         </tr>
                     {% endfor %}
@@ -167,7 +168,7 @@
         });
 
         $('.see-more').click(function() {
-            $(this).parent().html("{{ message.body }}");
+            $(this).parent().html($(this).siblings('meta').attr('content'));
         });
 
         //load the modal on a button click
