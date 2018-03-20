@@ -229,7 +229,7 @@ function removeFriend(user) {
 
 function addFriend(user) {
     const remove_friend = JSON.stringify({
-        user2_id: user.trim()
+        username: user.trim()
     });
 
     console.log(remove_friend);
@@ -256,7 +256,7 @@ function addFriend(user) {
                 swal({
                     type: 'success',
                     title: 'Awesome!',
-                    text: 'Friend successfully added',
+                    text: 'Friend request sent',
                   });
 
                 break;
@@ -300,7 +300,7 @@ function addFriend(user) {
 
 function acceptRequest(user) {
     const request = JSON.stringify({
-        user1_id: user.trim()
+        username: user.trim()
     });
 
     console.log(request);

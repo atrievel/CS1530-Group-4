@@ -46,8 +46,12 @@ def get_comment_votes(id):
 
 # Returns true if the two ids are freinds
 def are_friends(id1, id2):
-    return (Friendship.query.filter_by(user1_id = id1, user2_id = id2).first() is not None or
-    Friendship.query.filter_by(user1_id = id2, user2_id = id1).first())
+    return (Friendship.query.filter(Friendship.user1_id == id1).filter(Friendship.user2_id == id2).first() is not None) \
+        or (Friendship.query.filter(Friendship.user1_id == id2).filter(Friendship.user2_id == id1).first() is not None)
+
+def get_user_id(username):
+    res = User.query.filter_by(username=username).first()
+    return res.id if res else None
 
 @app.cli.command('initdb')
 def initdb_command():
@@ -178,7 +182,7 @@ def profile():
         return render_template('profile.html')
 
 @app.route("/profile/<int:user_id>", methods=['GET'])
-def get_profile(user_id):
+def getProfile(user_id):
     user = User.query.filter_by(id=user_id).first()
     return render_template('profile.html', id=user.id, username=user.username,
                                            name=user.name, email=user.email,
@@ -217,35 +221,52 @@ def getMessages():
 
 @app.route("/profile/friends", methods=['GET','POST'])
 @login_required
-def listFriends():
+def friends():
     user = User.query.filter_by(id=session['user_id']).first()
 
     if request.method == 'GET':
-        # Get a list of all messages sent to the current user
-        friends = Frienship.query.filter_by(user1_id=user.id).all()
-        friends_parsed = []
-        friends.append(Frienship.query.filter_by(user2_id=user.id).all())
-
-        # Create a list of tuples containg each messages sender, body, and creation_date
-        for friend in friends:
-            friends_parsed.append((friend.id, friend.username))
-
-        return render_template('friends.html', friends=friends_parsed)
+        friends = User.query.join(Friendship, User.id == case([
+                                                                (Friendship.user1_id == user.id, Friendship.user2_id),
+                                                                (Friendship.user2_id == user.id, Friendship.user1_id)
+                                                                ])).\
+                                                                filter(or_(Friendship.user1_id == user.id, Friendship.user2_id == user.id)).\
+                                                                filter(Friendship.creation_date != None).all()
+        requests = User.query.join(Friendship, User.id == case([
+                                                                (Friendship.user1_id == user.id, Friendship.user2_id),
+                                                                (Friendship.user2_id == user.id, Friendship.user1_id)
+                                                                ])).\
+                                                                filter(Friendship.user2_id == user.id).\
+                                                                filter(Friendship.creation_date == None).all()
+        return render_template('friends.html', friends=friends, requests=requests)
     elif request.method == 'POST':
         # Parse the JSON string
         data = request.get_json(force=True)
-        user2_id = int(data['user2_id'])
+        user2_id = get_user_id(data['username'])
 
         try:
-            assert not are_friends(user.id, user2.id)
+            assert not are_friends(user.id, user2_id)
         except:
-            return Response("{'error': 'no friends'", status=403, mimetype='application/json')
+            return Response("{'error': 'already friends'", status=403, mimetype='application/json')
 
+        friend_request = Friendship(user.id, user2_id, None)
+        db.session.add(friend_request)
+        db.session.commit()
         return Response("{'error': 'none'", status=200, mimetype='application/json')
     else:
         return render_template('friends.html', friends=None)
 
-   #TO DO
+@app.route("/profile/friends/requests", methods=['POST'])
+def acceptRequests():
+    if request.method == 'POST':
+        data = request.get_json(force=True)
+        user1_id = get_user_id(data['username'])
+        user = User.query.filter_by(id=session['user_id']).first()
+
+        friendship = Friendship.query.filter(Friendship.user1_id == user1_id).filter(Friendship.user2_id == user.id).first()
+        friendship.creation_date = datetime.now()
+        db.session.commit()
+
+        return Response("{'error': 'none'}", status=200, mimetype='application/json')
 
 @app.route("/categories", methods=['GET'])
 def categories():
