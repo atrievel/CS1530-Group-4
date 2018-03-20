@@ -22,7 +22,7 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-# Returns the tally of upvotes and downvotes on the given thread    
+# Returns the tally of upvotes and downvotes on the given thread
 def get_thread_votes(id):
     votes = ThreadVote.query.filter_by(thread_id=id).all()
     count = 0
@@ -33,7 +33,7 @@ def get_thread_votes(id):
             count-=1
     return count
 
-# Returns the tally of upvotes and downvotes on the given comment     
+# Returns the tally of upvotes and downvotes on the given comment
 def get_comment_votes(id):
     votes = CommentVote.query.filter_by(comment_id=id).all()
     count = 0
@@ -43,8 +43,8 @@ def get_comment_votes(id):
         else:
             count-=1
     return count
-    
-# Returns true if the two ids are freinds    
+
+# Returns true if the two ids are freinds
 def are_friends(id1, id2):
     return (Friendship.query.filter_by(user1_id = id1, user2_id = id2).first() is not None or
     Friendship.query.filter_by(user1_id = id2, user2_id = id1).first())
@@ -63,7 +63,7 @@ def index():
     num_posts = db.session.query(Thread).count()
     num_groups = db.session.query(Category).count()
     num_up_votes = db.session.query(ThreadVote).filter(ThreadVote.value == True).count() + db.session.query(ThreadVote).filter(CommentVote.value == True).count()
-    
+
     return render_template('landing.html', num_users=num_users, num_posts=num_posts,num_groups=num_groups,num_up_votes=num_up_votes)
 
 @app.route("/login", methods=['GET','POST'])
@@ -74,29 +74,29 @@ def login():
         # Get the user based on the entered username
         user = User.query.filter_by(username=request.form['username']).first()
 
-        if user: 
+        if user:
             pw_hash = user.password_hash #get the password hash from the db
 
-            if bcrypt.check_password_hash(pw_hash, request.form['password']):    
+            if bcrypt.check_password_hash(pw_hash, request.form['password']):
                 session['user_id'] = user.id #set the session varaible for the user
                 user.last_login = datetime.now()
-                db.session.commit() 
+                db.session.commit()
                 return redirect(url_for('profile'))
             else:
-                flash('Credentials not verified. Please try again or register for a new account','error')
+                flash('Credentials not verified. Please try again or register for a new account.','error')
                 return render_template('login.html')
         else:
-            flash('Credentials not verified. Please try again or register for a new account','error')
+            flash('Credentials not verified. Please try again or register for a new account.','error')
             return render_template('login.html')
     else:
         return render_template('login.html')
-        
+
 @app.route("/logout", methods=['GET'])
 @login_required
 def logout():
     session.clear()
     return redirect(url_for('login'))
-        
+
 @app.route("/register", methods=['GET','POST'])
 def register():
     if request.method == 'GET':
@@ -127,13 +127,13 @@ def register():
         # generate the hash for the password
         pw_hash = bcrypt.generate_password_hash(password)
         new_user = User(username, pw_hash, name, email, "", current_date, True, current_date)
-      
+
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
     else:
         return render_template('register.html')
-        
+
 @app.route("/profile", methods=['GET','POST'])
 @login_required
 def profile():
@@ -191,23 +191,23 @@ def getMessages():
     if request.method == 'GET':
         messages = Message.query.filter_by(user2_id=user.id).all()
         messages_parsed = []
-        
+
         # Create a list of tuples containg each messages sender, body, and creation_date
         for message in messages:
             messages_parsed.append((message.username, message.body, message.creation_date))
-        
+
         return render_template('messages.html', messages=messages_parsed)
-    elif request.method == 'POST':     
+    elif request.method == 'POST':
         # Parse the JSON string
         new_message = request.get_json(force=True)
-        description = string(new_message['description'])  
+        description = string(new_message['description'])
         recipient = User.query.filter_by(name=new_message['name']).first()
-        
+
         try:
             assert are_friends(user.id, recipient.id)
         except:
             return Response("{'error': 'users not friends'", status=403, mimetype='application/json')
-        
+
         return Response("{'error': 'none'", status=200, mimetype='application/json')
     else:
         return render_template('messages.html', messages=None)
@@ -222,27 +222,27 @@ def listFriends():
         friends = Frienship.query.filter_by(user1_id=user.id).all()
         friends_parsed = []
         friends.append(Frienship.query.filter_by(user2_id=user.id).all())
-        
+
         # Create a list of tuples containg each messages sender, body, and creation_date
         for friend in friends:
             friends_parsed.append((friend.id, friend.username))
-        
-        return render_template('friends.html', friends=friends_parsed) 
-    elif request.method == 'POST':        
+
+        return render_template('friends.html', friends=friends_parsed)
+    elif request.method == 'POST':
         # Parse the JSON string
         data = request.get_json(force=True)
         user2_id = int(data['user2_id'])
-        
+
         try:
             assert not are_friends(user.id, user2.id)
         except:
             return Response("{'error': 'no friends'", status=403, mimetype='application/json')
-        
+
         return Response("{'error': 'none'", status=200, mimetype='application/json')
     else:
-        return render_template('friends.html', friends=None) 
+        return render_template('friends.html', friends=None)
 
-   #TO DO     
+   #TO DO
 
 @app.route("/categories", methods=['GET'])
 def categories():
@@ -258,7 +258,7 @@ def categories():
         return render_template('categories.html', categories=categories)
     else:
         return render_template('categories.html', categories=None)
-        
+
 @app.route("/category", methods=['POST'])
 @login_required
 def create_category():
@@ -302,11 +302,11 @@ def category():
 
         # Get a list of all threads in the category
         threads = Thread.query.filter_by(category_id=category_id).all()
-        
+
         # Create a list of tuples containg each threads id, title, body, and vote count.
         for thread in threads:
             thread_list.append((thread.id, thread.title, thread.body, get_thread_votes(thread.id)))
-        
+
         return render_template('category.html', threads=thread_list, category_name=category.name)
     else:
         return url_for('listCategories')
@@ -320,16 +320,16 @@ def thread():
 
         # Get a list of all comments in the thread
         comms = Comment.query.filter_by(thread_id=thread_id).all()
-        
+
         # Create a list of tuples containg each comment's id, user, body, creation_date and vote count.
         for comment in comms:
             commenter = User.query.filter_by(id=comment.user_id).first()
             comments.append((comment.id, comment.body, commenter.name, get_comment_votes(comment.id), comment.creation_date.strftime("%m/%d/%Y")))
-        
+
         return render_template('thread.html',comments=comments, thread_name=thread.title, vote_count = get_thread_votes(thread.id))
     else:
         return url_for('listCategories')
-    
+
 @app.route("/category/thread", methods=['POST'])
 @login_required
 def create_thread():
@@ -359,7 +359,7 @@ def create_thread():
             return response
         else:
             return Response("{'error': 'insert error'}", status=403, mimetype='application/json')
-            
+
 @app.route("/category/thread/comment", methods=['POST'])
 @login_required
 def create_comment():
@@ -371,7 +371,7 @@ def create_comment():
         new_comment = Comment(data['thread_id'], session['user_id'], data['body'], datetime.now())
         db.session.add(new_comment)
         db.session.commit()
-        
+
         # Check if the comment was inserted
         if new_comment.id:
             return Response("{'error': 'none'}", status=200, mimetype='application/json')
@@ -384,21 +384,21 @@ def thread_vote():
     if request.method == 'POST':
         # Parse the JSON string
         data = request.get_json(force=True)
-  
+
         # Add the vote to the database
         new_vote = ThreadVote(data['thread_id'], session['user_id'], data['vote']==1)
         db.session.add(new_vote)
         db.session.commit()
 
         return Response("{'error': 'none'}", status=200, mimetype='application/json')
-        
+
 @app.route('/category/thread/comment/vote', methods=['POST'])
 @login_required
 def comment_vote():
     if request.method == 'POST':
         #Parse the JSON string
         data = request.get_json(force=True)
-        
+
         #Add the vote to the database
         new_vote = CommentVote(data['comment_id'], session['user_id'], data['vote']==1)
         db.session.add(new_vote)
