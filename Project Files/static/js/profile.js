@@ -4,7 +4,7 @@ function editProfile(name, email, bio, password, verify_password) {
         email: email.trim(),
         biography: bio.trim(),
         password: password.trim(),
-        verify_password = verify_password.trim()
+        verify_password: verify_password.trim()
     });
 
     console.log(profile_info);
@@ -28,9 +28,16 @@ function editProfile(name, email, bio, password, verify_password) {
             case 200:
                 console.log("All good");
 
-                $('#name').html(name);
-                $('#email').html(email);
-                $('#bio').html(bio);
+                if (name.length > 0) {
+                    $('#name').html(name);
+                }
+                if (email.length > 0) {
+                    $('#email').attr('href', 'mailto:' + email);
+                    $('#email').text(email);
+                }
+                if (bio.length > 0) {
+                    $('#bio').html(bio);
+                }
 
                 swal({
                     type: 'success',

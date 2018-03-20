@@ -150,6 +150,7 @@ def profile():
 
         try:
             name = updated_profile['name']
+            email = updated_profile['email']
             password = updated_profile['password']
             verify_password = updated_profile['verify_password']
             biography = updated_profile['biography']
@@ -161,14 +162,16 @@ def profile():
         except:
             return Response("{'updated': false}", status=403, mimetype='application/json')
 
-        user.name = name
-        user.email = email
-        user.biography = biography
-        if password is not None:
+        if name is not None and len(name) != 0:
+            user.name = name
+        if email is not None and len(email) != 0:
+            user.email = email
+        if biography is not None and len(biography) != 0:
+            user.biography = biography
+        if password is not None and len(password) != 0:
             pw_hash = bcrypt.generate_password_hash(password)
             user.password_hash = pw_hash
 
-        db.session.update(user)
         db.session.commit()
         return Response("{'updated': true}", status=200, mimetype='application/json')
     else:
