@@ -150,14 +150,14 @@ def profile():
                                                    creation_date=user.creation_date.strftime("%m/%d/%Y"),
                                                    last_login=user.last_login.strftime("%m/%d/%Y"))
     elif request.method == 'POST':
-        updated_profile = request.get_json(force=True)
+        data = request.get_json(force=True)
 
         try:
-            name = updated_profile['name']
-            email = updated_profile['email']
-            password = updated_profile['password']
-            verify_password = updated_profile['verify_password']
-            biography = updated_profile['biography']
+            name = data['name']
+            email = data['email']
+            password = data['password']
+            verify_password = data['verify_password']
+            biography = data['biography']
         except (KeyError, TypeError, ValueError):
             return Response("{'error': 'invalid JSON'}", status=403, mimetype='application/json')
 
@@ -192,28 +192,29 @@ def getProfile(id):
 
 @app.route("/profile/messages", methods=['GET','POST'])
 @login_required
-def getMessages():
+def messages():
     user = User.query.filter_by(id=session['user_id']).first()
 
     if request.method == 'GET':
-        messages = Message.query.filter_by(user2_id=user.id).all()
-        messages_parsed = []
+        messages = User.query.join(Message, User.id == Message.user1_id).filter(Message.user2_id == user.id).\
+                              with_entities(Message.user1_id, User.username, Message.body, Message.creation_date).all()
 
-        # Create a list of tuples containg each messages sender, body, and creation_date
-        for message in messages:
-            messages_parsed.append((message.username, message.body, message.creation_date))
-
-        return render_template('messages.html', messages=messages_parsed)
+        return render_template('messages.html', messages=messages)
     elif request.method == 'POST':
         # Parse the JSON string
-        new_message = request.get_json(force=True)
-        description = string(new_message['description'])
-        recipient = User.query.filter_by(name=new_message['name']).first()
+        data = request.get_json(force=True)
+        recipient_id = get_user_id(data['username'])
+        body = data['body']
+        recipient = User.query.filter(User.id == recipient_id).first()
 
         try:
             assert are_friends(user.id, recipient.id)
         except:
             return Response("{'error': 'users not friends'", status=403, mimetype='application/json')
+
+        message = Message(user.id, recipient_id, body, datetime.now())
+        db.session.add(message)
+        db.session.commit()
 
         return Response("{'error': 'none'", status=200, mimetype='application/json')
     else:
@@ -230,13 +231,15 @@ def friends():
                                                                 (Friendship.user2_id == user.id, Friendship.user1_id)
                                                                 ])).\
                                                                 filter(or_(Friendship.user1_id == user.id, Friendship.user2_id == user.id)).\
-                                                                filter(Friendship.creation_date != None).all()
+                                                                filter(Friendship.creation_date != None).\
+                                                                with_entities(User.username, User.id, Friendship.creation_date).all()
         requests = User.query.join(Friendship, User.id == case([
                                                                 (Friendship.user1_id == user.id, Friendship.user2_id),
                                                                 (Friendship.user2_id == user.id, Friendship.user1_id)
                                                                 ])).\
                                                                 filter(Friendship.user2_id == user.id).\
-                                                                filter(Friendship.creation_date == None).all()
+                                                                filter(Friendship.creation_date == None).\
+                                                                with_entities(User.id, User.username, User.name).all()
         return render_template('friends.html', friends=friends, requests=requests)
     elif request.method == 'POST':
         # Parse the JSON string

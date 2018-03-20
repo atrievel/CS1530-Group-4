@@ -84,9 +84,9 @@ function editProfile(name, email, bio, password, verify_password) {
     });
 }
 
-function postNewMessage(user, body) {
+function sendMessage(user, body) {
     const new_message = JSON.stringify({
-        user: user.trim(),
+        username: user.trim(),
         body: body.trim(),
     });
 

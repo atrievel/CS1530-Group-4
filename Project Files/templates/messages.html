@@ -91,12 +91,12 @@
                     {% for message in messages %}
                         <tr>
                             <td>
-                                <a class="primary-text" style="vertical-align: middle" href="profile/profile_id?={{ message.friend_id }}">{{ message.user1 }}</a>
+                                <a class="primary-text" style="vertical-align: middle" href="/profile/{{ message.id }}">{{ message.username }}</a>
                                 <button class="btn btn-md btn-info btnReply mr-2" style="float:right"><i class="fas fa-reply"></i></button>
                             </td>
                             <td class="message-body">{{ message.body }}</td>
                             <meta content="{{ message.body }}">
-                            <td>{{ message.date }}</td>
+                            <td>{{ message.creation_date.strftime("%I:%M %m/%d/%Y") }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -205,7 +205,7 @@
 
             //if both the username and body are not blank, pass the data to the server, clear the modal, and hide the modal
             if(username.length > 0 && body.length > 0) {
-                postNewMessage(username, body);
+                sendMessage(username, body);
                 $("#modalNewMessage").modal('hide');
                 $('#txtUsername').val('');
                 $('#txtBody').val('');
@@ -217,44 +217,6 @@
         $(".btnReply").on('click touch', function() {
             $("#modalNewMessage").modal('show');
             $('#txtUsername').val($(this).siblings('a').text());
-        });
-
-        //run checks after the modal fields are completed and submit if they pass
-        $("#btnPostNewMessage").on('click touch', function() {
-            const user = $('#txtUser').val();
-            const body = $('#txtBody').val();
-
-            //assert the user is not blank
-            //add valid/invalid css if it is not/is blank
-            if(user.length <= 0) {
-                $('#txtUser').removeClass("is-valid");
-                $('#txtUser').addClass("is-invalid");
-            }
-            else {
-                $('#txtUser').removeClass("is-invalid");
-                $('#txtUser').addClass("is-valid");
-            }
-
-            //assert the message body is not blank
-            //add valid/invalid css if it is not/is blank
-            if(body.length <= 0) {
-                $('#txtBody').removeClass("is-valid");
-                $('#txtBody').addClass("is-invalid");
-            }
-            else {
-                $('#txtBody').removeClass("is-invalid");
-                $('#txtBody').addClass("is-valid");
-            }
-
-            //if both the user and body are not blank, pass the data to the server, clear the modal, and hide the modal
-            if(user.length > 0 && body.length > 0) {
-                postNewMessage(user, body);
-                $("#modalNewMessage").modal('hide');
-                $('#txtUser').val('');
-                $('#txtBody').val('');
-                $('#txtUser').removeClass("is-valid");
-                $('#txtBody').removeClass("is-valid");
-            }
         });
     </script>
 </body>
