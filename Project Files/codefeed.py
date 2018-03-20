@@ -196,8 +196,13 @@ def messages():
     user = User.query.filter_by(id=session['user_id']).first()
 
     if request.method == 'GET':
-        messages = User.query.join(Message, User.id == Message.user1_id).filter(Message.user2_id == user.id).\
-                              with_entities(Message.user1_id, User.username, Message.body, Message.creation_date).all()
+        messages = User.query.join(Message, User.id == case([
+                                                                (Message.user1_id == user.id, Message.user2_id),
+                                                                (Message.user2_id == user.id, Message.user1_id)
+                                                            ])).\
+                                                            filter(or_(Message.user1_id == user.id, Message.user2_id == user.id)).\
+                                                            with_entities(Message.user1_id, User.username, Message.body, Message.creation_date).\
+                                                            order_by(Message.creation_date.desc()).all()
 
         return render_template('messages.html', messages=messages)
     elif request.method == 'POST':
@@ -232,14 +237,14 @@ def friends():
                                                                 ])).\
                                                                 filter(or_(Friendship.user1_id == user.id, Friendship.user2_id == user.id)).\
                                                                 filter(Friendship.creation_date != None).\
-                                                                with_entities(User.username, User.id, Friendship.creation_date).all()
+                                                                with_entities(User.id, User.username, User.name, Friendship.creation_date).all()
         requests = User.query.join(Friendship, User.id == case([
                                                                 (Friendship.user1_id == user.id, Friendship.user2_id),
                                                                 (Friendship.user2_id == user.id, Friendship.user1_id)
                                                                 ])).\
                                                                 filter(Friendship.user2_id == user.id).\
                                                                 filter(Friendship.creation_date == None).\
-                                                                with_entities(User.id, User.username, User.name).all()
+                                                                with_entities(User.id, User.username).all()
         return render_template('friends.html', friends=friends, requests=requests)
     elif request.method == 'POST':
         # Parse the JSON string
