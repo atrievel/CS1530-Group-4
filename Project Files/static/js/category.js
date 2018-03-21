@@ -15,8 +15,8 @@ function postNewCategory(name, description) {
     let jqxhr = $.ajax({
             url: "/category",
             type: "POST",
-            contentType: "applcation/json; charset=utf-8",
-            dataType: "applcation/json; charset=utf-8",
+            contentType: "application/json; charset=utf-8",
+            dataType: "application/json; charset=utf-8",
             cache: false,
             data: new_cat     
         })
@@ -95,8 +95,8 @@ function postNewThread(title, body, category_id) {
     let jqxhr = $.ajax({
         url: "/category/thread",
         type: "POST",
-        contentType: "applcation/json; charset=utf-8",
-        dataType: "applcation/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
+        dataType: "application/json; charset=utf-8",
         cache: false,
         data: new_thread  
     })
@@ -179,8 +179,8 @@ function postNewComment(body, thread_id) {
     let jqxhr = $.ajax({
         url: "/category/thread/comment",
         type: "POST",
-        contentType: "applcation/json; charset=utf-8",
-        dataType: "applcation/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
+        dataType: "application/json; charset=utf-8",
         cache: false,
         data: new_comment     
     })
@@ -260,8 +260,8 @@ function modifyThreadVote(thread_id, vote) {
     let jqxhr = $.ajax({
         url: "/category/thread/vote",
         type: "POST",
-        contentType: "applcation/json; charset=utf-8",
-        dataType: "applcation/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
+        dataType: "application/json; charset=utf-8",
         cache: false,
         data: new_vote     
     })
@@ -303,8 +303,8 @@ function modifyCommentVote(thread_id, comment_id, vote) {
     let jqxhr = $.ajax({
         url: "/category/thread/comment/vote",
         type: "POST",
-        contentType: "applcation/json; charset=utf-8",
-        dataType: "applcation/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8",
+        dataType: "application/json; charset=utf-8",
         cache: false,
         data: new_vote     
     })
