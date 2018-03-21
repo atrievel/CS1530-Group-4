@@ -76,7 +76,7 @@
             <div class="col-md-6">
                 <div class="text-left my-3">
                     <h2 id="name" class="primary-text" style="margin-bottom: 0">{{ name }}</h2>
-                    <h5 class="light-text" style="margin-bottom: 1.8rem">>{{ username }}</h5>
+                    <h5 id="username" class="light-text" style="margin-bottom: 1.8rem">>{{ username }}</h5>
                 </div>
             </div>
             {% if session["user_id"] == id %}
@@ -88,9 +88,13 @@
             {% endif %}
         </div>
         <div class="jumbotron light-bg">
-            {% if session["user_id"] == id %}
+            {% if session["user_id"] %}
                 <div class="container-fluid text-right p-0">
-                    <button id="btnEditProfile" class="btn btn-md btn-info mb-4"><i class="fas fa-edit"></i> Edit Profile</button>
+                    {% if session["user_id"] == id %}
+                        <button id="btnEditProfile" class="btn btn-md btn-info mb-4"><i class="fas fa-edit"></i> Edit Profile</button>
+                    {% elif  not friends %}
+                        <button id="btnAddFriendProfile" class="btn btn-md btn-success mb-4"><i class="fas fa-plus-square"></i> Send Friend Request</button>
+                    {% endif %}
                 </div>
             {% endif %}
             <div class="row">
@@ -320,6 +324,10 @@
                 $('#txtPass2').removeClass("is-invalid");
                 valid = false;
             }
+        });
+
+        $("#btnAddFriendProfile").on('click touch', function() {
+            addFriend($('#username').text().substring(1));
         });
     </script>
 </body>

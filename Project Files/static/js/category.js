@@ -18,9 +18,9 @@ function postNewCategory(name, description) {
             contentType: "application/json; charset=utf-8",
             dataType: "application/json; charset=utf-8",
             cache: false,
-            data: new_cat     
+            data: new_cat
         })
-    
+
         .always(function (data, textStatus) {
             //switch on the HTTP status code
             switch (jqxhr.status) {
@@ -29,7 +29,7 @@ function postNewCategory(name, description) {
 
                     clearModalInputs("#modalNewCategory", ['#txtCategoryName', '#txtDescription']);
 
-                    $("#tblCategories tbody").append("<tr><td><a class='btn' href='/category/?category_id=" + parseInt(new_cat.id) + "'>" + 
+                    $("#tblCategories tbody").append("<tr><td><a class='btn' href='/category/?category_id=" + parseInt(new_cat.id) + "'>" +
                                                      new_cat.name + "</a></td><td>" + new_cat.description + "</td></tr>"
                     );
 
@@ -65,11 +65,11 @@ function postNewCategory(name, description) {
                       });
 
                     break;
-                case 500: 
+                case 500:
                     console.log("Backend team broke something");
 
                     $("#modalNewCategory").modal('show');
-                    
+
                     swal({
                         type: 'error',
                         title: 'Oops...',
@@ -81,7 +81,7 @@ function postNewCategory(name, description) {
                     //probably won't need this in production, but here's where we get the response (undefined if error)
                     console.log(data.responseJSON);
                     break;
-            }    
+            }
     });
 }
 
@@ -98,7 +98,7 @@ function postNewThread(title, body, category_id) {
         contentType: "application/json; charset=utf-8",
         dataType: "application/json; charset=utf-8",
         cache: false,
-        data: new_thread  
+        data: new_thread
     })
 
     .always(function (data, textStatus) {
@@ -109,11 +109,11 @@ function postNewThread(title, body, category_id) {
 
                 clearModalInputs("#modalNewThread", ['#txtTitle', '#txtBody']);
 
-                $("#tblThreads tbody").append("<tr><td><a class='btn' href='/category/thread/?thread_id=" + parseInt(new_thread.id) + "'>" + 
+                $("#tblThreads tbody").append("<tr><td><a class='btn' href='/category/thread/?thread_id=" + parseInt(new_thread.id) + "'>" +
                                               new_thread.title + "</a></td><td>" + new_thread.body + "</td>" +
                                               "<td><span id='threadUp" + parseInt(new_thread.id) + "' class='thread-vote-up'>" +
                                               "<i class='fas fa-arrow-up bounce-up'></i></span><span id='thread" + parseInt(new_thread.id) + "'" +
-                                              "> 0 </span><span id='threadDown" + parseInt(new_thread.id) + "' class='thread-vote-down'>" + 
+                                              "> 0 </span><span id='threadDown" + parseInt(new_thread.id) + "' class='thread-vote-down'>" +
                                               "<i class='fas fa-arrow-down bounce-down'></i></span></td></tr>"
                 );
 
@@ -139,7 +139,7 @@ function postNewThread(title, body, category_id) {
                 break;
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
-                
+
                 $("#modalNewThread").modal('show');
 
                 swal({
@@ -149,7 +149,7 @@ function postNewThread(title, body, category_id) {
                   });
 
                 break;
-            case 500: 
+            case 500:
                 console.log("Backend team broke something");
 
                 $("#modalNewThread").modal('show');
@@ -165,7 +165,7 @@ function postNewThread(title, body, category_id) {
                 //probably won't need this in production, but here's where we get the response (undefined if error)
                 console.log(data.responseJSON);
                 break;
-        }   
+        }
     });
 }
 
@@ -182,14 +182,14 @@ function postNewComment(body, thread_id) {
         contentType: "application/json; charset=utf-8",
         dataType: "application/json; charset=utf-8",
         cache: false,
-        data: new_comment     
+        data: new_comment
     })
 
     .always(function (data, textStatus) {
         if (textStatus !== 'success') {
             console.log(textStatus);
         }
-        
+
         //switch on the HTTP status code
         switch (jqxhr.status) {
             case 200:
@@ -201,9 +201,11 @@ function postNewComment(body, thread_id) {
                     type: 'success',
                     title: 'Awesome!',
                     text: 'Your new comment was created'
-                  });
-
-                  location.reload(true); //this is lazy, fix this later
+                }).then((result) => {
+                    if (result.value) {
+                        location.reload(true);
+                    }
+                });
 
                 break;
             case 403:
@@ -231,7 +233,7 @@ function postNewComment(body, thread_id) {
                   });
 
                 break;
-            case 500: 
+            case 500:
                 console.log("Backend team broke something");
 
                 $("#modalNewComment").modal('show');
@@ -247,7 +249,7 @@ function postNewComment(body, thread_id) {
                 //probably won't need this in production, but here's where we get the response (undefined if error)
                 console.log(data.responseJSON);
                 break;
-        }   
+        }
     });
 }
 
@@ -263,14 +265,14 @@ function modifyThreadVote(thread_id, vote) {
         contentType: "application/json; charset=utf-8",
         dataType: "application/json; charset=utf-8",
         cache: false,
-        data: new_vote     
+        data: new_vote
     })
 
     .always(function (data, textStatus) {
         if (textStatus !== 'success') {
             console.log(textStatus);
         }
-        
+
         //switch on the HTTP status code
         switch (jqxhr.status) {
             case 200:
@@ -282,14 +284,14 @@ function modifyThreadVote(thread_id, vote) {
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
                 break;
-            case 500: 
+            case 500:
                 console.log("Backend team broke something");
                 break;
             default:
                 //probably won't need this in production, but here's where we get the response (undefined if error)
                 console.log(data.responseJSON);
                 break;
-        }   
+        }
     });
 }
 
@@ -299,21 +301,21 @@ function modifyCommentVote(thread_id, comment_id, vote) {
         comment_id: parseInt(comment_id),
         vote: parseInt(vote)
     });
-    
+
     let jqxhr = $.ajax({
         url: "/category/thread/comment/vote",
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "application/json; charset=utf-8",
         cache: false,
-        data: new_vote     
+        data: new_vote
     })
 
     .always(function (data, textStatus) {
         if (textStatus !== 'success') {
             console.log(textStatus);
         }
-        
+
         //switch on the HTTP status code
         switch (jqxhr.status) {
             case 200:
@@ -325,22 +327,22 @@ function modifyCommentVote(thread_id, comment_id, vote) {
             case 405:
                 console.log("Try connecting to Flask first. Or someone didn't add the POST method to this route");
                 break;
-            case 500: 
+            case 500:
                 console.log("Backend team broke something");
                 break;
             default:
                 //probably won't need this in production, but here's where we get the response (undefined if error)
                 console.log(data.responseJSON);
                 break;
-        }   
+        }
     });
 }
 
 /*
 * Helper functions used by the AJAX requests
 */
-function getQueryStringValue(key) {  
-    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+function getQueryStringValue(key) {
+    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
 }
 
 function setupDataTable(table_id) {
@@ -373,7 +375,7 @@ function setupVoteListeners(base_class, type) {
             else {
                 modifyThreadVote(this.id.replace(/\D/g,'').trim(), 1);
                 document.getElementById(base_id).innerText = (current_vote + 1);
-            }        
+            }
         }
         else if(type === 'comment') {
             if(!$(this).hasClass('animated-clicked')) {
@@ -383,7 +385,7 @@ function setupVoteListeners(base_class, type) {
             else {
                 modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), 1);
                 document.getElementById(base_id).innerText = (current_vote + 1);
-            }  
+            }
         }
     });
 
@@ -406,7 +408,7 @@ function setupVoteListeners(base_class, type) {
             else {
                 modifyThreadVote(this.id.replace(/\D/g,'').trim(), 1);
                 document.getElementById(base_id).innerText = (current_vote + 1);
-            }        
+            }
         }
         else if(type === 'comment') {
             if($(this).hasClass('animated-clicked')) {
@@ -416,7 +418,7 @@ function setupVoteListeners(base_class, type) {
             else {
                 modifyCommentVote(getQueryStringValue('thread_id'), this.id.replace(/\D/g,'').trim(), 1);
                 document.getElementById(base_id).innerText = (current_vote + 1);
-            }  
+            }
         }
     });
 }

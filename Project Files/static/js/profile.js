@@ -115,7 +115,11 @@ function sendMessage(user, body) {
                     type: 'success',
                     title: 'Awesome!',
                     text: 'Your message was sent',
-                  });
+                }).then((result) => {
+                    if (result.value) {
+                        location.reload(true);
+                    }
+                });
 
                 break;
             case 403:
@@ -257,7 +261,11 @@ function addFriend(user) {
                     type: 'success',
                     title: 'Awesome!',
                     text: 'Friend request sent',
-                  });
+                }).then((result) => {
+                    if (result.value) {
+                        $('#btnAddFriendProfile').remove();
+                    }
+                });
 
                 break;
             case 403:

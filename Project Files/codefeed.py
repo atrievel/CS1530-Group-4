@@ -44,10 +44,20 @@ def get_comment_votes(id):
             count-=1
     return count
 
-# Returns true if the two ids are freinds
+# Returns true if the two ids are friends
 def are_friends(id1, id2):
-    return (Friendship.query.filter(Friendship.user1_id == id1).filter(Friendship.user2_id == id2).first() is not None) \
-        or (Friendship.query.filter(Friendship.user1_id == id2).filter(Friendship.user2_id == id1).first() is not None)
+    return (Friendship.query.filter(Friendship.user1_id == id1).filter(Friendship.user2_id == id2).filter(Friendship.creation_date != None).first() is not None) \
+        or (Friendship.query.filter(Friendship.user1_id == id2).filter(Friendship.user2_id == id1).filter(Friendship.creation_date != None).first() is not None)
+
+def request_sent(id1, id2):
+    return (Friendship.query.filter(Friendship.user1_id == id1).filter(Friendship.user2_id == id2).filter(Friendship.creation_date == None).first() is not None)
+
+def user_exists(id):
+    user = User.query.filter(User.id == id)
+    if user is None:
+        return False
+    else:
+        return True
 
 def get_user_id(username):
     res = User.query.filter_by(username=username).first()
@@ -183,12 +193,19 @@ def profile():
 
 @app.route("/profile/<id>", methods=['GET'])
 def getProfile(id):
+    friends = False
     user = User.query.filter_by(id=id).first()
+    if session["user_id"] is not None:
+        if are_friends(user.id, session["user_id"]):
+            friends = True
+        else:
+            friends = request_sent(session["user_id"], user.id)
     return render_template('profile.html', id=user.id, username=user.username,
                                            name=user.name, email=user.email,
                                            biography=user.biography,
                                            creation_date=user.creation_date.strftime("%m/%d/%Y"),
-                                           last_login=user.last_login.strftime("%m/%d/%Y"))
+                                           last_login=user.last_login.strftime("%m/%d/%Y"),
+                                           friends = friends)
 
 @app.route("/profile/messages", methods=['GET','POST'])
 @login_required
@@ -255,6 +272,11 @@ def friends():
             assert not are_friends(user.id, user2_id)
         except:
             return Response("{'error': 'already friends'", status=403, mimetype='application/json')
+
+        try:
+            assert user_exists(user2_id)
+        except:
+            return Response("{'error': 'user doesn't exist'", status=403, mimetype='application/json')
 
         friend_request = Friendship(user.id, user2_id, None)
         db.session.add(friend_request)
