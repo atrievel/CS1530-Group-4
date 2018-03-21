@@ -327,12 +327,18 @@
             const user = $(this).siblings('a').text();
             acceptRequest(user);
 
+            console.log($(this).closest('tbody').children().length)
+            if ($(this).closest('tbody').children().length == 0) {
+                $('#modalRequests').modal('hide');
+                $('#btnRequests').remove();
+            }
+
             $(this).closest('tr').remove();
         });
 
         $('#btnDoneAccepting').on('click touch', function() {
-            $("#modalRequests").modal('hide');
-
+            $('#modalRequests').modal('hide');
+            location.reload(true);
         });
     </script>
 </body>
