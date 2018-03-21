@@ -1,8 +1,10 @@
-function editProfile(name, email, bio) {
+function editProfile(name, email, bio, password, verify_password) {
     const profile_info = JSON.stringify({
         name: name.trim(),
         email: email.trim(),
-        bio: bio.trim()
+        biography: bio.trim(),
+        password: password.trim(),
+        verify_password: verify_password.trim()
     });
 
     console.log(profile_info);
@@ -26,9 +28,16 @@ function editProfile(name, email, bio) {
             case 200:
                 console.log("All good");
 
-                $('#name').html(name);
-                $('#email').html(email);
-                $('#bio').html(bio);
+                if (name.length > 0) {
+                    $('#name').html(name);
+                }
+                if (email.length > 0) {
+                    $('#email').attr('href', 'mailto:' + email);
+                    $('#email').text(email);
+                }
+                if (bio.length > 0) {
+                    $('#bio').html(bio);
+                }
 
                 swal({
                     type: 'success',
@@ -75,9 +84,9 @@ function editProfile(name, email, bio) {
     });
 }
 
-function postNewMessage(user, body) {
+function sendMessage(user, body) {
     const new_message = JSON.stringify({
-        user: user.trim(),
+        username: user.trim(),
         body: body.trim(),
     });
 
@@ -106,7 +115,11 @@ function postNewMessage(user, body) {
                     type: 'success',
                     title: 'Awesome!',
                     text: 'Your message was sent',
-                  });
+                }).then((result) => {
+                    if (result.value) {
+                        location.reload(true);
+                    }
+                });
 
                 break;
             case 403:
@@ -220,7 +233,7 @@ function removeFriend(user) {
 
 function addFriend(user) {
     const remove_friend = JSON.stringify({
-        user2_id: user.trim()
+        username: user.trim()
     });
 
     console.log(remove_friend);
@@ -247,8 +260,12 @@ function addFriend(user) {
                 swal({
                     type: 'success',
                     title: 'Awesome!',
-                    text: 'Friend successfully added',
-                  });
+                    text: 'Friend request sent',
+                }).then((result) => {
+                    if (result.value) {
+                        $('#btnAddFriendProfile').remove();
+                    }
+                });
 
                 break;
             case 403:
@@ -291,7 +308,7 @@ function addFriend(user) {
 
 function acceptRequest(user) {
     const request = JSON.stringify({
-        user1_id: user.trim()
+        username: user.trim()
     });
 
     console.log(request);

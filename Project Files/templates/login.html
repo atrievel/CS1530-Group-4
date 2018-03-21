@@ -1,39 +1,85 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Login - CodeFeed</title>
-        <link rel="stylesheet" href="../static/css/main.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-    </head>
-    <body style="background: #116466;">
-        <div class="container h-100">
-            <div class="row justify-content-center align-items-center h-100">
-                <div class="col-md-6 col-sm-2">
-                    <div class="card">
-                        <div class="card-header">
-                            <h1 class="card-title text-muted">Please enter your login info below:</h1>
-                        </div>
-                        <div class="card-body justify-content-center">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input class="form-control" type="text" name="username" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="form-control" type="password" name="pass" required>
-                                </div>
-                                <br><br><br>
-                                <input type="submit" class="smoothscroll btn full-width btn--stroke" name="login" value="Login">
-                            </form>
-                            <h3>Don't have an account?</h3>
-                            <h3><a href="#" style="color: #116466">Click here to register and join CodeFeed!</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<html lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Login | CodeFeed</title>
+    <meta name="description" content="">
+    <meta name="author" content="CodeFeed">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap_override.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../staticfavicons//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="bootstrap_override dark-bg">
+    <div class="conatiner-fluid">
+        <div class="text-center my-3">
+            <span class="secondary-text display-2"><></span><span class="light-text display-2"> CodeFeed </span><span class="secondary-text display-2">();</span>
         </div>
-    </body>
+    </div>
+    <div class="container">
+        {% with messages = get_flashed_messages()%}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form form method="POST" class="needs-validation">
+            <div class="form-group">
+                <label class="form_input" for="txtUsername">Username</label>
+                <input class="form-control" type="text" name="username" id="txtUsername" required>
+            </div>
+            <div class="form-group">
+                <label class="form_input mt-2" for="txtUsername">Password</label>
+                <input class="form-control" type="password" name="password" required>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-lg btn-primary my-3" name="login" value="Login to Codefeed">
+            </div>
+        </form>
+        <h6 class="ml-3">Don't have an account?</h6>
+        <a class="btn btn-lg ml-0" href="/register">Click here to register and join CodeFeed!</a>
+    </div>
+
+    <!-- JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
 </html>
