@@ -286,6 +286,7 @@ def friends():
         return render_template('friends.html', friends=None)
 
 @app.route("/profile/friends/requests", methods=['POST'])
+@login_required
 def acceptRequests():
     if request.method == 'POST':
         data = request.get_json(force=True)
