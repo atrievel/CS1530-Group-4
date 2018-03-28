@@ -5,7 +5,7 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 
 # load default config and override config from an external class
-app.config.from_object('config.DebugConfig')
+app.config.from_object('config.TestingConfig')
 
 # initialize the database
 db.init_app(app)
