@@ -1,0 +1,40 @@
+# Defect Report #
+
+## Summary ##
+
+171
+
+## Description ##
+
+In the Edit Profile pop-up, when editing your name
+(in the name field)
+it is possible to make your name a number, i.e 1234.
+
+## Reproduction Steps ##
+
+[AN **EXACT** SEQUENCES OF STEPS THAT CAUSED THE TEST TO FAIL HERE]
+
+1. login with username and password.
+2. Click on the Edit Profile button.
+3. Type in 1234 in the name field.
+4. Click Update.
+5. Click Ok.
+
+## Expected Behavior ##
+
+There should have been a flash message 
+saying something along the lines of
+"Name cannot include symbols or characters
+other than letters, apostrophes or hyphens."
+
+## Observed Behavior ##
+
+There was a flash message declaring the field
+had valid input, and indeed accepted a number
+integer as a valid name, and updated the local
+database with the new number as the name attribute
+for the session user.
+
+### Additional Notes ###
+
+[OPTIONAL]
