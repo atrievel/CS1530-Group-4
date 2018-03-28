@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigates to messages while logged in. Run test after user has logged in.</description>
+   <name>6 - Load Messages While Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ceb04458-2f15-4824-b6ed-4f49867417ca</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6ceb3e38-472c-42c3-a6f7-167c2836ab5b</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

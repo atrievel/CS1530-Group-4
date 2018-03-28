@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Views landing page and ensures that text is loading correctly</description>
+   <name>22 - View Landing Page</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b8789fba-7dae-4dbf-86c1-e34d9725cf06</testCaseGuid>
+</TestCaseEntity>

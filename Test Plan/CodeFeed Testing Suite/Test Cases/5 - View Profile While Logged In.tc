@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigates to Profile After Logging In</description>
+   <name>5 - View Profile While Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f72d4a55-8a15-4a10-a849-c0f840d95baf</testCaseGuid>
+</TestCaseEntity>

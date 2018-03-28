@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>9 - Send Friend Request While Not Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d76451e8-fdc5-4708-bb78-69331398d090</testCaseGuid>
+</TestCaseEntity>

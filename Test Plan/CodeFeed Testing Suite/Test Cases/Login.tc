@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Logins using &quot;test&quot;, &quot;123456789&quot;. Use this in subroutines.</description>
+   <name>Login</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8d0d79d8-2e00-4628-bd82-00433e73ce09</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Attempt to load /profile if not logged in.
+
+Should redirect to login.</description>
+   <name>4 - View Profile While Not Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>beaa2cff-54f2-4404-a615-78c091a66311</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3b210734-3dc1-44d7-b68b-28fdfde98c27</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

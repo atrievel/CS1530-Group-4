@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Creates a user using valid example data. Use for subroutine calls</description>
+   <name>Create User</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f704876b-b133-48f4-b3d0-3007065b3b39</testCaseGuid>
+</TestCaseEntity>

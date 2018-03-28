@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Attempts to add categories while not logged in</description>
+   <name>11 - Add Category While Not Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>283a747d-7888-4697-97be-c2bc76338af6</testCaseGuid>
+</TestCaseEntity>

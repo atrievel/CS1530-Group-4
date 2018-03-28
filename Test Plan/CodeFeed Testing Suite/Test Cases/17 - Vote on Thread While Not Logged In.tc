@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>17 - Vote on Thread While Not Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>53bcbfb5-3dde-40b9-9885-43b76c026d2f</testCaseGuid>
+</TestCaseEntity>

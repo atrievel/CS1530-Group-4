@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Attempts to load messages without loggin in first.</description>
+   <name>7 - View Messages While Not Logged In</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>67b15af9-8c3d-42b5-9249-d12d393fdfd5</testCaseGuid>
+</TestCaseEntity>
