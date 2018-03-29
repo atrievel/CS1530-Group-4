@@ -1,0 +1,46 @@
+# Defect Report #
+
+## Summary ##
+
+TESTID = 100
+
+## Description ##
+
+In the Register page, when creating your profile:
+Name can be 12345, 
+email can be a@a, 
+username can be 33 characters long. 
+
+## Reproduction Steps ##
+
+[AN **EXACT** SEQUENCES OF STEPS THAT CAUSED THE TEST TO FAIL HERE]
+
+1. login with username and password.
+2. Click on the Edit Profile button.
+3. Type in 12345 in the name field.
+4. Type in a@a in the email field.
+5. Type in adadadadadadadadadadadadadadadada in the username field.
+6. Click Update.
+7. Click Ok.
+
+## Expected Behavior ##
+
+There should have been a flash error messages 
+saying something along the lines of
+"Name cannot include symbols or characters
+other than letters, apostrophes or hyphens."
+
+"Not an email expression."
+
+and
+"Username is too long, keep it under 32 characters."
+
+## Observed Behavior ##
+
+There was a flash message declaring the field
+had valid input, and indeed accepted all fields
+valid, redirecting the user to the login page.
+
+### Additional Notes ###
+
+[OPTIONAL]

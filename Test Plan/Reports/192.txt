@@ -1,0 +1,37 @@
+# Defect Report #
+
+## Summary ##
+
+TESTID = 192
+
+## Description ##
+
+It is possible to send a friend request to a
+username that does not exist in the DB.
+
+## Reproduction Steps ##
+
+[AN **EXACT** SEQUENCES OF STEPS THAT CAUSED THE TEST TO FAIL HERE]
+
+1. login with username and password.
+2. Click on the Friends link
+3. Click on Add Friend
+4. Type in a random String in the add user field.
+5. Click Add.
+6. Click Ok.
+
+## Expected Behavior ##
+
+There should have been a flash error message
+saying something along the lines of
+"User does not exist."
+
+## Observed Behavior ##
+
+There was a flash message declaring the field
+had valid input, and an OK popup to finalize
+the validated friend request.
+
+### Additional Notes ###
+
+[OPTIONAL]
