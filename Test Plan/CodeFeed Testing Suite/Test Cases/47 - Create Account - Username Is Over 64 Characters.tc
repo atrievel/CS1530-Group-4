@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>47 - Create Account - Username Is Over 64 Characters</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ae554525-2cc8-456a-8a12-d0b0821c2b9e</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>82 - Thread - Add Thread With Title Less Than 20 Chars</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>65c358cf-3b2f-435c-b93e-b257594ace59</testCaseGuid>
+</TestCaseEntity>

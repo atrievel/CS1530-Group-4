@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>35 - Create Account - Name is only Numbers</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fa7840da-1c77-4042-ba9a-a6c1a8c2ff7d</testCaseGuid>
+</TestCaseEntity>

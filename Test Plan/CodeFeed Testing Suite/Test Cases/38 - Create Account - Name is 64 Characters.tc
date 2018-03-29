@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>38 - Create Account - Name is 64 Characters</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>033e6be8-d008-498e-bc52-f94fd70d5ba2</testCaseGuid>
+</TestCaseEntity>

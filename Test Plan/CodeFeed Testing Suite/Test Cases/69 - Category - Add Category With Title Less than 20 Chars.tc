@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>69 - Category - Add Category With Title Less than 20 Chars</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ce844b1c-f2ae-47be-99c6-d5e8b3746817</testCaseGuid>
+</TestCaseEntity>

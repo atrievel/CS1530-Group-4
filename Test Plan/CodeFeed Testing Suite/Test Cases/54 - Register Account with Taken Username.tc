@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>54 - Register Account with Taken Username</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fb6f21d4-077e-46dd-afd1-fe72cde355e0</testCaseGuid>
+</TestCaseEntity>
