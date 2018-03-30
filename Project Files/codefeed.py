@@ -17,7 +17,7 @@ db.init_app(app)
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if session['user_id'] is None:
+        if not "user_id" in session:
             return redirect(url_for('login', next=request.url))
         return f(*args, **kwargs)
     return decorated_function
@@ -83,6 +83,8 @@ def index():
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == 'GET':
+        if "user_id" in session:
+            return redirect(url_for("profile"))
         return render_template('login.html')
     elif request.method == 'POST':
         # Get the user based on the entered username
@@ -92,7 +94,7 @@ def login():
             pw_hash = user.password_hash #get the password hash from the db
 
             if bcrypt.check_password_hash(pw_hash, request.form['password']):
-                session['user_id'] = user.id #set the session varaible for the user
+                session["user_id"] = user.id
                 user.last_login = datetime.now()
                 db.session.commit()
                 return redirect(url_for('profile'))
