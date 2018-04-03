@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Send message with valid input</description>
+   <name>107</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>df126dad-f4a2-48cd-a266-2f46fc483f4b</testCaseGuid>
+</TestCaseEntity>

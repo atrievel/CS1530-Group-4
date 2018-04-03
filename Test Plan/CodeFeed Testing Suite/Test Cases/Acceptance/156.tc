@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Click Add Friends on /profile</description>
+   <name>156</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e4040edd-da31-4d49-a78f-6dcaf7a4cc37</testCaseGuid>
+</TestCaseEntity>

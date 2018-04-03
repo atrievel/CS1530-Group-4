@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Click add comment  on /thread and follow on screen instructions</description>
+   <name>169</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ad656da8-0b3b-49bd-8617-eb8585b32dda</testCaseGuid>
+</TestCaseEntity>

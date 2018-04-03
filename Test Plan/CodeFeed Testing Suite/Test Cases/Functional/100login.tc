@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Login with invalid input</description>
+   <name>100login</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e748a7e5-92f8-4102-a4bb-600be63c0317</testCaseGuid>
+</TestCaseEntity>

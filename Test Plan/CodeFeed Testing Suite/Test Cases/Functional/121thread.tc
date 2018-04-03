@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to /category/thread/?thread_id=1</description>
+   <name>121thread</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a09ccf3b-7824-4f28-ae3b-2447b0a61ea4</testCaseGuid>
+</TestCaseEntity>

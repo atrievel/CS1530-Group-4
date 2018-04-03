@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Add someone else that exists in the DB.</description>
+   <name>194</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4d0c2bc7-113d-4d25-be04-48ad706bf2a8</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Click add category on /categories and follow on screen instructions</description>
+   <name>167</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>32ba15fb-ca32-4c4f-ab1d-917445dcf65a</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Send message response with invalid input</description>
+   <name>129</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a488bb8b-e684-49ee-aaef-00755bf6f014</testCaseGuid>
+</TestCaseEntity>

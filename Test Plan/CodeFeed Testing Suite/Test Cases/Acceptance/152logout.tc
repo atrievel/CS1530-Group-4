@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Click logout on any page</description>
+   <name>152logout</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>af38d822-1bf1-41d7-8411-46d380dde64a</testCaseGuid>
+</TestCaseEntity>
