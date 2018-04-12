@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Non-existent username</description>
+   <name>192</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b2399136-918e-4925-ad22-3ea923677d6a</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to /category/?category_id=1</description>
+   <name>142</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ff6bae54-24ea-40f1-af81-b0d2d01d2958</testCaseGuid>
+</TestCaseEntity>

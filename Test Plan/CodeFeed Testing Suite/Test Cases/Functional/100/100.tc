@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Add new account with invalid input</description>
+   <name>100</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cb8fbc5f-6446-4661-9ff9-c05c26829f4f</testCaseGuid>
+</TestCaseEntity>
