@@ -2659,7 +2659,7 @@ html.no-csstransitions .home-content__main {
         padding-right: 0;
     }
 
-    /* .footer-main .right {
+    .footer-main .right {
         padding-left: 0;
-    } */
+    }
 }
