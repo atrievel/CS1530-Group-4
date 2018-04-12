@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="CodeFeedSuite" time="1" tests="0" failures="0" errors="168">
+   <testsuite name="CodeFeedSuite" tests="0" failures="0" errors="168" time="1" timestamp="2018-04-11 21:15:42" hostname="Jeremy - ArtilleryUnit" id="Test Suites/CodeFeedSuite">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="D:\\Codefeed\\CS1530-Group-4\\Test Plan\\CodeFeed Testing Suite\\Reports\\CodeFeedSuite\\20180411_211541"/>
+         <property name="logFiles" value="D:\\Codefeed\\CS1530-Group-4\\Test Plan\\CodeFeed Testing Suite\\Reports\\CodeFeedSuite\\20180411_211541\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Jeremy - ArtilleryUnit"/>
+         <property name="hostAddress" value="192.168.0.103"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.3.1.1"/>
+      </properties>
+      <testcase name="Test Cases/Acceptance/151" classname="Test Cases/Acceptance/151" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/151 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/151: Test Cases/Acceptance/151 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/151: Test Cases/Acceptance/151 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/152" classname="Test Cases/Acceptance/152" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/152 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/152: Test Cases/Acceptance/152 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/152: Test Cases/Acceptance/152 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/152logout" classname="Test Cases/Acceptance/152logout" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/152logout has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/152logout: Test Cases/Acceptance/152logout has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/152logout: Test Cases/Acceptance/152logout has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/153" classname="Test Cases/Acceptance/153" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/153 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/153: Test Cases/Acceptance/153 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/153: Test Cases/Acceptance/153 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/154" classname="Test Cases/Acceptance/154" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/154 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/154: Test Cases/Acceptance/154 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/154: Test Cases/Acceptance/154 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/155" classname="Test Cases/Acceptance/155" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/155 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/155: Test Cases/Acceptance/155 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/155: Test Cases/Acceptance/155 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/156" classname="Test Cases/Acceptance/156" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/156 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/156: Test Cases/Acceptance/156 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/156: Test Cases/Acceptance/156 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/157" classname="Test Cases/Acceptance/157" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/157 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/157: Test Cases/Acceptance/157 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/157: Test Cases/Acceptance/157 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/158" classname="Test Cases/Acceptance/158" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/158 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/158: Test Cases/Acceptance/158 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/158: Test Cases/Acceptance/158 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/159" classname="Test Cases/Acceptance/159" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/159 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/159: Test Cases/Acceptance/159 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/159: Test Cases/Acceptance/159 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/160" classname="Test Cases/Acceptance/160" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/160 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/160: Test Cases/Acceptance/160 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/160: Test Cases/Acceptance/160 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/161" classname="Test Cases/Acceptance/161" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/161 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/161: Test Cases/Acceptance/161 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/161: Test Cases/Acceptance/161 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/162" classname="Test Cases/Acceptance/162" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/162 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/162: Test Cases/Acceptance/162 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/162: Test Cases/Acceptance/162 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/163" classname="Test Cases/Acceptance/163" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/163 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/163: Test Cases/Acceptance/163 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/163: Test Cases/Acceptance/163 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/164" classname="Test Cases/Acceptance/164" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/164 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/164: Test Cases/Acceptance/164 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/164: Test Cases/Acceptance/164 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/165" classname="Test Cases/Acceptance/165" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/165 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/165: Test Cases/Acceptance/165 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/165: Test Cases/Acceptance/165 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/166" classname="Test Cases/Acceptance/166" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/166 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/166: Test Cases/Acceptance/166 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/166: Test Cases/Acceptance/166 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/167" classname="Test Cases/Acceptance/167" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/167 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/167: Test Cases/Acceptance/167 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/167: Test Cases/Acceptance/167 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/168" classname="Test Cases/Acceptance/168" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/168 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/168: Test Cases/Acceptance/168 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/168: Test Cases/Acceptance/168 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/169" classname="Test Cases/Acceptance/169" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/169 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/169: Test Cases/Acceptance/169 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/169: Test Cases/Acceptance/169 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Acceptance/Login" classname="Test Cases/Acceptance/Login" status="ERROR">
+         <error type="ERROR" message="Test Cases/Acceptance/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/Login: Test Cases/Acceptance/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Acceptance/Login: Test Cases/Acceptance/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/186" classname="Test Cases/Friends/186" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/186 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/186: Test Cases/Friends/186 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/186: Test Cases/Friends/186 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/187" classname="Test Cases/Friends/187" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/187 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/187: Test Cases/Friends/187 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/187: Test Cases/Friends/187 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/188" classname="Test Cases/Friends/188" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/188 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/188: Test Cases/Friends/188 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/188: Test Cases/Friends/188 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/189" classname="Test Cases/Friends/189" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/189 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/189: Test Cases/Friends/189 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/189: Test Cases/Friends/189 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/190" classname="Test Cases/Friends/190" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/190 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/190: Test Cases/Friends/190 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/190: Test Cases/Friends/190 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/191" classname="Test Cases/Friends/191" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/191 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/191: Test Cases/Friends/191 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/191: Test Cases/Friends/191 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/192" classname="Test Cases/Friends/192" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/192 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/192: Test Cases/Friends/192 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/192: Test Cases/Friends/192 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/193" classname="Test Cases/Friends/193" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/193 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/193: Test Cases/Friends/193 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/193: Test Cases/Friends/193 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/194" classname="Test Cases/Friends/194" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/194 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/194: Test Cases/Friends/194 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/194: Test Cases/Friends/194 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/195" classname="Test Cases/Friends/195" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/195 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/195: Test Cases/Friends/195 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/195: Test Cases/Friends/195 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/196" classname="Test Cases/Friends/196" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/196 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/196: Test Cases/Friends/196 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/196: Test Cases/Friends/196 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/197" classname="Test Cases/Friends/197" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/197 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/197: Test Cases/Friends/197 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/197: Test Cases/Friends/197 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/198" classname="Test Cases/Friends/198" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/198 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/198: Test Cases/Friends/198 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/198: Test Cases/Friends/198 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/199" classname="Test Cases/Friends/199" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/199 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/199: Test Cases/Friends/199 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/199: Test Cases/Friends/199 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/200" classname="Test Cases/Friends/200" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/200 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/200: Test Cases/Friends/200 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/200: Test Cases/Friends/200 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/201" classname="Test Cases/Friends/201" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/201 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/201: Test Cases/Friends/201 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/201: Test Cases/Friends/201 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/202" classname="Test Cases/Friends/202" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/202 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/202: Test Cases/Friends/202 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/202: Test Cases/Friends/202 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/203" classname="Test Cases/Friends/203" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/203 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/203: Test Cases/Friends/203 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/203: Test Cases/Friends/203 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/204" classname="Test Cases/Friends/204" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/204 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/204: Test Cases/Friends/204 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/204: Test Cases/Friends/204 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/205" classname="Test Cases/Friends/205" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/205 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/205: Test Cases/Friends/205 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/205: Test Cases/Friends/205 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Friends/Login" classname="Test Cases/Friends/Login" status="ERROR">
+         <error type="ERROR" message="Test Cases/Friends/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/Login: Test Cases/Friends/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Friends/Login: Test Cases/Friends/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/100" classname="Test Cases/Functional/100" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/100 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/100: Test Cases/Functional/100 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/100: Test Cases/Functional/100 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/100login" classname="Test Cases/Functional/100login" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/100login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/100login: Test Cases/Functional/100login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/100login: Test Cases/Functional/100login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/101" classname="Test Cases/Functional/101" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/101 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/101: Test Cases/Functional/101 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/101: Test Cases/Functional/101 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/101login" classname="Test Cases/Functional/101login" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/101login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/101login: Test Cases/Functional/101login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/101login: Test Cases/Functional/101login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/102" classname="Test Cases/Functional/102" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/102 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/102: Test Cases/Functional/102 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/102: Test Cases/Functional/102 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/103" classname="Test Cases/Functional/103" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/103 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/103: Test Cases/Functional/103 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/103: Test Cases/Functional/103 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/104" classname="Test Cases/Functional/104" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/104 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/104: Test Cases/Functional/104 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/104: Test Cases/Functional/104 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/105" classname="Test Cases/Functional/105" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/105 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/105: Test Cases/Functional/105 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/105: Test Cases/Functional/105 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/106" classname="Test Cases/Functional/106" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/106 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/106: Test Cases/Functional/106 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/106: Test Cases/Functional/106 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/107" classname="Test Cases/Functional/107" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/107 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/107: Test Cases/Functional/107 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/107: Test Cases/Functional/107 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/108" classname="Test Cases/Functional/108" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/108 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/108: Test Cases/Functional/108 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/108: Test Cases/Functional/108 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/109" classname="Test Cases/Functional/109" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/109 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/109: Test Cases/Functional/109 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/109: Test Cases/Functional/109 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/110" classname="Test Cases/Functional/110" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/110 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/110: Test Cases/Functional/110 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/110: Test Cases/Functional/110 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/111" classname="Test Cases/Functional/111" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/111 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/111: Test Cases/Functional/111 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/111: Test Cases/Functional/111 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/112" classname="Test Cases/Functional/112" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/112 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/112: Test Cases/Functional/112 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/112: Test Cases/Functional/112 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/113" classname="Test Cases/Functional/113" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/113 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/113: Test Cases/Functional/113 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/113: Test Cases/Functional/113 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/114" classname="Test Cases/Functional/114" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/114 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/114: Test Cases/Functional/114 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/114: Test Cases/Functional/114 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/115" classname="Test Cases/Functional/115" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/115 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/115: Test Cases/Functional/115 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/115: Test Cases/Functional/115 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/116" classname="Test Cases/Functional/116" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/116 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/116: Test Cases/Functional/116 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/116: Test Cases/Functional/116 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/117" classname="Test Cases/Functional/117" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/117 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/117: Test Cases/Functional/117 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/117: Test Cases/Functional/117 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/118" classname="Test Cases/Functional/118" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/118 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/118: Test Cases/Functional/118 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/118: Test Cases/Functional/118 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/119" classname="Test Cases/Functional/119" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/119 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/119: Test Cases/Functional/119 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/119: Test Cases/Functional/119 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/120" classname="Test Cases/Functional/120" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/120 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/120: Test Cases/Functional/120 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/120: Test Cases/Functional/120 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/121" classname="Test Cases/Functional/121" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/121 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/121: Test Cases/Functional/121 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/121: Test Cases/Functional/121 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/121thread" classname="Test Cases/Functional/121thread" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/121thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/121thread: Test Cases/Functional/121thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/121thread: Test Cases/Functional/121thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/122" classname="Test Cases/Functional/122" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/122 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/122: Test Cases/Functional/122 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/122: Test Cases/Functional/122 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/122invalid profile" classname="Test Cases/Functional/122invalid profile" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/122invalid profile has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/122invalid profile: Test Cases/Functional/122invalid profile has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/122invalid profile: Test Cases/Functional/122invalid profile has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/123" classname="Test Cases/Functional/123" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/123 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/123: Test Cases/Functional/123 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/123: Test Cases/Functional/123 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/124" classname="Test Cases/Functional/124" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/124 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/124: Test Cases/Functional/124 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/124: Test Cases/Functional/124 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/125" classname="Test Cases/Functional/125" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/125 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/125: Test Cases/Functional/125 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/125: Test Cases/Functional/125 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/126" classname="Test Cases/Functional/126" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/126 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/126: Test Cases/Functional/126 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/126: Test Cases/Functional/126 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/127" classname="Test Cases/Functional/127" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/127 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/127: Test Cases/Functional/127 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/127: Test Cases/Functional/127 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/128" classname="Test Cases/Functional/128" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/128 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/128: Test Cases/Functional/128 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/128: Test Cases/Functional/128 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/129" classname="Test Cases/Functional/129" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/129 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/129: Test Cases/Functional/129 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/129: Test Cases/Functional/129 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/130" classname="Test Cases/Functional/130" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/130 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/130: Test Cases/Functional/130 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/130: Test Cases/Functional/130 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/131" classname="Test Cases/Functional/131" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/131 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/131: Test Cases/Functional/131 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/131: Test Cases/Functional/131 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/132" classname="Test Cases/Functional/132" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/132 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/132: Test Cases/Functional/132 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/132: Test Cases/Functional/132 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/133" classname="Test Cases/Functional/133" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/133 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/133: Test Cases/Functional/133 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/133: Test Cases/Functional/133 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/134" classname="Test Cases/Functional/134" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/134 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/134: Test Cases/Functional/134 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/134: Test Cases/Functional/134 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/135" classname="Test Cases/Functional/135" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/135 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/135: Test Cases/Functional/135 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/135: Test Cases/Functional/135 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/136" classname="Test Cases/Functional/136" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/136 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/136: Test Cases/Functional/136 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/136: Test Cases/Functional/136 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/137" classname="Test Cases/Functional/137" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/137 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/137: Test Cases/Functional/137 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/137: Test Cases/Functional/137 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/138" classname="Test Cases/Functional/138" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/138 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/138: Test Cases/Functional/138 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/138: Test Cases/Functional/138 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/139" classname="Test Cases/Functional/139" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/139 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/139: Test Cases/Functional/139 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/139: Test Cases/Functional/139 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/140" classname="Test Cases/Functional/140" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/140 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/140: Test Cases/Functional/140 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/140: Test Cases/Functional/140 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/141" classname="Test Cases/Functional/141" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/141 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/141: Test Cases/Functional/141 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/141: Test Cases/Functional/141 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/141thread" classname="Test Cases/Functional/141thread" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/141thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/141thread: Test Cases/Functional/141thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/141thread: Test Cases/Functional/141thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/142" classname="Test Cases/Functional/142" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/142 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/142: Test Cases/Functional/142 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/142: Test Cases/Functional/142 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Functional/Login" classname="Test Cases/Functional/Login" status="ERROR">
+         <error type="ERROR" message="Test Cases/Functional/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/Login: Test Cases/Functional/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Functional/Login: Test Cases/Functional/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/170" classname="Test Cases/Profile/170" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/170 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/170: Test Cases/Profile/170 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/170: Test Cases/Profile/170 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/171" classname="Test Cases/Profile/171" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/171 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/171: Test Cases/Profile/171 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/171: Test Cases/Profile/171 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/172" classname="Test Cases/Profile/172" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/172 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/172: Test Cases/Profile/172 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/172: Test Cases/Profile/172 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/173" classname="Test Cases/Profile/173" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/173 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/173: Test Cases/Profile/173 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/173: Test Cases/Profile/173 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/174" classname="Test Cases/Profile/174" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/174 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/174: Test Cases/Profile/174 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/174: Test Cases/Profile/174 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/175" classname="Test Cases/Profile/175" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/175 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/175: Test Cases/Profile/175 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/175: Test Cases/Profile/175 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/176" classname="Test Cases/Profile/176" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/176 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/176: Test Cases/Profile/176 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/176: Test Cases/Profile/176 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/177" classname="Test Cases/Profile/177" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/177 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/177: Test Cases/Profile/177 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/177: Test Cases/Profile/177 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/178" classname="Test Cases/Profile/178" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/178 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/178: Test Cases/Profile/178 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/178: Test Cases/Profile/178 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/179" classname="Test Cases/Profile/179" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/179 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/179: Test Cases/Profile/179 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/179: Test Cases/Profile/179 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/180" classname="Test Cases/Profile/180" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/180 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/180: Test Cases/Profile/180 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/180: Test Cases/Profile/180 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/181" classname="Test Cases/Profile/181" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/181 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/181: Test Cases/Profile/181 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/181: Test Cases/Profile/181 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/182" classname="Test Cases/Profile/182" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/182 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/182: Test Cases/Profile/182 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/182: Test Cases/Profile/182 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/183" classname="Test Cases/Profile/183" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/183 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/183: Test Cases/Profile/183 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/183: Test Cases/Profile/183 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/184" classname="Test Cases/Profile/184" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/184 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/184: Test Cases/Profile/184 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/184: Test Cases/Profile/184 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/185" classname="Test Cases/Profile/185" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/185 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/185: Test Cases/Profile/185 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/185: Test Cases/Profile/185 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Login" classname="Test Cases/Profile/Login" status="ERROR">
+         <error type="ERROR" message="Test Cases/Profile/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/Login: Test Cases/Profile/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/Profile/Login: Test Cases/Profile/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/11 - Add Category While Not Logged In" classname="Test Cases/JeremyFolder/11 - Add Category While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/11 - Add Category While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/11 - Add Category While Not Logged In: Test Cases/JeremyFolder/11 - Add Category While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/11 - Add Category While Not Logged In: Test Cases/JeremyFolder/11 - Add Category While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/13 - Add Thread While Not Logged In" classname="Test Cases/JeremyFolder/13 - Add Thread While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/13 - Add Thread While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/13 - Add Thread While Not Logged In: Test Cases/JeremyFolder/13 - Add Thread While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/13 - Add Thread While Not Logged In: Test Cases/JeremyFolder/13 - Add Thread While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/15 - Add Comment While Not Logged In" classname="Test Cases/JeremyFolder/15 - Add Comment While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/15 - Add Comment While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/15 - Add Comment While Not Logged In: Test Cases/JeremyFolder/15 - Add Comment While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/15 - Add Comment While Not Logged In: Test Cases/JeremyFolder/15 - Add Comment While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In" classname="Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In: Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In: Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/22 - View Landing Page" classname="Test Cases/JeremyFolder/22 - View Landing Page" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/22 - View Landing Page has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/22 - View Landing Page: Test Cases/JeremyFolder/22 - View Landing Page has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/22 - View Landing Page: Test Cases/JeremyFolder/22 - View Landing Page has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/23 - Click Register Button" classname="Test Cases/JeremyFolder/23 - Click Register Button" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/23 - Click Register Button has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/23 - Click Register Button: Test Cases/JeremyFolder/23 - Click Register Button has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/23 - Click Register Button: Test Cases/JeremyFolder/23 - Click Register Button has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/24 - Click Login Button" classname="Test Cases/JeremyFolder/24 - Click Login Button" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/24 - Click Login Button has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/24 - Click Login Button: Test Cases/JeremyFolder/24 - Click Login Button has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/24 - Click Login Button: Test Cases/JeremyFolder/24 - Click Login Button has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/25 - View Registered User Count" classname="Test Cases/JeremyFolder/25 - View Registered User Count" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/25 - View Registered User Count has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/25 - View Registered User Count: Test Cases/JeremyFolder/25 - View Registered User Count has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/25 - View Registered User Count: Test Cases/JeremyFolder/25 - View Registered User Count has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/27 - View Group Count" classname="Test Cases/JeremyFolder/27 - View Group Count" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/27 - View Group Count has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/27 - View Group Count: Test Cases/JeremyFolder/27 - View Group Count has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/27 - View Group Count: Test Cases/JeremyFolder/27 - View Group Count has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/34 - Create Account - Correct Name Format" classname="Test Cases/JeremyFolder/34 - Create Account - Correct Name Format" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/34 - Create Account - Correct Name Format has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/34 - Create Account - Correct Name Format: Test Cases/JeremyFolder/34 - Create Account - Correct Name Format has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/34 - Create Account - Correct Name Format: Test Cases/JeremyFolder/34 - Create Account - Correct Name Format has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers" classname="Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers: Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers: Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters" classname="Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters: Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters: Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character" classname="Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character: Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character: Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters" classname="Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters: Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters: Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters" classname="Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters: Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters: Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/4 - View Profile While Not Logged In" classname="Test Cases/JeremyFolder/4 - View Profile While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/4 - View Profile While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/4 - View Profile While Not Logged In: Test Cases/JeremyFolder/4 - View Profile While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/4 - View Profile While Not Logged In: Test Cases/JeremyFolder/4 - View Profile While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/40 - Create Account - Valid Email" classname="Test Cases/JeremyFolder/40 - Create Account - Valid Email" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/40 - Create Account - Valid Email has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/40 - Create Account - Valid Email: Test Cases/JeremyFolder/40 - Create Account - Valid Email has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/40 - Create Account - Valid Email: Test Cases/JeremyFolder/40 - Create Account - Valid Email has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/41 - Create Account - Invalid Email" classname="Test Cases/JeremyFolder/41 - Create Account - Invalid Email" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/41 - Create Account - Invalid Email has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/41 - Create Account - Invalid Email: Test Cases/JeremyFolder/41 - Create Account - Invalid Email has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/41 - Create Account - Invalid Email: Test Cases/JeremyFolder/41 - Create Account - Invalid Email has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters" classname="Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters: Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters: Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers" classname="Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers: Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers: Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters" classname="Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters: Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters: Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character" classname="Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character: Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character: Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters" classname="Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters: Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters: Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters" classname="Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters: Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters: Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters" classname="Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters: Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters: Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters" classname="Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters: Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters: Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/5 - View Profile While Logged In" classname="Test Cases/JeremyFolder/5 - View Profile While Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/5 - View Profile While Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/5 - View Profile While Logged In: Test Cases/JeremyFolder/5 - View Profile While Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/5 - View Profile While Logged In: Test Cases/JeremyFolder/5 - View Profile While Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters" classname="Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters: Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters: Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/51 - Create Account - Passwords do not match" classname="Test Cases/JeremyFolder/51 - Create Account - Passwords do not match" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/51 - Create Account - Passwords do not match has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/51 - Create Account - Passwords do not match: Test Cases/JeremyFolder/51 - Create Account - Passwords do not match has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/51 - Create Account - Passwords do not match: Test Cases/JeremyFolder/51 - Create Account - Passwords do not match has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/53 - Logout While Not Logged In" classname="Test Cases/JeremyFolder/53 - Logout While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/53 - Logout While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/53 - Logout While Not Logged In: Test Cases/JeremyFolder/53 - Logout While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/53 - Logout While Not Logged In: Test Cases/JeremyFolder/53 - Logout While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/54 - Register Account with Taken Username" classname="Test Cases/JeremyFolder/54 - Register Account with Taken Username" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/54 - Register Account with Taken Username has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/54 - Register Account with Taken Username: Test Cases/JeremyFolder/54 - Register Account with Taken Username has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/54 - Register Account with Taken Username: Test Cases/JeremyFolder/54 - Register Account with Taken Username has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/55 - Click Register Button on Login Page" classname="Test Cases/JeremyFolder/55 - Click Register Button on Login Page" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/55 - Click Register Button on Login Page has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/55 - Click Register Button on Login Page: Test Cases/JeremyFolder/55 - Click Register Button on Login Page has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/55 - Click Register Button on Login Page: Test Cases/JeremyFolder/55 - Click Register Button on Login Page has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/56 - Login with Matching Username and Password" classname="Test Cases/JeremyFolder/56 - Login with Matching Username and Password" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/56 - Login with Matching Username and Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/56 - Login with Matching Username and Password: Test Cases/JeremyFolder/56 - Login with Matching Username and Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/56 - Login with Matching Username and Password: Test Cases/JeremyFolder/56 - Login with Matching Username and Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/57 - Login With Wrong Password" classname="Test Cases/JeremyFolder/57 - Login With Wrong Password" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/57 - Login With Wrong Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/57 - Login With Wrong Password: Test Cases/JeremyFolder/57 - Login With Wrong Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/57 - Login With Wrong Password: Test Cases/JeremyFolder/57 - Login With Wrong Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/58 - Login with Invalid Username and Password" classname="Test Cases/JeremyFolder/58 - Login with Invalid Username and Password" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/58 - Login with Invalid Username and Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/58 - Login with Invalid Username and Password: Test Cases/JeremyFolder/58 - Login with Invalid Username and Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/58 - Login with Invalid Username and Password: Test Cases/JeremyFolder/58 - Login with Invalid Username and Password has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly" classname="Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly: Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly: Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/6 - Load Messages While Logged In" classname="Test Cases/JeremyFolder/6 - Load Messages While Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/6 - Load Messages While Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/6 - Load Messages While Logged In: Test Cases/JeremyFolder/6 - Load Messages While Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/6 - Load Messages While Logged In: Test Cases/JeremyFolder/6 - Load Messages While Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/60 - Category Title Loads Properly" classname="Test Cases/JeremyFolder/60 - Category Title Loads Properly" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/60 - Category Title Loads Properly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/60 - Category Title Loads Properly: Test Cases/JeremyFolder/60 - Category Title Loads Properly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/60 - Category Title Loads Properly: Test Cases/JeremyFolder/60 - Category Title Loads Properly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/64 - Category Search Shows No Results Found" classname="Test Cases/JeremyFolder/64 - Category Search Shows No Results Found" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/64 - Category Search Shows No Results Found has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/64 - Category Search Shows No Results Found: Test Cases/JeremyFolder/64 - Category Search Shows No Results Found has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/64 - Category Search Shows No Results Found: Test Cases/JeremyFolder/64 - Category Search Shows No Results Found has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/65 - Category Search Shows Test Result" classname="Test Cases/JeremyFolder/65 - Category Search Shows Test Result" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/65 - Category Search Shows Test Result has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/65 - Category Search Shows Test Result: Test Cases/JeremyFolder/65 - Category Search Shows Test Result has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/65 - Category Search Shows Test Result: Test Cases/JeremyFolder/65 - Category Search Shows Test Result has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category" classname="Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category: Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category: Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/67 - Category - Add Category Without Title" classname="Test Cases/JeremyFolder/67 - Category - Add Category Without Title" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/67 - Category - Add Category Without Title has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/67 - Category - Add Category Without Title: Test Cases/JeremyFolder/67 - Category - Add Category Without Title has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/67 - Category - Add Category Without Title: Test Cases/JeremyFolder/67 - Category - Add Category Without Title has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters" classname="Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters: Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters: Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars" classname="Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars: Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars: Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/7 - View Messages While Not Logged In" classname="Test Cases/JeremyFolder/7 - View Messages While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/7 - View Messages While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/7 - View Messages While Not Logged In: Test Cases/JeremyFolder/7 - View Messages While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/7 - View Messages While Not Logged In: Test Cases/JeremyFolder/7 - View Messages While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description" classname="Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description: Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description: Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars" classname="Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars: Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars: Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly" classname="Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly: Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly: Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly" classname="Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly: Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly: Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread" classname="Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread: Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread: Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread" classname="Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread: Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread: Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title" classname="Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title: Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title: Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars" classname="Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars: Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars: Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars" classname="Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars: Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars: Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body" classname="Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body: Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body: Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars" classname="Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars: Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars: Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/87 - Thread - Upvote Thread" classname="Test Cases/JeremyFolder/87 - Thread - Upvote Thread" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/87 - Thread - Upvote Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/87 - Thread - Upvote Thread: Test Cases/JeremyFolder/87 - Thread - Upvote Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/87 - Thread - Upvote Thread: Test Cases/JeremyFolder/87 - Thread - Upvote Thread has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In" classname="Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In: Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In: Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/Create User" classname="Test Cases/JeremyFolder/Create User" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/Create User has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/Create User: Test Cases/JeremyFolder/Create User has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/Create User: Test Cases/JeremyFolder/Create User has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/JeremyFolder/Login" classname="Test Cases/JeremyFolder/Login" status="ERROR">
+         <error type="ERROR" message="Test Cases/JeremyFolder/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist"/>
+         <system-out><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/Login: Test Cases/JeremyFolder/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+         <system-err><![CDATA[2018-04-11 21:15:43 - [TEST_CASE][ERROR] - Test Cases/JeremyFolder/Login: Test Cases/JeremyFolder/Login has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-04-11 21:15:42 - [TEST_SUITE][ERROR] - CodeFeedSuite: Test Cases/Acceptance/151 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-out>
+      <system-err><![CDATA[2018-04-11 21:15:42 - [TEST_SUITE][ERROR] - CodeFeedSuite: Test Cases/Acceptance/151 has ERROR(s) because (of) java.io.FileNotFoundException: File '' does not exist]]></system-err>
+   </testsuite>
+</testsuites>

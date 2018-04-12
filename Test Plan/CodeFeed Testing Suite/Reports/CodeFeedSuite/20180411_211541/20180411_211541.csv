@@ -1,0 +1,338 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+CodeFeedSuite,,,2018-04-11 21:15:42,2018-04-11 21:15:43,1.137s,ERROR
+,,,,,,
+Test Cases/Acceptance/151,,"Navigate to /register, create account via on screen instructions",2018-04-11 21:15:43,2018-04-11 21:15:43,0.010s,ERROR
+,,,,,,
+Test Cases/Acceptance/152,,"Navigate to /login, login with credentials created on register",2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Acceptance/152logout,,Click logout on any page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/153,,Click profile on any page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/154,,Edit profile with on screen instructions,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/155,,Click Friends on /profile,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Acceptance/156,,Click Add Friends on /profile,2018-04-11 21:15:43,2018-04-11 21:15:43,0.004s,ERROR
+,,,,,,
+Test Cases/Acceptance/157,,Click Friends on /profile,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/158,,Click Messages on any page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/159,,Click respond on a message,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/160,,Click Categories on any page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.034s,ERROR
+,,,,,,
+Test Cases/Acceptance/161,,Click Messages on any page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/Acceptance/162,,Click respond on a message,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/163,,Click Categories on any page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.004s,ERROR
+,,,,,,
+Test Cases/Acceptance/164,,Click thread id on any category,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/165,,Click vote on any thread,2018-04-11 21:15:43,2018-04-11 21:15:43,0.007s,ERROR
+,,,,,,
+Test Cases/Acceptance/166,,Click vote on any comment,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/167,,Click add category on /categories and follow on screen instructions,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/168,,Click add thread on /category and follow on screen instructions,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Acceptance/169,,Click add comment  on /thread and follow on screen instructions,2018-04-11 21:15:43,2018-04-11 21:15:43,0.004s,ERROR
+,,,,,,
+Test Cases/Acceptance/Login,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/186,,get the show entries drop down list,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/187,,Select 10,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/188,,Select 25,2018-04-11 21:15:43,2018-04-11 21:15:43,0.010s,ERROR
+,,,,,,
+Test Cases/Friends/189,,Select 50,2018-04-11 21:15:43,2018-04-11 21:15:43,0.004s,ERROR
+,,,,,,
+Test Cases/Friends/190,,Select 100,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/191,,Add Friend Popup,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/192,,Non-existent username,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/193,,Add yourself as friend,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/194,,Add someone else that exists in the DB.,2018-04-11 21:15:43,2018-04-11 21:15:43,0.010s,ERROR
+,,,,,,
+Test Cases/Friends/195,,Click Add To send request to user,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/Friends/196,,Search random username,2018-04-11 21:15:43,2018-04-11 21:15:43,0.004s,ERROR
+,,,,,,
+Test Cases/Friends/197,,search an existing friend,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/198,,Ascending/Descending Name,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/199,,Ascending/Descending Friends Since date,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/200,,previous page,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/201,,Click next,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Friends/202,,Click on My Profile from friends,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/203,,Click Messages from friends,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Friends/204,,Click Categories from friends,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Friends/205,,Click Logout from friends,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Friends/Login,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/100,,Add new account with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Functional/100login,,Login with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/101,,Add new account with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/101login,,Login with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/102,,Update profile with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/103,,Update profile with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/104,,Added friend with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/105,,Added friend with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/106,,Send message with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/107,,Send message with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/108,,View Messages,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/109,,Send message response with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/110,,Send message response with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/111,,Added category with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.008s,ERROR
+,,,,,,
+Test Cases/Functional/112,,Added category with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/113,,Added thread with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/114,,Added thread with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/115,,Added comment with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/116,,Added comment with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/117,,Added thread upvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/118,,Added thread downvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.006s,ERROR
+,,,,,,
+Test Cases/Functional/119,,Added comment upvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/120,,Added comment downvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/Functional/121,,Navigate to /categories,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/121thread,,Navigate to /category/thread/?thread_id=1,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/122,,Navigate to /category/?category_id=1,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/122invalid profile,,Update profile with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/123,,Update profile with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/124,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/125,,Added friend with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/126,,Send message with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/127,,Send message with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/128,,View messages,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/129,,Send message response with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/130,,Send message response with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/131,,Added category with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/132,,Added category with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/133,,Added thread with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/134,,Added thread with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/135,,Added comment with invalid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Functional/136,,Added comment with valid input,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/137,,Added thread upvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.025s,ERROR
+,,,,,,
+Test Cases/Functional/138,,Added thread downvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/139,,Added comment upvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/140,,Added comment downvote,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/141,,Navigate to /categories,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/141thread,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Functional/142,,Navigate to /category/?category_id=1,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Functional/Login,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/Profile/170,,BlackBox,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/171,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Profile/172,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Profile/173,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Profile/174,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Profile/175,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Profile/176,,257 1's for password field in edit profile,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/Profile/177,,test for matching passwords,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/178,,all bad fields,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/179,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/180,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Profile/181,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/182,,go to messages,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/183,,get categories,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/Profile/184,,logout,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/Profile/185,,Get My Friends,2018-04-11 21:15:43,2018-04-11 21:15:43,0.004s,ERROR
+,,,,,,
+Test Cases/Profile/Login,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/11 - Add Category While Not Logged In,,Attempts to add categories while not logged in,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/13 - Add Thread While Not Logged In,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/15 - Add Comment While Not Logged In,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/17 - Vote on Thread While Not Logged In,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/22 - View Landing Page,,Views landing page and ensures that text is loading correctly,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/23 - Click Register Button,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/24 - Click Login Button,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/25 - View Registered User Count,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/27 - View Group Count,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/34 - Create Account - Correct Name Format,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/35 - Create Account - Name is only Numbers,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/36 - Create Account - Name is Only Special Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/37 - Create Account - Name is Only One Character,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/38 - Create Account - Name is 64 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/39 - Create Account - Name is over 64 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/4 - View Profile While Not Logged In,,Attempt to load /profile if not logged in.\n\nShould redirect to login.,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/40 - Create Account - Valid Email,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/41 - Create Account - Invalid Email,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/42 - Create Account - Username Of Only Letters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.010s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/43 - Create Account - Username of Only Numbers,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/44 - Create Account - Username is Only Special Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/45 - Create Account - Username is Only 1 Character,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/46 - Create Account - Username is 64 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/47 - Create Account - Username Is Over 64 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/48 - Create Account - Password is Less Than 8 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/49 - Create Account - Password is 64 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/5 - View Profile While Logged In,,Navigates to Profile After Logging In,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/50 - Create Account - Password is 64 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/51 - Create Account - Passwords do not match,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/53 - Logout While Not Logged In,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/54 - Register Account with Taken Username,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/55 - Click Register Button on Login Page,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/56 - Login with Matching Username and Password,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/57 - Login With Wrong Password,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/58 - Login with Invalid Username and Password,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/59 - Categories Navbar Loads Correctly,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/6 - Load Messages While Logged In,,Navigates to messages while logged in. Run test after user has logged in.,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/60 - Category Title Loads Properly,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/64 - Category Search Shows No Results Found,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/65 - Category Search Shows Test Result,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.002s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/66 - Category - Adding Duplicate Category,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/67 - Category - Add Category Without Title,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/68 - Category - Add Category With Title Greater Than 20 Characters,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/69 - Category - Add Category With Title Less than 20 Chars,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/7 - View Messages While Not Logged In,,Attempts to load messages without loggin in first.,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/70 - Category - Add Category with Blank Description,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/71 - Category - Add Category With Description Over 60 Chars,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.003s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/74 - Thread Navbar Loads Correctly,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/75 - Thread Title Loads Correcctly,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/78 - Thread - Search for Nonexistant Thread,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/79 - Thread - Search for Existing Thread,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/80 - Thread - Add Thread With Blank Title,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/81 - Thread - Add Thread With Title Greater than 20 Chars,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/82 - Thread - Add Thread With Title Less Than 20 Chars,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/83 - Thread - Add Thread With Empty Body,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/84 - Thread - Add Thread With More Than 60 Chars,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/87 - Thread - Upvote Thread,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/9 - Send Friend Request While Not Logged In,,,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/Create User,,Creates a user using valid example data. Use for subroutine calls,2018-04-11 21:15:43,2018-04-11 21:15:43,0.000s,ERROR
+,,,,,,
+Test Cases/JeremyFolder/Login,,"Logins using \""test\"", \""123456789\"". Use this in subroutines.",2018-04-11 21:15:43,2018-04-11 21:15:43,0.001s,ERROR
