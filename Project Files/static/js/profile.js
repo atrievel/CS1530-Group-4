@@ -162,7 +162,7 @@ function sendMessage(user, body) {
 
 function removeFriend(user) {
     const remove_friend = JSON.stringify({
-        user2_id: user.trim()
+        username: user.trim()
     });
 
     console.log(remove_friend);

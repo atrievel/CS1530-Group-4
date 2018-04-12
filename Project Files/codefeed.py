@@ -243,7 +243,7 @@ def messages():
     else:
         return render_template('messages.html', messages=None)
 
-@app.route("/profile/friends", methods=['GET','POST'])
+@app.route("/profile/friends", methods=['GET','POST', 'DELETE'])
 @login_required
 def friends():
     user = User.query.filter_by(id=session['user_id']).first()
@@ -281,6 +281,15 @@ def friends():
 
         friend_request = Friendship(user.id, user2_id, None)
         db.session.add(friend_request)
+        db.session.commit()
+        return Response("{'error': 'none'", status=200, mimetype='application/json')
+    elif request.method == 'DELETE':
+        #Parse the JSON string
+        data = request.get_json(force=True)
+        user2_id = get_user_id(data['username'])
+
+        res = Friendship.query.filter(or_(and_(Friendship.user1_id == user.id, Friendship.user2_id == user2_id), and_(Friendship.user1_id == user2_id, Friendship.user2_id == user.id))).first()
+        db.session.delete(res)
         db.session.commit()
         return Response("{'error': 'none'", status=200, mimetype='application/json')
     else:

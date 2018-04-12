@@ -4,5 +4,5 @@ from datetime import datetime
 from functools import wraps
 from flask.ext.bcrypt import Bcrypt
 from database import db, User, Category, Thread, Comment, Friendship, CommentVote, ThreadVote, Message
-from sqlalchemy import or_, case
+from sqlalchemy import or_, and_, case
 import os
