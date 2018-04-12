@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+   <description>Black box unit tests for CodeFeed</description>
+   <name>CodeFeed Testing Suite</name>
+   <tag></tag>
+   <UUID>fb6ac198-138f-4e4c-8f68-b2e375fa84d2</UUID>
+   <pageLoadTimeout>30</pageLoadTimeout>
+</Project>

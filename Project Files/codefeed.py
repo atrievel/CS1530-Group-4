@@ -17,7 +17,7 @@ db.init_app(app)
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if session['user_id'] is None:
+        if not "user_id" in session:
             return redirect(url_for('login', next=request.url))
         return f(*args, **kwargs)
     return decorated_function
@@ -83,6 +83,8 @@ def index():
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == 'GET':
+        if "user_id" in session:
+            return redirect(url_for("profile"))
         return render_template('login.html')
     elif request.method == 'POST':
         # Get the user based on the entered username
@@ -92,7 +94,7 @@ def login():
             pw_hash = user.password_hash #get the password hash from the db
 
             if bcrypt.check_password_hash(pw_hash, request.form['password']):
-                session['user_id'] = user.id #set the session varaible for the user
+                session["user_id"] = user.id
                 user.last_login = datetime.now()
                 db.session.commit()
                 return redirect(url_for('profile'))
@@ -106,7 +108,6 @@ def login():
         return render_template('login.html')
 
 @app.route("/logout", methods=['GET'])
-@login_required
 def logout():
     session.clear()
     return redirect(url_for('login'))
@@ -242,7 +243,7 @@ def messages():
     else:
         return render_template('messages.html', messages=None)
 
-@app.route("/profile/friends", methods=['GET','POST'])
+@app.route("/profile/friends", methods=['GET','POST', 'DELETE'])
 @login_required
 def friends():
     user = User.query.filter_by(id=session['user_id']).first()
@@ -280,6 +281,15 @@ def friends():
 
         friend_request = Friendship(user.id, user2_id, None)
         db.session.add(friend_request)
+        db.session.commit()
+        return Response("{'error': 'none'", status=200, mimetype='application/json')
+    elif request.method == 'DELETE':
+        #Parse the JSON string
+        data = request.get_json(force=True)
+        user2_id = get_user_id(data['username'])
+
+        res = Friendship.query.filter(or_(and_(Friendship.user1_id == user.id, Friendship.user2_id == user2_id), and_(Friendship.user1_id == user2_id, Friendship.user2_id == user.id))).first()
+        db.session.delete(res)
         db.session.commit()
         return Response("{'error': 'none'", status=200, mimetype='application/json')
     else:
