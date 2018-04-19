@@ -2,10 +2,7 @@ Milestone 1:
     changed "quality assurance" to "software tester"
     changed roles
 
-Milestone 2:
-
-
-Milestone 3:
+Milestone 2 and 3:
     updated dataflow diagram
     updated IC cards
     updated cost tables
