@@ -15,3 +15,7 @@ Milestone 4:
 Milestone 5:
 
 Milestone 6:
+
+
+print checklist
+print source code 

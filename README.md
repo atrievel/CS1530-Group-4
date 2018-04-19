@@ -36,27 +36,11 @@ flask initdb
 flask run
 ```
 
-Then go to localhost:5000 on your web browser to run the application. You should see a page called landing.html
+Then go to localhost:5000 on your web browser to run the application. You should see a page called landing.html. From this page, you can access links to register of login. After logging in, you can view your profile, friends, messages, categories, threads, and comments. All actions on the page are clearly labeled. 
 
 ## Running the tests
 
-TO DO
-
-### Break down into end to end tests
-
-TO DO
-
-``` python
-Give an example
-```
-
-### And coding style tests
-
-TO DO
-
-``` python
-Give an example
-```
+The tests are run using Katalon Studio. To run the tests, switch to the test-env branch, clone the test suite, open in Katalon, and click 'Run test Suite.'
 
 ## Deployment
 
@@ -69,19 +53,21 @@ In order to deploy this application, the database will need to be migrated to so
 * [ECMAScript 6](http://es6-features.org/#Constants) - The version of JavaScript compliance used
 * [BootStrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - The front-end framework
 * [PyTest](http://pytest-flask.readthedocs.io/en/latest/) - The back-end testing suite
-* [Mocha](https://mochajs.org/) - The front-end testing suite
+* [Katalon](https://www.katalon.com/) - The front-end testing suite
 
 ## Versioning
 
-* *Current Build (in progress)* 1.0.0 - Initial release based on documentation requirements
+* 1.0.0 - Initial release based on documentation requirements
+* 1.5.0 - Major bug fixes
+* *Current Build* 2.0.0 - Results after first sprint
 
 ## Authors
 
-* **Alec Trievel** - *Project Manager, Front-end Specialist, Quality Assurance* - [GitHub](https://github.com/AlecT58)
-* **Tim Plats** - *Front-end specialist, Database Admin* - [GitHub](https://github.com/twsp)
-* **Jeremy Kato** - *Database Admin* - [GitHub](https://github.com/jeremykato)
+* **Alec Trievel** - *Project Manager, Front-end Specialist, Back-end Specialist* - [GitHub](https://github.com/AlecT58)
+* **Tim Plats** - *Front-end specialist, Back-end Specialist, Database Admin* - [GitHub](https://github.com/twsp)
+* **Jeremy Kato** - *Quality Assurance* - [GitHub](https://github.com/jeremykato)
 * **Joseph Kostial** - *Back-end Specialist* - [GitHub](https://github.com/jmk243)
-* **Albert Yang** - *Back-end specialist, Quality Assurance* - [GitHub](https://github.com/aly31)
+* **Albert Yang** - *Quality Assurance* - [GitHub](https://github.com/aly31)
 
 ## License
 
@@ -89,4 +75,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* TO DO
+* Authors of all software, libraries, frameworks, and tools used
+* Dr. Chang and Akhil Yendluri
