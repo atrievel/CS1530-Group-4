@@ -36,7 +36,11 @@ flask initdb
 flask run
 ```
 
-Then go to localhost:5000 on your web browser to run the application. You should see a page called landing.html. From this page, you can access links to register of login. After logging in, you can view your profile, friends, messages, categories, threads, and comments. All actions on the page are clearly labeled. 
+Then go to localhost:5000 on your web browser to run the application. You should see a page called landing.html. From this page, you can access links to register of login. After logging in, you can view your profile, friends, messages, categories, threads, and comments. All actions on the page are clearly labeled.
+
+## Modifications
+
+To make modifications to CodeFeed, there are no special steps required. After making your modifications, it is recommended you run the installation commands again.
 
 ## Running the tests
 
